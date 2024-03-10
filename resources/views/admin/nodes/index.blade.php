@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Lista de Nodes
+    Lista de Nodos
 @endsection
 
 @section('scripts')
@@ -10,10 +10,10 @@
 @endsection
 
 @section('content-header')
-    <h1>Nodes<small>Todos os nodes disponíveis no sistema.</small></h1>
+    <h1>Nodos<small>Todos los nodos dispoibles en sistema.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li class="active">Nodes</li>
+        <li class="active">Nodos</li>
     </ol>
 @endsection
 
@@ -22,14 +22,14 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Lista de Node </h3>
+                <h3 class="box-title">Lista de Nodos </h3>
                 <div class="box-tools search01">
                     <form action="{{ route('admin.nodes') }}" method="GET">
                         <div class="input-group input-group-sm">
-                            <input type="text" name="filter[name]" class="form-control pull-right" value="{{ request()->input('filter.name') }}" placeholder="Procurar Nodes">
+                            <input type="text" name="filter[name]" class="form-control pull-right" value="{{ request()->input('filter.name') }}" placeholder="Buscar nodos">
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                <a href="{{ route('admin.nodes.new') }}"><button type="button" class="btn btn-sm btn-primary" style="border-radius: 0 3px 3px 0;margin-left:-1px;">Criar Novo</button></a>
+                                <a href="{{ route('admin.nodes.new') }}"><button type="button" class="btn btn-sm btn-primary" style="border-radius: 0 3px 3px 0;margin-left:-1px;">Crear nuevo</button></a>
                             </div>
                         </div>
                     </form>
@@ -40,8 +40,8 @@
                     <tbody>
                         <tr>
                             <th></th>
-                            <th>Nome</th>
-                            <th>Localização</th>
+                            <th>Nombre</th>
+                            <th>Localización</th>
                             <th>Memoria</th>
                             <th>Disco</th>
                             <th class="text-center">Servidores</th>
@@ -91,7 +91,7 @@
                 });
                 $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heartbeat faa-pulse animated').css('color', '#50af51');
             }).fail(function (error) {
-                var errorText = 'Erro ao se conectar ao node! Verifique o console do navegador para obter detalhes.';
+                var errorText = '¡Error al conectarse al nodo! Consulte la consola de su navegador para obtener más detalles.';
                 try {
                     errorText = error.responseJSON.errors[0].detail || errorText;
                 } catch (ex) {}

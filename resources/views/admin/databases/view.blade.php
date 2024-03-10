@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    Host do Database &rarr; Ver &rarr; {{ $host->name }}
+    Host de Database &rarr; Ver &rarr; {{ $host->name }}
 @endsection
 
 @section('content-header')
-    <h1>{{ $host->name }}<small>Visualização de bancos de dados associados e detalhes para este database</small></h1>
+    <h1>{{ $host->name }}<small>Ver bases de datos asociadas y detalles de esta base de datos</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
         <li><a href="{{ route('admin.databases') }}">Host de Database</a></li>
@@ -19,25 +19,25 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Detalhes da Host</h3>
+                    <h3 class="box-title">Detalles de Host</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pName" class="form-label">Nome</label>
+                        <label for="pName" class="form-label">Nombre</label>
                         <input type="text" id="pName" name="name" class="form-control" value="{{ old('name', $host->name) }}" />
                     </div>
                     <div class="form-group">
-                        <label for="pHost" class="form-label">Hospedado</label>
+                        <label for="pHost" class="form-label">Alojado</label>
                         <input type="text" id="pHost" name="host" class="form-control" value="{{ old('host', $host->host) }}" />
-                        <p class="text-muted small">O endereço IP ou FQDN que deve ser usado ao tentar se conectar a este host MySQL <em>a partir do painel</em> para adicionar novos bancos de dados.</p>
+                        <p class="text-muted small">La dirección IP o FQDN que se debe usar al intentar conectarse a este host MySQL desde el panel</em> para agregar nuevas databases.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pPort" class="form-label">Porta</label>
+                        <label for="pPort" class="form-label">Puerto</label>
                         <input type="text" id="pPort" name="port" class="form-control" value="{{ old('port', $host->port) }}" />
-                        <p class="text-muted small">A porta em que o MySQL está sendo executado para este host.</p>
+                        <p class="text-muted small">El puerto en el que se ejecuta MySQL para este host.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pNodeId" class="form-label">Node Linkado</label>
+                        <label for="pNodeId" class="form-label">Nodo linkeado</label>
                         <select name="node_id" id="pNodeId" class="form-control">
                             <option value="">Nada</option>
                             @foreach($locations as $location)
@@ -48,7 +48,7 @@
                                 </optgroup>
                             @endforeach
                         </select>
-                        <p class="text-muted small">Esta configuração não faz nada além do padrão para este host de Database ao adicionar um Database a um servidor no Node selecionado.</p>
+                        <p class="text-muted small">Esta configuración no hace nada más que el valor predeterminado para este host de base de datos al agregar una base de datos a un servidor en el nodo seleccionado..</p>
                     </div>
                 </div>
             </div>
@@ -56,25 +56,25 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Detalhes do Usuário </h3>
+                    <h3 class="box-title">Detalles de usuario </h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pUsername" class="form-label">Usuário</label>
+                        <label for="pUsername" class="form-label">Usuario</label>
                         <input type="text" name="username" id="pUsername" class="form-control" value="{{ old('username', $host->username) }}" />
-                        <p class="text-muted small">O nome de usuário de uma conta que tem permissões suficientes para criar novos usuários e bancos de dados sobre o sistema.</p>
+                        <p class="text-muted small">El nombre de usuario de una cuenta que tiene permisos suficientes para crear nuevos usuarios y bases de datos en el sistema.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pPassword" class="form-label">Senha</label>
+                        <label for="pPassword" class="form-label">Contraseña</label>
                         <input type="password" name="password" id="pPassword" class="form-control" />
-                        <p class="text-muted small">A senha para a conta definida. Deixe em branco para continuar usando a senha atribuída.</p>
+                        <p class="text-muted small">La contraseña de la cuenta definida. Déjelo en blanco para continuar usando la contraseña asignada.</p>
                     </div>
                     <hr />
-                    <p class="text-danger small text-left">A conta definida para esse host de Database <strong>deve</strong> ter a permissão com <code>OPÇÃO DE CONCESSÃO</code>. Se a conta definida não tiver essa permissão, as solicitações para criar bancos de dados <em>falharão</em>. <strong>Não use os mesmos detalhes da conta para o MySQL que você definiu para este painel</strong></p>
+                    <p class="text-danger small text-left">La cuenta definida para este host de base de datos <strong>debe</strong> tener permisos con <code>OPCIÓN DE CONCÉNSO</code>. Si la cuenta definida no tiene este permiso, solicitudes para crear bases de datos <em>fallará</em>. <strong>No utilice los mismos detalles de cuenta para MySQL que definió para este panel</strong></p>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">Salvar</button>
+                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">Guardar</button>
                     <button name="_method" value="DELETE" class="btn btn-sm btn-danger pull-left muted muted-hover"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
@@ -91,10 +91,10 @@
                 <table class="table table-hover">
                     <tr>
                         <th>Servidor</th>
-                        <th>Nome do Database</th>
-                        <th>Usuário</th>
-                        <th>Conexões de</th>
-                        <th>Conexões máximas</th>
+                        <th>Nombre de base de datos</th>
+                        <th>Usuario</th>
+                        <th>Conexión de</th>
+                        <th>Conexíon máximas</th>
                         <th></th>
                     </tr>
                     @foreach($databases as $database)
@@ -110,7 +110,7 @@
                             @endif
                             <td class="text-center">
                                 <a href="{{ route('admin.servers.view.database', $database->getRelation('server')->id) }}">
-                                    <button class="btn btn-xs btn-primary">Gerenciar</button>
+                                    <button class="btn btn-xs btn-primary">Administrar</button>
                                 </a>
                             </td>
                         </tr>

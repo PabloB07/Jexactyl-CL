@@ -5,7 +5,7 @@ Lista de servidores
 @endsection
 
 @section('content-header')
-    <h1>Servidores<small>Todos os servidores disponíveis no sistema.</small></h1>
+    <h1>Servidores<small>Todos los servidores disponibles en el sistema.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li class="active">Servidores</li>
@@ -21,10 +21,10 @@ Lista de servidores
                 <div class="box-tools search01">
                     <form action="{{ route('admin.servers') }}" method="GET">
                         <div class="input-group input-group-sm">
-                            <input type="text" name="filter[*]" class="form-control pull-right" value="{{ request()->input()['filter']['*'] ?? '' }}" placeholder="Procurar Servidores">
+                            <input type="text" name="filter[*]" class="form-control pull-right" value="{{ request()->input()['filter']['*'] ?? '' }}" placeholder="Busqueda de Servidores">
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                <a href="{{ route('admin.servers.new') }}"><button type="button" class="btn btn-sm btn-primary" style="border-radius: 0 3px 3px 0;margin-left:-1px;">Criar Novo</button></a>
+                                <a href="{{ route('admin.servers.new') }}"><button type="button" class="btn btn-sm btn-primary" style="border-radius: 0 3px 3px 0;margin-left:-1px;">Cear nuevo</button></a>
                             </div>
                         </div>
                     </form>
@@ -34,11 +34,11 @@ Lista de servidores
                 <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <th>Nome do servidor</th>
+                            <th>Nombre de Servidores</th>
                             <th>UUID</th>
-                            <th>Dono</th>
-                            <th>Node</th>
-                            <th>Conexão</th>
+                            <th>Dueño</th>
+                            <th>Nodo</th>
+                            <th>Conexión</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -57,7 +57,7 @@ Lista de servidores
                                     @elseif(! $server->isInstalled())
                                         <span class="label label-warning">Instalando</span>
                                     @else
-                                        <span class="label label-success">Ativo</span>
+                                        <span class="label label-success">Activo</span>
                                     @endif
                                 </td>
                                 <td class="text-center">

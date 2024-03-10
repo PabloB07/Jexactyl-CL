@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Nodes &rarr; Novo
+    Nodos &rarr; Nuevos
 @endsection
 
 @section('content-header')
-    <h1>Novo Node<small>Criar um novo Node local ou remoto para os servidores a serem instalados.</small></h1>
+    <h1>Nuevo Nodo<small>Crear un nuevo Nodo local o remoto para los servidores a instalar.</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Administração</a></li>
-        <li><a href="{{ route('admin.nodes') }}">Nodes</a></li>
-        <li class="active">Novo</li>
+        <li><a href="{{ route('admin.index') }}">Administración</a></li>
+        <li><a href="{{ route('admin.nodes') }}">Nodos</a></li>
+        <li class="active">Nuevo</li>
     </ol>
 @endsection
 
@@ -19,20 +19,20 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Detalhes Básicos</h3>
+                    <h3 class="box-title">Detalles Básicos</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
                         <label for="pName" class="form-label">Nome</label>
                         <input type="text" name="name" id="pName" class="form-control" value="{{ old('name') }}"/>
-                        <p class="text-muted small">Limites de caracteres: <code>a-zA-Z0-9_.-</code> e <code>[Espaço]</code> (min 1, max 100 caracteres).</p>
+                        <p class="text-muted small">Límites de caracteres: <code>a-zA-Z0-9_.-</code> e <code>[Espacio]</code> (min 1, max 100 caracteres).</p>
                     </div>
                     <div class="form-group">
-                        <label for="pDescription" class="form-label">Descrição</label>
+                        <label for="pDescription" class="form-label">Descripción</label>
                         <textarea name="description" id="pDescription" rows="4" class="form-control">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="pLocationId" class="form-label">Localização</label>
+                        <label for="pLocationId" class="form-label">Localización</label>
                         <select name="location_id" id="pLocationId">
                             @foreach($locations as $location)
                                 <option value="{{ $location->id }}" {{ $location->id != old('location_id') ?: 'selected' }}>{{ $location->short }}</option>
@@ -40,7 +40,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Visibilidade do Node</label>
+                        <label class="form-label">Visibilidad del Nodo</label>
                         <div>
                             <div class="radio radio-success radio-inline">
 
@@ -52,52 +52,52 @@
                                 <label for="pPublicFalse"> Privado </label>
                             </div>
                         </div>
-                        <p class="text-muted small">Ao definir um Node como<code>privado</code>, você estará negando a capacidade de implantar automaticamente nesse node.
+                        <p class="text-muted small">Por definir un Nodo como<code>privado</code>, tu estaras negando la capacidad de implantar automaticamente ese nodo.
                     </div>
                     <div class="form-group">
                         <label for="pFQDN" class="form-label">FQDN Wings</label>
                         <input type="text" name="fqdn" id="pFQDN" class="form-control" value="{{ old('fqdn') }}"/>
-                        <p class="text-muted small">Insira o nome de domínio (por exemplo,<code> node.example.com</code>) a ser usado para se conectar ao daemon. Um endereço IP pode ser usado <em>somente</em> se você não estiver usando SSL para esse node.</p>
+                        <p class="text-muted small">Introduzca el nombre de dominio (por ejemplo, <código> nodo.ejemplo.com</código>) que se utilizará para conectarse al demonio. Se puede usar una dirección IP <em>sólo</em> si no estás usando SSL para ese nodo.</p>
                     </div>
                     <div class="form-group">
                         <label for="daemonSFTPIP" class="control-label">FQDN SFTP (Opcional)</label>
                         <div>
                         <input type="text" name="daemonSFTPIP" class="form-control" id="pDaemonSFTPIP"/>
                         </div>
-                        <p class="text-muted"><small>Insira o nome do domínio SFTP ou ip (por exemplo, <code>sftp.example.com</code> ou <code>123.456.789.123</code>) a ser usado para se conectar ao sftp do daemon.Ao utilizar um SFTP separado, é possível configurar um servidor Wings atrás do Proxy do Cloudflare. Isso pode melhorar a segurança e a eficiência do servidor.
+                        <p class="text-muted"><small>Ingrese el nombre de dominio SFTP o IP (por ejemplo, <code>sftp.example.com</code> o <code>123.456.789.123</code>) que se usará para conectarse al sftp del demonio. SFTP separado, puede configurar un servidor Wings detrás del Cloudflare Proxy. Esto puede mejorar la seguridad y la eficiencia del servidor.
                             </small></p>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Comunicar por SSL</label>
+                        <label class="form-label">Comunicarse por SSL</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pSSLTrue" value="https" name="scheme" checked>
-                                <label for="pSSLTrue"> Usar conexão SSL</label>
+                                <label for="pSSLTrue"> Usar conexión SSL</label>
                             </div>
                             <div class="radio radio-danger radio-inline">
                                 <input type="radio" id="pSSLFalse" value="http" name="scheme" @if(request()->isSecure()) disabled @endif>
-                                <label for="pSSLFalse"> Usar conexão HTTP</label>
+                                <label for="pSSLFalse"> Usar conexión HTTP</label>
                             </div>
                         </div>
                         @if(request()->isSecure())
-                            <p class="text-danger small">Seu Painel está configurado no momento para usar uma conexão segura. Para que os navegadores se conectem ao seu node, ele <strong>deve</strong> usar uma conexão SSL.</p>
+                            <p class="text-danger small">Su Panel de control está actualmente configurado para utilizar una conexión segura. Para que los navegadores se conecten a su nodo, <strong>debe</strong> utilizar una conexión SSL.</p>
                         @else
-                            <p class="text-muted small">Na maioria dos casos, você deve optar por usar uma conexão SSL. Se estiver usando um endereço IP ou se você não deseja usar SSL, selecione uma conexão HTTP.</p>
+                            <p class="text-muted small">En la mayoría de los casos, deberá optar por utilizar una conexión SSL. Si utiliza una dirección IP o si no desea utilizar SSL, seleccione una conexión HTTP.</p>
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Serviços CDN(Proxy)</label>
+                        <label class="form-label">Servicios CDN(Proxy)</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pProxyFalse" value="0" name="behind_proxy" checked>
-                                <label for="pProxyFalse"> Não usar Proxy </label>
+                                <label for="pProxyFalse"> No usar Proxy </label>
                             </div>
                             <div class="radio radio-info radio-inline">
                                 <input type="radio" id="pProxyTrue" value="1" name="behind_proxy">
                                 <label for="pProxyTrue"> Usar proxy </label>
                             </div>
                         </div>
-                        <p class="text-muted small">Se você estiver usando serviços CDN que estão com proxy ativados coloque <code>"Usar Proxy"</code>,Caso contrario deixe <code>"Não usar Proxy"</code>.No CloudFlare isso pode não ser necessario.</p>
+                        <p class="text-muted small">Si está utilizando servicios CDN que tienen proxy habilitado, escriba <code>"Use Proxy"</code>; de lo contrario, deje <code>"Do not use Proxy"</code>. En CloudFlare esto puede no ser necesario.</p>
                     </div>
                 </div>
             </div>
@@ -105,14 +105,14 @@
         <div class="col-sm-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configurações</h3>
+                    <h3 class="box-title">Configuraciones</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="pDaemonBase" class="form-label">Diretório de arquivos do Servidor Daemon </label>
+                            <label for="pDaemonBase" class="form-label">Directorio de archivos del servidor Daemon </label>
                             <input type="text" name="daemonBase" id="pDaemonBase" class="form-control" value="/var/lib/pterodactyl/volumes" />
-                            <p class="text-muted small">Insira o diretório onde os arquivos do servidor devem ser armazenados. <strong>Se utilizar a OVH deve verificar o seu esquema de partição. Talvez seja necessário usar <code>/home/daemon-data</code> para ter espaço suficiente.</strong></p>
+                            <p class="text-muted small">Ingrese el directorio donde se deben almacenar los archivos del servidor. <strong>Si utilizas OVH deberías comprobar tu esquema de partición. Es posible que necesites usar <code>/home/daemon-data</code> para tener suficiente espacio.</strong></p>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="pMemory" class="form-label">Memoria Total </label>
@@ -122,54 +122,54 @@
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pMemoryOverallocate" class="form-label">Sobre-alocação de memória</label>
+                            <label for="pMemoryOverallocate" class="form-label">Sobreasignación de memoria</label>
                             <div class="input-group">
                                 <input type="text" name="memory_overallocate" class="form-control" id="pMemoryOverallocate" value="{{ old('memory_overallocate') }}"/>
                                 <span class="input-group-addon">%</span>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">Insira a quantidade total de memória disponível para novos servidores. Se você quiser permitir a superalocação de memória, insira a porcentagem que deseja permitir. Para desativar a verificação de superalocação, insira <code>-1</code> no campo. Digitar <code>0</code> evitará a criação de novos servidores se ultrapassar o limite do Node.</p>
+                            <p class="text-muted small">Ingrese la cantidad total de memoria disponible para nuevos servidores. Si desea permitir la sobreasignación de memoria, ingrese el porcentaje que desea permitir. Para deshabilitar la verificación de sobreasignación, ingrese <code>-1</code> en el campo. Escribir <code>0</code> evitará la creación de nuevos servidores si excede el límite de nodos.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="pDisk" class="form-label">Espaço em disco Total</label>
+                            <label for="pDisk" class="form-label">Espacio en disco Total</label>
                             <div class="input-group">
                                 <input type="text" name="disk" data-multiplicator="true" class="form-control" id="pDisk" value="{{ old('disk') }}"/>
                                 <span class="input-group-addon">MiB</span>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="pDiskOverallocate" class="form-label">Super-alocação de disco</label>
+                            <label for="pDiskOverallocate" class="form-label">Sobreasignación de disco</label>
                             <div class="input-group">
                                 <input type="text" name="disk_overallocate" class="form-control" id="pDiskOverallocate" value="{{ old('disk_overallocate') }}"/>
                                 <span class="input-group-addon">%</span>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="text-muted small">Insira a quantidade total de espaço em disco disponível para novos servidores. Se você quiser permitir a superalocação de espaço em disco, insira a porcentagem que deseja permitir. Para desativar a verificação de superalocação, insira <code>-1</code> no campo. Digitar <code>0</code> evitará a criação de novos servidores se ultrapassar o limite do Node.</p>
+                            <p class="text-muted small">Ingrese la cantidad total de espacio en disco disponible para nuevos servidores. Si desea permitir la sobreasignación de espacio en disco, ingrese el porcentaje que desea permitir. Para deshabilitar la verificación de sobreasignación, ingrese <code>-1</code> en el campo. Escribir <code>0</code> evitará la creación de nuevos servidores si excede el límite de nodos.</p>
                         </div>
                     </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="daemonListen" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Porta do Daemon</label>
+                                <label for="daemonListen" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Puerto del Daemon</label>
                                     <div>
                                         <input type="text" name="daemonListen" class="form-control" id="pDaemonListen" value="8080" />
                                     </div>
                                 </div>
                             <div class="form-group col-md-6">
-                                <label for="daemonSFTP" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Porta SFTP do Daemon</label>
+                                <label for="daemonSFTP" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Puerto SFTP del Daemon</label>
                                     <div>
                                         <input type="text" name="daemonSFTP" class="form-control" id="pDaemonSFTP" value="2022" />
                                 </div>
                         </div>
                     <div class="col-md-12">
-                            <p class="text-muted small">O daemon executa seu próprio contêiner de gerenciamento SFTP e não utiliza o processo SSHd no servidor físico principal. <Strong>Não utilize a mesma porta que você designou para o processo SSH do seu servidor físico.</strong> Se você estiver executando o daemon atrás do CloudFlare&reg; você deve configurar o porta daemon para <code>8443</code> para permitir a proxy de websocket sobre SSL.</p>
+                            <p class="text-muted small">El demonio ejecuta su propio contenedor de administración SFTP y no utiliza el proceso SSHd en el servidor físico principal. <Strong>No utilice el mismo puerto que designó para el proceso SSH de su servidor físico.</strong> Si está ejecutando el demonio detrás de CloudFlare&reg; debe configurar el puerto del demonio en <code>8443</code> para permitir el proxy websocket a través de SSL.</p>
                         </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Implantável via Loja do Jexactyl</label>
+                    <label class="form-label">Implementable a través de Jexactyl Store</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pDeployableTrue" value="1" name="deployable" checked>
@@ -181,14 +181,14 @@
                             </div>
                             </div>
                         <p class="text-muted"><small>
-                            Essa opção permite que você controle se esse node está visível por meio da página Criação de Servidor da vitrine Jexactyl.
-                            Se ele estiver definido como negado, os usuários não poderão implantar nesse node.
+                                Esta opción le permite controlar si este nodo es visible a través de la página Creación de servidor del escaparate de Jexactyl.
+                                Si se configura en denegar, los usuarios no podrán implementar en este nodo.
                         </small></p>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-success pull-right">Criar Node</button>
+                    <button type="submit" class="btn btn-success pull-right">Crear Nodo</button>
                 </div>
             </div>
         </div>

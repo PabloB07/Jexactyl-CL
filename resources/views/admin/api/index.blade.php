@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    Aplicação de API
+    Aplicación de API
 @endsection
 
 @section('content-header')
-    <h1>Aplica&ccedil;&atilde;o API<small>Controlar credenciais de acesso para gerenciar este Painel atrav&eacute;s da API.</small></h1>
+    <h1>Aplicación API<small>Controlar credenciales de acceso para la gestión de este Panel a trav&eacute;s de la API.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li class="active">Aplica&ccedil;&atilde;o de API</li>
+        <li class="active">Aplicación de API</li>
     </ol>
 @endsection
 
@@ -17,18 +17,18 @@
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Lista de Credenciais</h3>
+                    <h3 class="box-title">Lista de Credenciales</h3>
                     <div class="box-tools">
-                        <a href="{{ route('admin.api.new') }}" class="btn btn-sm btn-primary">Criar Nova</a>
+                        <a href="{{ route('admin.api.new') }}" class="btn btn-sm btn-primary">Crear nueva</a>
                     </div>
                 </div>
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
-                            <th>Chave</th>
-                            <th>Descri&ccedil;&atilde;o</th>
-                            <th>&Uacute;ltimo Uso</th>
-                            <th>Criado</th>
+                            <th>Llave</th>
+                            <th>Descripción</th>
+                            <th>&Uacute;ltimo uso</th>
+                            <th>Creado</th>
                             <th></th>
                         </tr>
                         @foreach($keys as $key)
@@ -66,12 +66,12 @@
                 event.preventDefault();
                 swal({
                     type: 'error',
-                    title: 'Revogar a chave API',
-                    text: 'Assim que esta chave API for revogada, os sistemas que usavam essa chave vai ser negado.',
+                    title: 'Revocar clave API',
+                    text: 'Una vez que se revoque esta clave API, se rechazarán los sistemas que usaron esta clave.',
                     showCancelButton: true,
                     allowOutsideClick: true,
                     closeOnConfirm: false,
-                    confirmButtonText: 'Revogar',
+                    confirmButtonText: 'Revocar',
                     confirmButtonColor: '#d9534f',
                     showLoaderOnConfirm: true
                 }, function () {
@@ -85,7 +85,7 @@
                         swal({
                             type: 'success',
                             title: '',
-                            text: 'A chave API foi revogada.'
+                            text: 'La clave API fue revocado.'
                         });
                         self.parent().parent().slideUp();
                     }).fail(function (jqXHR) {
@@ -93,7 +93,7 @@
                         swal({
                             type: 'error',
                             title: 'Ops!',
-                            text: 'Ocorreu um erro durante a tentativa de revogar desta chave.'
+                            text: 'Se produjo un error al intentar revocar esta clave.'
                         });
                     });
                 });

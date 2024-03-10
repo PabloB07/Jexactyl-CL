@@ -5,10 +5,10 @@
 @endsection
 
 @section('content-header')
-    <h1>Host de Database<small>Hospedagem de database nos quais os servidores podem ter bancos de dados criados.</small></h1>
+    <h1>Host de Database<small>Alojamiento de bases de datos en los que los servidores pueden crear bases de datos.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li class="active">Lista dos Database</li>
+        <li class="active">Lista de Databases</li>
     </ol>
 @endsection
 
@@ -17,9 +17,9 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Lista dos Database</h3>
+                <h3 class="box-title">Lista de Databases</h3>
                 <div class="box-tools">
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newHostModal">Criar Novo</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newHostModal">Crear nuevo</button>
                 </div>
             </div>
             <div class="box-body table-responsive no-padding">
@@ -27,12 +27,12 @@
                     <tbody>
                         <tr>
                             <th>ID</th>
-                            <th>Nome</th>
-                            <th>Hospedado</th>
-                            <th>Porta</th>
-                            <th>Usu&aacute;rio</th>
+                            <th>Nombre</th>
+                            <th>Alojado</th>
+                            <th>Puerto</th>
+                            <th>Usuario</th>
                             <th class="text-center">Database</th>
-                            <th class="text-center">Node</th>
+                            <th class="text-center">Nodo</th>
                         </tr>
                         @foreach ($hosts as $host)
                             <tr>
@@ -63,40 +63,40 @@
             <form action="{{ route('admin.databases') }}" method="POST">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Criar Novo Database</h4>
+                    <h4 class="modal-title">Crear nuevo Database</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="pName" class="form-label">Nome</label>
                         <input type="text" name="name" id="pName" class="form-control" />
-                        <p class="text-muted small">Um pequeno identificador utilizado para distinguir este local de outros. Deve ter entre 1 e 60 caracteres, por exemplo, <code>br.painel.db</code>.</p>
+                        <p class="text-muted small">Un pequeño identificador utilizado para distinguir esta ubicación de otras. Debe tener entre 1 y 60 caracteres, p.e., <code>cl.panel.db</code>.</p>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="pHost" class="form-label">Hospedagem</label>
+                            <label for="pHost" class="form-label">Alojamiento</label>
                             <input type="text" name="host" id="pHost" class="form-control" />
-                            <p class="text-muted small">O endereço IP ou FQDN que deve ser usado quando se tenta conectar a este host MySQL <em> do painel</em> para adicionar novos databases.</p>
+                            <p class="text-muted small">La dirección IP o FQDN que se debe utilizar al intentar conectarse a este host MySQL <em> del panel</em> para agregar nuevas databases.</p>
                         </div>
                         <div class="col-md-6">
-                            <label for="pPort" class="form-label">Porta</label>
+                            <label for="pPort" class="form-label">Puerto</label>
                             <input type="text" name="port" id="pPort" class="form-control" value="3306"/>
-                            <p class="text-muted small">A porta em que o MySQL está rodando para este host.</p>
+                            <p class="text-muted small">El puerto en el que se ejecuta MySQL para este host.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="pUsername" class="form-label">Usu&aacute;rio</label>
+                            <label for="pUsername" class="form-label">Usuario</label>
                             <input type="text" name="username" id="pUsername" class="form-control" />
-                            <p class="text-muted small">O nome de usuário de uma conta que tem permissões suficientes para criar novos usuários e bancos de dados sobre o sistema.</p>
+                            <p class="text-muted small">El nombre de usuario de una cuenta que tiene permisos suficientes para crear nuevos usuarios y bases de datos en el sistema..</p>
                         </div>
                         <div class="col-md-6">
-                            <label for="pPassword" class="form-label">Senha</label>
+                            <label for="pPassword" class="form-label">Contraseña</label>
                             <input type="password" name="password" id="pPassword" class="form-control" />
-                            <p class="text-muted small">A senha para a conta definida.</p>
+                            <p class="text-muted small">La contraseña de la cuenta definida..</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pNodeId" class="form-label">Node linkado</label>
+                        <label for="pNodeId" class="form-label">Nodo linkeado</label>
                         <select name="node_id" id="pNodeId" class="form-control">
                             <option value="">Nada</option>
                             @foreach($locations as $location)
@@ -107,14 +107,14 @@
                                 </optgroup>
                             @endforeach
                         </select>
-                        <p class="text-muted small">Esta configuração não faz nada além do padrão para este host de Database ao adicionar um Database a um servidor no Node selecionado.</p>
+                        <p class="text-muted small">Esta configuración no hace nada más que el valor predeterminado para este host de base de datos al agregar una base de datos a un servidor en el nodo seleccionado.</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <p class="text-danger small text-left">A conta definida para esse host de Database <strong>deve</strong> ter a permissão com <code>OPÇÃO DE CONCESSÃO</code>. Se a conta definida não tiver essa permissão, as solicitações para criar bancos de dados <em>falharão</em>. <strong>Não use os mesmos detalhes da conta para o MySQL que você definiu para este painel.</strong></p>
+                    <p class="text-danger small text-left">La cuenta definida para este host de base de datos <strong>el debe</strong> tener permisos con <code>OPCIÓN DE CONSECIÓN</code>. Si la cuenta definida no tiene el permiso, solicitudes para crear bases de datos <em>fallará</em>. <strong>No utilice los mismos detalles de cuenta para MySQL que definió para este panel.</strong></p>
                     {!! csrf_field() !!}
                     <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success btn-sm">Criar</button>
+                    <button type="submit" class="btn btn-success btn-sm">Crear</button>
                 </div>
             </form>
         </div>

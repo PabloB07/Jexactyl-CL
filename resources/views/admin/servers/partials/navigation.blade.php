@@ -10,26 +10,26 @@
                     <a href="{{ route('admin.servers.view', $server->id) }}">Sobre</a></li>
                 @if($server->isInstalled())
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.details') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.details', $server->id) }}">Detalhes</a>
+                        <a href="{{ route('admin.servers.view.details', $server->id) }}">Detalles</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.build') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.build', $server->id) }}">Configuração de Build</a>
+                        <a href="{{ route('admin.servers.view.build', $server->id) }}">Configuración del build</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.startup') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.startup', $server->id) }}">Iniciação</a>
+                        <a href="{{ route('admin.servers.view.startup', $server->id) }}">Inicialización</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.database') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.database', $server->id) }}">Database</a>
+                        <a href="{{ route('admin.servers.view.database', $server->id) }}">Databases</a>
                     </li>
                     <li class="{{ $router->currentRouteNamed('admin.servers.view.mounts') ? 'active' : '' }}">
-                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">Montagem</a>
+                        <a href="{{ route('admin.servers.view.mounts', $server->id) }}">Mount</a>
                     </li>
                 @endif
                 <li class="{{ $router->currentRouteNamed('admin.servers.view.manage') ? 'active' : '' }}">
-                    <a href="{{ route('admin.servers.view.manage', $server->id) }}">Gerenciar</a>
+                    <a href="{{ route('admin.servers.view.manage', $server->id) }}">Administrar</a>
                 </li>
                 <li class="tab-danger {{ $router->currentRouteNamed('admin.servers.view.delete') ? 'active' : '' }}">
-                    <a href="{{ route('admin.servers.view.delete', $server->id) }}">Deletar</a>
+                    <a href="{{ route('admin.servers.view.delete', $server->id) }}">Eliminar</a>
                 </li>
                 <li class="tab-success">
                     <a href="/server/{{ $server->uuidShort }}" target="_blank"><i class="fa fa-external-link"></i></a>

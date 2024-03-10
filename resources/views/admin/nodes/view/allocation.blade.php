@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ $node->name }}: Alocações
+    {{ $node->name }}: Alocaciones
 @endsection
 
 @section('content-header')
-    <h1>{{ $node->name }}<small>Alocações de controle disponíveis para servidores neste node.</small></h1>
+    <h1>{{ $node->name }}<small>Controle las asignaciones disponibles para los servidores en este nodo.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administador</a></li>
-        <li><a href="{{ route('admin.nodes') }}">Nodes</a></li>
+        <li><a href="{{ route('admin.nodes') }}">Nodos</a></li>
         <li><a href="{{ route('admin.nodes.view', $node->id) }}">{{ $node->name }}</a></li>
-        <li class="active">Alocações</li>
+        <li class="active">Alocacioness</li>
     </ol>
 @endsection
 
@@ -20,9 +20,9 @@
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
                 <li><a href="{{ route('admin.nodes.view', $node->id) }}">Sobre</a></li>
-                <li><a href="{{ route('admin.nodes.view.settings', $node->id) }}">Definições</a></li>
-                <li><a href="{{ route('admin.nodes.view.configuration', $node->id) }}">Configuração</a></li>
-                <li class="active"><a href="{{ route('admin.nodes.view.allocation', $node->id) }}">Alocações</a></li>
+                <li><a href="{{ route('admin.nodes.view.settings', $node->id) }}">Definiciones</a></li>
+                <li><a href="{{ route('admin.nodes.view.configuration', $node->id) }}">Configuración</a></li>
+                <li class="active"><a href="{{ route('admin.nodes.view.allocation', $node->id) }}">Alocaciones</a></li>
                 <li><a href="{{ route('admin.nodes.view.servers', $node->id) }}">Servidores</a></li>
             </ul>
         </div>
@@ -32,7 +32,7 @@
     <div class="col-sm-8">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Alocações existentes</h3>
+                <h3 class="box-title">Alocaciones existentes</h3>
             </div>
             <div class="box-body table-responsive no-padding" style="overflow-x: visible">
                 <table class="table table-hover" style="margin-bottom:0;">
@@ -40,17 +40,17 @@
                         <th>
                             <input type="checkbox" class="select-all-files hidden-xs" data-action="selectAll">
                         </th>
-                        <th>Endereço IP<i class="fa fa-fw fa-minus-square" style="font-weight:normal;color:#d9534f;cursor:pointer;" data-toggle="modal" data-target="#allocationModal"></i></th>
+                        <th>Dirección IP<i class="fa fa-fw fa-minus-square" style="font-weight:normal;color:#d9534f;cursor:pointer;" data-toggle="modal" data-target="#allocationModal"></i></th>
                         <th>IP Alias</th>
-                        <th>Porta</th>
+                        <th>Puerto</th>
                         <th>Atribuído a</th>
                         <th>
                             <div class="btn-group hidden-xs">
                                 <button type="button" id="mass_actions" class="btn btn-sm btn-default dropdown-toggle disabled"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ações de Massa <span class="caret"></span>
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acciones masivas <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-massactions">
-                                    <li><a href="#" id="selective-deletion" data-action="selective-deletion">Deletar <i class="fa fa-fw fa-trash-o"></i></a></li>
+                                    <li><a href="#" id="selective-deletion" data-action="selective-deletion">Eliminar <i class="fa fa-fw fa-trash-o"></i></a></li>
                                 </ul>
                             </div>
                         </th>
@@ -94,32 +94,32 @@
         <form action="{{ route('admin.nodes.view.allocation', $node->id) }}" method="POST">
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Atribuir novas alocações</h3>
+                    <h3 class="box-title">Atribuir nuevas alocaciones</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pAllocationIP" class="control-label">Endereço IP</label>
+                        <label for="pAllocationIP" class="control-label">Dirección IP</label>
                         <div>
                             <select class="form-control" name="allocation_ip" id="pAllocationIP" multiple>
                                 @foreach($allocations as $allocation)
                                     <option value="{{ $allocation->ip }}">{{ $allocation->ip }}</option>
                                 @endforeach
                             </select>
-                            <p class="text-muted small">Insira um endereço IP para atribuir portas aqui.</p>
+                            <p class="text-muted small">Ingrese una dirección IP para asignar puertos aquí.</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="pAllocationIP" class="control-label">IP Alias</label>
                         <div>
                             <input type="text" id="pAllocationAlias" class="form-control" name="allocation_alias" placeholder="alias" />
-                            <p class="text-muted small">Se você quiser atribuir um alias padrão a essas alocações, insira-o aqui.</p>
+                            <p class="text-muted small">Si desea asignar un alias predeterminado a estas asignaciones, ingréselo aquí.</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="pAllocationPorts" class="control-label">Portas</label>
                         <div>
                             <select class="form-control" name="allocation_ports[]" id="pAllocationPorts" multiple></select>
-                            <p class="text-muted small">Insira portas individuais ou intervalos de portas aqui separados por vírgulas ou espaços.</p>
+                            <p class="text-muted small">Introduzca aquí puertos individuales o rangos de puertos separados por comas o espacios.</p>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Excluir alocações para o bloco IP</h4>
+                <h4 class="modal-title">Eliminar asignación para bloque de IP</h4>
             </div>
             <form action="{{ route('admin.nodes.view.allocation.removeBlock', $node->id) }}" method="POST">
                 <div class="modal-body">
@@ -153,7 +153,7 @@
                 <div class="modal-footer">
                     {{{ csrf_field() }}}
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-danger">Excluir alocações</button>
+                    <button type="submit" class="btn btn-danger">Excluir alocaciones</button>
                 </div>
             </form>
         </div>
@@ -199,12 +199,12 @@
         var allocation = $(this).data('id');
         swal({
             title: '',
-            text: 'Tem certeza de que deseja excluir essa alocação?',
+            text: '¿Está seguro de que desea eliminar esta asignación?',
             type: 'warning',
             showCancelButton: true,
             allowOutsideClick: true,
             closeOnConfirm: false,
-            confirmButtonText: 'Deletar',
+            confirmButtonText: 'Eliminar',
             confirmButtonColor: '#d9534f',
             showLoaderOnConfirm: true
         }, function () {
@@ -304,7 +304,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Tem certeza de que deseja excluir as seguintes alocações: ' + formattedItems + '?',
+                text: '¿Está seguro de que desea eliminar las siguientes asignaciones?: ' + formattedItems + '?',
                 html: true,
                 showCancelButton: true,
                 showConfirmButton: true,
@@ -339,7 +339,7 @@
                         type: 'error',
                         title: 'Ops!',
                         html: true,
-                        text: 'Ocorreu um erro ao tentar excluir essas alocações. Tente novamente.',
+                        text: 'Se produjo un error al intentar eliminar estas ubicaciones. Inténtalo de nuevo.',
                     });
                 });
             });
@@ -347,7 +347,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Selecione alocação(ões) a serem excluídas.',
+                text: 'Seleccione las asignaciones para eliminar.',
             });
         }
     }

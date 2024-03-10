@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Criar Usu&aacute;rio
+    Criar Usuario
 @endsection
 
 @section('content-header')
-    <h1>Criar Usu&aacute;rio<small>Adiciona um novo usu&aacute;rio ao sistema.</small></h1>
+    <h1>Criar Usuario<small>Adiciona un nuevo usuario en el sistema.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li><a href="{{ route('admin.users') }}">Usu&aacute;rios</a></li>
-        <li class="active">Criar</li>
+        <li><a href="{{ route('admin.users') }}">Usuarios</a></li>
+        <li class="active">Crear</li>
     </ol>
 @endsection
 
@@ -19,7 +19,7 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Identifica&ccedil;&atilde;o</h3>
+                    <h3 class="box-title">Identificación</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
@@ -29,45 +29,45 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="control-label">Usu&aacute;rio</label>
+                        <label for="username" class="control-label">Usuario</label>
                         <div>
                             <input type="text" autocomplete="off" name="username" value="{{ old('username') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name_first" class="control-label">Primeiro nome do Cliente </label>
+                        <label for="name_first" class="control-label">Primer nombre de cliente </label>
                         <div>
                             <input type="text" autocomplete="off" name="name_first" value="{{ old('name_first') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name_last" class="control-label">&Uacute;ltimo nome do Cliente</label>
+                        <label for="name_last" class="control-label">Ultimo nombre de cliente</label>
                         <div>
                             <input type="text" autocomplete="off" name="name_last" value="{{ old('name_last') }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Idioma padr&atilde;o</label>
+                        <label class="control-label">Idioma Estándar</label>
                         <div>
                             <select name="language" class="form-control">
                                 @foreach($languages as $key => $value)
                                     <option value="{{ $key }}" @if(config('app.locale') === $key) selected @endif>{{ $value }}</option>
                                 @endforeach
                             </select>
-                            <p class="text-muted"><small>A linguagem padr&atilde;o a ser usada ao renderizar o painel para este usu&aacute;rio.</small></p>
+                            <p class="text-muted"><small>El idioma predeterminado que se utilizará al representar el panel para este usuario.</small></p>
                         </div>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <input type="submit" value="Criar usu&aacute;rio" class="btn btn-success btn-sm">
+                    <input type="submit" value="Crear un usuario" class="btn btn-success btn-sm">
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Permiss&otilde;es</h3>
+                    <h3 class="box-title">Permisos</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group col-md-12">
@@ -77,7 +77,7 @@
                                 <option value="0">@lang('strings.no')</option>
                                 <option value="1">@lang('strings.yes')</option>
                             </select>
-                            <p class="text-muted"><small>Definindo isto como "Sim", o usu&aacute;rio tem acesso administrativo completo.</small></p>
+                            <p class="text-muted"><small>Al configurar esto en "Sí", el usuario tiene acceso administrativo completo.</small></p>
                         </div>
                     </div>
                 </div>
@@ -86,15 +86,15 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Senha</h3>
+                    <h3 class="box-title">Contraseña</h3>
                 </div>
                 <div class="box-body">
                     <div class="alert alert-info">
-                        <p>O fornecimento de uma senha de usu&aacute;rio &eacute; opcional. Os E-mails de novos usu&aacute;rios solicitam aos usu&aacute;rios que criem uma senha na primeira vez em que se logarem. Se uma senha for fornecida aqui, voc&ecirc; precisar&aacute; encontrar um m&eacute;todo diferente de fornec&ecirc;-la ao usu&aacute;rio.</p>
+                        <p>Es necesario proporcionar una contraseña de usuario. opcional. Los correos electrónicos de nuevos usuarios solicitan a los usuarios que creen una contraseña la primera vez que inician sesión. Si se proporciona una contraseña aquí, podrá acceder a ella. necesitará encontrar un método diferente para proporcionárselo al usuario.</p>
                     </div>
                     <div id="gen_pass" class=" alert alert-success" style="display:none;margin-bottom: 10px;"></div>
                     <div class="form-group">
-                        <label for="pass" class="control-label">Senha</label>
+                        <label for="pass" class="control-label">Contraseña</label>
                         <div>
                             <input type="password" name="password" class="form-control" />
                         </div>

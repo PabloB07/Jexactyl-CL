@@ -2,27 +2,27 @@
 
 return [
     'email' => [
-        'title' => 'Atualize seu E-mail',
-        'updated' => 'Seu endereço de E-mail foi atualizado.',
+        'title' => 'Actualiza tu correo electrónico',
+        'updated' => 'Su dirección de correo electrónico ha sido actualizada.',
     ],
     'password' => [
-        'title' => 'Altere sua senha',
-        'requirements' => 'Sua nova senha deve ter pelo menos 8 caracteres de comprimento.',
-        'updated' => 'Sua senha foi atualizada.',
+        'title' => 'cambia tu contraseña',
+        'requirements' => 'Su nueva contraseña debe tener al menos 8 caracteres.',
+        'updated' => 'Tu contraseña ha sido actualizada.',
     ],
     'two_factor' => [
-        'button' => 'Configure autenticação de 2 fatores',
-        'disabled' => 'A autenticação de dois fatores foi desativada em sua conta. Você não será mais solicitado a fornecer um token ao fazer login.',
-        'enabled' => 'A autenticação de dois fatores foi ativada em sua conta! A partir de agora, ao fazer login, você será obrigado a fornecer o código gerado pelo seu dispositivo.',
-        'invalid' => 'O token fornecido era inválido.',
+        'button' => 'Configurar la autenticación de 2 factores',
+        'disabled' => 'La autenticación de dos factores ha sido deshabilitada en su cuenta. Ya no se le pedirá un token al iniciar sesión.',
+        'enabled' => '¡Se ha habilitado la autenticación de dos factores en su cuenta! A partir de ahora, al iniciar sesión se te pedirá que proporciones el código generado por tu dispositivo.',
+        'invalid' => 'El token proporcionado no era válido.',
         'setup' => [
-            'title' => 'Configuração de autenticação de dois fatores',
-            'help' => 'Can\'t Digitalizar o código? Digite o código abaixo em seu aplicativo:',
-            'field' => 'Coloque o token',
+            'title' => 'Configuración de autenticación de dos factores',
+            'help' => '¿No puedes escanear el código? Ingrese el siguiente código en su aplicación:',
+            'field' => 'Coloca el token',
         ],
         'disable' => [
-            'title' => 'Desativar a autenticação de dois fatores',
-            'field' => 'Coloque o token',
+            'title' => 'Deshabilitar la autenticación de dos factores',
+            'field' => 'Coloca el token',
         ],
     ],
 ];

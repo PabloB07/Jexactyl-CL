@@ -2,14 +2,14 @@
 @include('partials/admin.users.nav', ['activeTab' => 'overview', 'user' => $user])
 
 @section('title')
-    Gerenciar Usu&aacute;rio: {{ $user->username }}
+    Administrar Usuario: {{ $user->username }}
 @endsection
 
 @section('content-header')
     <h1>{{ $user->name_first }} {{ $user->name_last}}<small>{{ $user->username }}</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li><a href="{{ route('admin.users') }}">Usu&aacute;rios</a></li>
+        <li><a href="{{ route('admin.users') }}">Usuarios</a></li>
         <li class="active">{{ $user->username }}</li>
     </ol>
 @endsection
@@ -21,42 +21,42 @@
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Identifica&ccedil;&atilde;o</h3>
+                        <h3 class="box-title">Identificación</h3>
                     </div>
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="email" class="control-label">Endereço de E-mail</label>
+                            <label for="email" class="control-label">Dirección de E-mail</label>
                             <div>
                                 <input type="email" name="email" value="{{ $user->email }}" class="form-control form-autocomplete-stop">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="registered" class="control-label">Usuário</label>
+                            <label for="registered" class="control-label">Usuario</label>
                             <div>
                                 <input type="text" name="username" value="{{ $user->username }}" class="form-control form-autocomplete-stop">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="registered" class="control-label">Primeiro nome</label>
+                            <label for="registered" class="control-label">Primer nombre</label>
                             <div>
                                 <input type="text" name="name_first" value="{{ $user->name_first }}" class="form-control form-autocomplete-stop">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="registered" class="control-label">&Ugrave;ltimo nome</label>
+                            <label for="registered" class="control-label">Último nombre</label>
                             <div>
                                 <input type="text" name="name_last" value="{{ $user->name_last }}" class="form-control form-autocomplete-stop">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Idioma padrão</label>
+                            <label class="control-label">Idioma estándar</label>
                             <div>
                                 <select name="language" class="form-control">
                                     @foreach($languages as $key => $value)
                                         <option value="{{ $key }}" @if($user->language === $key) selected @endif>{{ $value }}</option>
                                     @endforeach
                                 </select>
-                                <p class="text-muted"><small>O idioma padr&atilde;o a ser usado ao renderizar o painel para este usu&aacute;rio.</small></p>
+                                <p class="text-muted"><small>El idioma predeterminado que se utilizará al representar el panel para este usuario.</small></p>
                             </div>
                         </div>
                     </div>
@@ -70,15 +70,15 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Senha</h3>
+                        <h3 class="box-title">Contraseña</h3>
                     </div>
                     <div class="box-body">
                         <div class="alert alert-success" style="display:none;margin-bottom:10px;" id="gen_pass"></div>
                         <div class="form-group no-margin-bottom">
-                            <label for="password" class="control-label">Senha <span class="field-optional"></span></label>
+                            <label for="password" class="control-label">Contraseña <span class="field-optional"></span></label>
                             <div>
                                 <input type="password" id="password" name="password" class="form-control form-autocomplete-stop">
-                                <p class="text-muted small">Deixe em branco para manter a mesma senha deste usu&aacute;rio. O usu&aacute;rio n&atilde;o receber&aacute; nenhuma notifica&ccedil;&atilde;o se a senha for alterada.</p>
+                                <p class="text-muted small">Déjelo en blanco para mantener la misma contraseña para este usuario. El usuario no recibirá ningún no hay notificación si se cambia la contraseña.</p>
                             </div>
                         </div>
                     </div>
@@ -87,17 +87,17 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Permissões</h3>
+                        <h3 class="box-title">Permisos</h3>
                     </div>
                     <div class="box-body">
                         <div class="form-group">
                             <label for="root_admin" class="control-label">Administrador</label>
                             <div>
                                 <select name="root_admin" class="form-control">
-                                    <option value="0">@lang('Não')</option>
-                                    <option value="1" {{ $user->root_admin ? 'selected="selected"' : '' }}>@lang('Sim')</option>
+                                    <option value="0">@lang('No')</option>
+                                    <option value="1" {{ $user->root_admin ? 'selected="selected"' : '' }}>@lang('Si')</option>
                                 </select>
-                                <p class="text-muted"><small>Definir isso como 'Sim' da ao usu&aacute;rio acesso administrativo total.</small></p>
+                                <p class="text-muted"><small>Establecer esto en "Sí" le otorga al usuario acceso administrativo completo.</small></p>
                             </div>
                         </div>
                     </div>
@@ -107,16 +107,16 @@
         <div class="col-xs-12">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Deletar Usu&aacute;rio</h3>
+                    <h3 class="box-title">Remover Usuario</h3>
                 </div>
                 <div class="box-body">
-                    <p class="no-margin">N&atilde;o deve haver servidores associados a essa conta para que ela seja exclu&iacute;da.</p>
+                    <p class="no-margin">No debe haber servidores asociados con esta cuenta para que se elimine.</p>
                 </div>
                 <div class="box-footer">
                     <form action="{{ route('admin.users.view', $user->id) }}" method="POST">
                         {!! csrf_field() !!}
                         {!! method_field('DELETE') !!}
-                        <input id="delete" type="submit" class="btn btn-sm btn-danger pull-right" {{ $user->servers->count() < 1 ?: 'disabled' }} value="Deletar Usu&aacute;rio" />
+                        <input id="delete" type="submit" class="btn btn-sm btn-danger pull-right" {{ $user->servers->count() < 1 ?: 'disabled' }} value="Eliminar usuarios" />
                     </form>
                 </div>
             </div>

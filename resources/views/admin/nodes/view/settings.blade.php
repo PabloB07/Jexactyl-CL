@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ $node->name }}: Definições
+    {{ $node->name }}: Definiciones
 @endsection
 
 @section('content-header')
-    <h1>{{ $node->name }}<small>Defina as definições do node.</small></h1>
+    <h1>{{ $node->name }}<small>Definir las definiçiones del nodo.</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Administração</a></li>
-        <li><a href="{{ route('admin.nodes') }}">Nodes</a></li>
+        <li><a href="{{ route('admin.index') }}">Administración</a></li>
+        <li><a href="{{ route('admin.nodes') }}">Nodos</a></li>
         <li><a href="{{ route('admin.nodes.view', $node->id) }}">{{ $node->name }}</a></li>
         <li class="active">Definições</li>
     </ol>
@@ -20,9 +20,9 @@
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
                 <li><a href="{{ route('admin.nodes.view', $node->id) }}">Sobre</a></li>
-                <li class="active"><a href="{{ route('admin.nodes.view.settings', $node->id) }}">Definições</a></li>
-                <li><a href="{{ route('admin.nodes.view.configuration', $node->id) }}">Configuração</a></li>
-                <li><a href="{{ route('admin.nodes.view.allocation', $node->id) }}">Alocações</a></li>
+                <li class="active"><a href="{{ route('admin.nodes.view.settings', $node->id) }}">Definiciones</a></li>
+                <li><a href="{{ route('admin.nodes.view.configuration', $node->id) }}">Configuración</a></li>
+                <li><a href="{{ route('admin.nodes.view.allocation', $node->id) }}">Alocaciones</a></li>
                 <li><a href="{{ route('admin.nodes.view.servers', $node->id) }}">Servidores</a></li>
             </ul>
         </div>
@@ -33,24 +33,24 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Definições</h3>
+                    <h3 class="box-title">Definiciones</h3>
                 </div>
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="name" class="control-label">Nome do Node</label>
+                        <label for="name" class="control-label">Nombre del Nodo</label>
                         <div>
                             <input type="text" autocomplete="off" name="name" class="form-control" value="{{ old('name', $node->name) }}" />
-                            <p class="text-muted"><small>Limites de caracteres: <code>a-zA-Z0-9_.-</code> e <code>[Espaço]</code> (min 1, max 100 caracteres).</small></p>
+                            <p class="text-muted"><small>Límites de carácteres: <code>a-zA-Z0-9_.-</code> e <code>[Espacio]</code> (min 1, max 100 caracteres).</small></p>
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label for="description" class="control-label">Descrição</label>
+                        <label for="description" class="control-label">Descripción</label>
                         <div>
                             <textarea name="description" id="description" rows="4" class="form-control">{{ $node->description }}</textarea>
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label for="name" class="control-label">Localização</label>
+                        <label for="name" class="control-label">Localización</label>
                         <div>
                             <select name="location_id" class="form-control">
                                 @foreach($locations as $location)
@@ -60,10 +60,10 @@
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label for="public" class="control-label">Permitir alocação automática <sup><a data-toggle="tooltip" data-placement="top" title="Permitir alocação automática para este Node?">?</a></sup></label>
+                        <label for="public" class="control-label">Permitir alocacion automática <sup><a data-toggle="tooltip" data-placement="top" title="Permitir alocacion automática para este Nodo?">?</a></sup></label>
                         <div>
-                            <input type="radio" name="public" value="1" {{ (old('public', $node->public)) ? 'checked' : '' }} id="public_1" checked> <label for="public_1" style="padding-left:5px;">Sim</label><br />
-                            <input type="radio" name="public" value="0" {{ (old('public', $node->public)) ? '' : 'checked' }} id="public_0"> <label for="public_0" style="padding-left:5px;">Não</label>
+                            <input type="radio" name="public" value="1" {{ (old('public', $node->public)) ? 'checked' : '' }} id="public_1" checked> <label for="public_1" style="padding-left:5px;">Si</label><br />
+                            <input type="radio" name="public" value="0" {{ (old('public', $node->public)) ? '' : 'checked' }} id="public_0"> <label for="public_0" style="padding-left:5px;">No</label>
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
@@ -71,8 +71,9 @@
                         <div>
                             <input type="text" autocomplete="off" name="fqdn" class="form-control" value="{{ old('fqdn', $node->fqdn) }}" />
                         </div>
-                        <p class="text-muted"><small>Insira o nome de domínio (por exemplo,<code> node.example.com</code>) a ser usado para se conectar ao daemon. Um endereço IP só pode ser usado se você não estiver usando SSL para esse node.
-                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="Por que eu preciso de uma FQDN?" data-content="A fim de proteger as comunicações entre seu servidor e este Node, usamos SSL. Não é possível gerar um certificado SSL para endereços IP, portanto, você precisará fornecer um FQDN.">Por quê?</a>
+                        <p class="text-muted"><small>Ingresa el nombre de domínio (por ejemplo,<code> nodo.example.com</code>) que se utilizará para conectarse al demonio. Solo se puede utilizar una dirección IP si no está utilizando SSL para ese nodo.
+                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="¿Por qué necesito un FQDN?" data-content="
+Para proteger las comunicaciones entre su servidor y este Nodo, utilizamos SSL. No es posible generar un certificado SSL para direcciones IP, por lo que deberá proporcionar un FQDN.">¿Por qué?</a>
                             </small></p>
                     </div>
                     <div class="form-group col-xs-12">
@@ -80,8 +81,8 @@
                         <div>
                         <input type="text" name="daemonSFTPIP" class="form-control" value="{{ old('daemonSFTPIP', $node->daemonSFTPIP) }}"/>
                         </div>
-                        <p class="text-muted"><small>Insira o nome do domínio SFTP ou ip (por exemplo, <code>sftp.example.com</code> ou <code>123.456.789.123</code>) a ser usado para se conectar ao sftp do daemon.
-                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="Por que eu preciso de uma FQDN para o SFTP?" data-content="Ao utilizar um SFTP separado, é possível configurar um servidor Wings atrás do Proxy do Cloudflare. Isso pode melhorar a segurança e a eficiência do servidor.">Por quê?</a>
+                        <p class="text-muted"><small>Ingresa el nombre de domínio SFTP o tu ip (por ejemplo, <code>sftp.example.com</code> o <code>123.456.789.123</code>) para ser utilizado para conectarse al sftp del demonio.
+                                <a tabindex="0" data-toggle="popover" data-trigger="focus" title="¿Por qué necesito un FQDN para SFTP?" data-content="Al utilizar un SFTP independiente, puede configurar un servidor Wings detrás del proxy Cloudflare. Esto puede mejorar la seguridad y la eficiencia del servidor.">¿Por qué?</a>
                             </small></p>
                     </div>
                     <div class="form-group col-xs-12">
@@ -89,42 +90,42 @@
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pSSLTrue" value="https" name="scheme" {{ (old('scheme', $node->scheme) === 'https') ? 'checked' : '' }}>
-                                <label for="pSSLTrue"> Usar conexão SSL</label>
+                                <label for="pSSLTrue"> Usar conexión SSL</label>
                             </div>
                             <div class="radio radio-danger radio-inline">
                                 <input type="radio" id="pSSLFalse" value="http" name="scheme" {{ (old('scheme', $node->scheme) !== 'https') ? 'checked' : '' }}>
-                                <label for="pSSLFalse"> Usar conexão HTTP</label>
+                                <label for="pSSLFalse"> Usar conexión HTTP</label>
                             </div>
                         </div>
-                        <p class="text-muted small">Na maioria dos casos, você deve optar por usar uma conexão SSL. Se estiver usando um endereço IP ou se você não deseja usar SSL, selecione uma conexão HTTP.</p>
+                        <p class="text-muted small">En la mayoría de los casos, deberá optar por utilizar una conexión SSL. Si utiliza una dirección IP o si no desea utilizar SSL, seleccione una conexión HTTP.</p>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label class="form-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Serviços CDN(Proxy)</label>
+                        <label class="form-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Servicios CDN(Proxy)</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pProxyFalse" value="0" name="behind_proxy" {{ (old('behind_proxy', $node->behind_proxy) == false) ? 'checked' : '' }}>
-                                <label for="pProxyFalse"> Não usar Proxy </label>
+                                <label for="pProxyFalse"> No usar Proxy </label>
                             </div>
                             <div class="radio radio-info radio-inline">
                                 <input type="radio" id="pProxyTrue" value="1" name="behind_proxy" {{ (old('behind_proxy', $node->behind_proxy) == true) ? 'checked' : '' }}>
                                 <label for="pProxyTrue"> Usar Proxy </label>
                             </div>
                         </div>
-                        <p class="text-muted small">Se você estiver usando serviços CDN que estão com proxy ativados coloque <code>"Usar Proxy"</code>,Caso contrario deixe <code>"Não usar Proxy"</code>.No CloudFlare isso pode não ser necessario.</p>
+                        <p class="text-muted small">Si está utilizando servicios CDN que tienen proxy habilitado, escriba <code>"Use Proxy"</code>; de lo contrario, deje <code>"Do not use Proxy"</code>. En CloudFlare esto puede no ser necesario.</p>
                     </div>
                     <div class="form-group col-xs-12">
-                        <label class="form-label"><span class="label label-warning"><i class="fa fa-wrench"></i></span> Modo de Manutenção</label>
+                        <label class="form-label"><span class="label label-warning"><i class="fa fa-wrench"></i></span> Modo en Mantención</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pMaintenanceFalse" value="0" name="maintenance_mode" {{ (old('behind_proxy', $node->maintenance_mode) == false) ? 'checked' : '' }}>
-                                <label for="pMaintenanceFalse"> Desativado</label>
+                                <label for="pMaintenanceFalse"> Desactivado</label>
                             </div>
                             <div class="radio radio-warning radio-inline">
                                 <input type="radio" id="pMaintenanceTrue" value="1" name="maintenance_mode" {{ (old('behind_proxy', $node->maintenance_mode) == true) ? 'checked' : '' }}>
-                                <label for="pMaintenanceTrue"> Ativado</label>
+                                <label for="pMaintenanceTrue"> Activado</label>
                             </div>
                         </div>
-                        <p class="text-muted small">Se o Node estiver marcado como 'Em Manutenção', os usuários não poderão acessar os servidores que estão nesse node.</p>
+                        <p class="text-muted small">Si el Nodo está marcado como 'En Mantenimiento', los usuarios no podrán acceder a los servidores que se encuentran en ese nodo.</p>
                     </div>
                 </div>
             </div>
@@ -132,7 +133,7 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Limites de alocação</h3>
+                    <h3 class="box-title">Límites de alocaciones</h3>
                 </div>
                 <div class="box-body row">
                     <div class="col-xs-12">
@@ -145,33 +146,33 @@
                                 </div>
                             </div>
                             <div class="form-group col-xs-6">
-                                <label for="memory_overallocate" class="control-label">Sobre-alocação</label>
+                                <label for="memory_overallocate" class="control-label">Sobreasignación</label>
                                 <div class="input-group">
                                     <input type="text" name="memory_overallocate" class="form-control" value="{{ old('memory_overallocate', $node->memory_overallocate) }}"/>
                                     <span class="input-group-addon">%</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-muted small">Insira a quantidade total de memória disponível nesse node para alocação a servidores. Você também pode fornecer uma porcentagem que pode permitir a alocação de mais do que a memória definida.</p>
+                        <p class="text-muted small">Ingrese la cantidad total de memoria disponible en este nodo para su asignación a servidores. También puedes proporcionar un porcentaje que te permita asignar más memoria que la definida.</p>
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="form-group col-xs-6">
-                                <label for="disk" class="control-label">Espaço em disco</label>
+                                <label for="disk" class="control-label">Espacio en disco</label>
                                 <div class="input-group">
                                     <input type="text" name="disk" class="form-control" data-multiplicator="true" value="{{ old('disk', $node->disk) }}"/>
                                     <span class="input-group-addon">MiB</span>
                                 </div>
                             </div>
                             <div class="form-group col-xs-6">
-                                <label for="disk_overallocate" class="control-label">Sobre-alocação</label>
+                                <label for="disk_overallocate" class="control-label">Sobreasignación</label>
                                 <div class="input-group">
                                     <input type="text" name="disk_overallocate" class="form-control" value="{{ old('disk_overallocate', $node->disk_overallocate) }}"/>
                                     <span class="input-group-addon">%</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-muted small">Insira a quantidade total de espaço em disco disponível neste node para alocação de servidor. Você também pode fornecer uma porcentagem que determinará a quantidade de espaço em disco acima do limite definido a ser permitido.</p>
+                        <p class="text-muted small">Ingrese la cantidad total de espacio en disco disponible en este nodo para la asignación del servidor. También puede proporcionar un porcentaje que determinará la cantidad de espacio en disco permitido por encima del límite establecido.</p>
                     </div>
                 </div>
             </div>
@@ -179,27 +180,27 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuração Geral</h3>
+                    <h3 class="box-title">Configuración General</h3>
                 </div>
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="disk_overallocate" class="control-label">Tamanho máximo do arquivo de upload da Web</label>
+                        <label for="disk_overallocate" class="control-label">Tamaño máximo de archivo de carga web</label>
                         <div class="input-group">
                             <input type="text" name="upload_size" class="form-control" value="{{ old('upload_size', $node->upload_size) }}"/>
                             <span class="input-group-addon">MiB</span>
                         </div>
-                        <p class="text-muted"><small>Insira o tamanho máximo de arquivos que podem ser carregados por meio do gerenciador de arquivos baseado na Web.</small></p>
+                        <p class="text-muted"><small>Ingrese el tamaño máximo de archivos que se pueden cargar a través del administrador de archivos basado en web.</small></p>
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="daemonListen" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Porta do Daemon</label>
+                                <label for="daemonListen" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Puerto de Daemon</label>
                                 <div>
                                     <input type="text" name="daemonListen" class="form-control" value="{{ old('daemonListen', $node->daemonListen) }}"/>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="daemonSFTP" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Porta SFTP do Daemon</label>
+                                <label for="daemonSFTP" class="control-label"><span class="label label-warning"><i class="fa fa-power-off"></i></span>Puerto SFTP de Daemon</label>
                                 <div>
                                     <input type="text" name="daemonSFTP" class="form-control" value="{{ old('daemonSFTP', $node->daemonSFTP) }}"/>
                                 </div>
@@ -207,7 +208,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <p class="text-muted"><small>O daemon executa seu próprio contêiner de gerenciamento SFTP e não usa o processo SSHd no servidor físico principal. <Strong>Não use a mesma porta que você atribuiu para o processo SSH do servidor físico.</strong></small></p>
+                                <p class="text-muted"><small>El demonio ejecuta su propio contenedor de administración SFTP y no utiliza el proceso SSHd en el servidor físico principal. <Strong>No utilice el mismo puerto que asignó al proceso SSH del servidor físico.</strong></small></p>
                             </div>
                         </div>
                     </div>
@@ -217,11 +218,11 @@
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Implantação</h3>
+                    <h3 class="box-title">Implementación</h3>
                 </div>
                 <div class="box-body row">
                     <div class="form-group col-xs-12">
-                        <label for="deployable" class="control-label">Implantável via Loja do Jexactyl</label>
+                        <label for="deployable" class="control-label">Implementable a través de Jexactyl Store</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pDeployableTrue" value="1" name="deployable" {{ (old('deployable', $node->deployable)) ? 'checked' : '' }}>
@@ -233,16 +234,16 @@
                             </div>
                         </div>
                         <p class="text-muted"><small>
-                            Essa opção permite que você controle se esse node está visível por meio da página Criação de Servidor da vitrine Jexactyl.
-                            Se ele estiver definido como negado, os usuários não poderão implantar nesse node.
+                                Esta opción le permite controlar si este nodo es visible a través de la página Creación de servidor del escaparate de Jexactyl.
+                                Si se configura en denegar, los usuarios no podrán implementar en este nodo.
                         </small></p>
                     </div>
                                         <div class="form-group col-xs-12">
-                        <label for="deploy_fee" class="control-label">Taxa de implantação da loja</label>
+                        <label for="deploy_fee" class="control-label">Tasa de implementación de la tienda</label>
                         <div>
                             <input type="text" autocomplete="off" name="deploy_fee" class="form-control" value="{{ old('deploy_fee', $node->deploy_fee) }}" />
                         </div>
-                        <p class="text-muted"><small>Inserir um valor aqui significa que os usuários que implantam um servidor por meio da Vitrine devem pagar uma taxa em créditos para implantar nesse nó.</small></p>
+                        <p class="text-muted"><small>Introducir un valor aquí significa que los usuarios que implementen un servidor a través de Showcase deben pagar una tarifa en créditos para implementarlo en ese nodo.</small></p>
                     </div>
                 </div>
             </div>
@@ -250,20 +251,20 @@
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Salvar Configurações</h3>
+                    <h3 class="box-title">Guardar configuraciones</h3>
                 </div>
                 <div class="box-body row">
                     <div class="form-group col-sm-6">
                         <div>
-                            <input type="checkbox" name="reset_secret" id="reset_secret" /> <label for="reset_secret" class="control-label">Redefinir chave mestra do Daemon</label>
+                            <input type="checkbox" name="reset_secret" id="reset_secret" /> <label for="reset_secret" class="control-label">Restablecer la clave maestra del demonio</label>
                         </div>
-                        <p class="text-muted"><small>Redefinir a chave mestra do daemon anulará qualquer solicitação proveniente da chave antiga. Essa chave é usada para todas as operações confidenciais no daemon, incluindo criação e exclusão do servidor. Sugerimos alterar essa chave regularmente por segurança.</small></p>
+                        <p class="text-muted"><small>Restablecer la clave maestra del demonio anulará cualquier solicitud proveniente de la clave anterior. Esta clave se utiliza para todas las operaciones confidenciales en el demonio, incluida la creación y eliminación del servidor. Le sugerimos cambiar esta clave periódicamente para estar seguro.</small></p>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! method_field('PATCH') !!}
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-primary pull-right">Salvar mudanças</button>
+                    <button type="submit" class="btn btn-primary pull-right">Guardar Cambios</button>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
 @endsection
 
 @section('content-header')
-    <h1>Configurações do servidor<small>Definir as configurações do servidor da Jexactyl.</small></h1>
+    <h1>Configuraciones de servidor<small>Configurar los ajustes del servidor Jexactyl.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li class="active">Jexactyl</li>
@@ -26,38 +26,38 @@
                     @endif
                 ">
                     <div class="box-header with-border">
-                        <i class="fa fa-clock-o"></i> <h3 class="box-title">Renovações dos servidores <small>Definir as configurações das renovações dos servidores.</small></h3>
+                        <i class="fa fa-clock-o"></i> <h3 class="box-title">Renovaciones de servidores <small>Configurar los ajustes de renovación del servidor.</small></h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label class="control-label">Sistema de renovação</label>
+                                <label class="control-label">Sistema de renovación</label>
                                 <div>
                                     <select name="enabled" class="form-control">
-                                        <option @if ($enabled == 'false') selected @endif value="false">Desabilitado</option>
+                                        <option @if ($enabled == 'false') selected @endif value="false">Deshabilitado</option>
                                         <option @if ($enabled == 'true') selected @endif value="true">Habilitado</option>
                                     </select>
                                     <p class="text-muted"><small>Determina se os usuários precisam renovar seus servidores.</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Prazo de renovação padrão</label>
+                                <label class="control-label">Plazo de renovación estándar</label>
                                 <div>
                                     <div class="input-group">
                                         <input type="text" id="default" name="default" class="form-control" value="{{ $default }}" />
-                                        <span class="input-group-addon">dias</span>
+                                        <span class="input-group-addon">días</span>
                                     </div>
-                                    <p class="text-muted"><small>Determina a quantidade de dias que os servidores têm antes que sua renovação seja necessária.</small></p>
+                                    <p class="text-muted"><small>Determina la cantidad de días que tienen los servidores antes de que se requiera la renovación..</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Custo de renovação</label>
+                                <label class="control-label">Costo de renovación</label>
                                 <div>
                                     <div class="input-group">
                                         <input type="text" id="cost" name="cost" class="form-control" value="{{ $cost }}" />
                                         <span class="input-group-addon">créditos</span>
                                     </div>
-                                    <p class="text-muted"><small>Determina a quantidade de créditos que uma renovação custa.</small></p>
+                                    <p class="text-muted"><small>Determina la cantidad de créditos que cuesta una renovación.</small></p>
                                 </div>
                             </div>
                         </div>
@@ -71,35 +71,35 @@
                     @endif
                 ">
                     <div class="box-header with-border">
-                        <i class="fa fa-server"></i> <h3 class="box-title">Configurações dos servidores <small>Definir as configurações dos servidores.</small></h3>
+                        <i class="fa fa-server"></i> <h3 class="box-title">Configuraciones de servidores <small>Definir las configuraciones de los servidores.</small></h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label class="control-label">Editar recursos dos servidores</label>
+                                <label class="control-label">Editar recursos de los servidores</label>
                                 <div>
                                     <select name="editing" class="form-control">
-                                        <option @if ($editing == 'false') selected @endif value="false">Desabilitado</option>
+                                        <option @if ($editing == 'false') selected @endif value="false">Deshabilitado</option>
                                         <option @if ($editing == 'true') selected @endif value="true">Habilitado</option>
                                     </select>
-                                    <p class="text-muted"><small>Determina se os usuários podem editar a quantidade de recursos atribuídos ao seu servidor.</small></p>
+                                    <p class="text-muted"><small>Determina si los usuarios pueden editar la cantidad de recursos asignados a su servidor.</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Permitir a exclusão do servidor</label>
+                                <label class="control-label">Permitir la eliminación del servidor</label>
                                 <div>
                                     <select name="deletion" class="form-control">
-                                        <option @if ($deletion == 'false') selected @endif value="false">Desabilitado</option>
+                                        <option @if ($deletion == 'false') selected @endif value="false">Deshabilitado</option>
                                         <option @if ($deletion == 'true') selected @endif value="true">Habilitado</option>
                                     </select>
-                                    <p class="text-muted"><small>Determina se os usuários são capazes de excluir seus próprios servidores. (Padrão: Habilitado)</small></p>
+                                    <p class="text-muted"><small>Determina si los usuarios pueden eliminar sus propios servidores. (Predeterminado: habilitado)</small></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 {!! csrf_field() !!}
-                <button type="submit" name="_method" value="PATCH" class="btn btn-default pull-right">Salvar mudanças</button>
+                <button type="submit" name="_method" value="PATCH" class="btn btn-default pull-right">Guardar cambios</button>
             </form>
         </div>
     </div>
