@@ -73,8 +73,8 @@ Servidor — {{ $server->name }}: Detalhes do Build
                         <div>
                             <input type="text" name="io" class="form-control" value="{{ old('io', $server->io) }}"/>
                         </div>
-                        <p class="text-muted small"><strong>Avançado</strong>: 
-                        O desempenho da IO deste servidor em relação a outros contêineres em <em>funcionamento</em> no sistema. O valor deve estar entre <code>10</code> e <code>1000</code>.</code></p>
+                        <p class="text-muted small"><strong>Avançado</strong>:
+                        O desempenho da IO deste servidor em relação a outros contêineres em <em>funcionamento</em> no sistema. O valor deve estar entre <code>10</code> e <code>1000</code></p>
                     </div>
                     <div class="form-group">
                         <label for="cpu" class="control-label">OOM Killer</label>
