@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    localização &rarr; ver &rarr; {{ $location->short }}
+    localizaciones &rarr; ver &rarr; {{ $location->short }}
 @endsection
 
 @section('content-header')
     <h1>{{ $location->short }}<small>{{ str_limit($location->long, 75) }}</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li><a href="{{ route('admin.locations') }}">localizações</a></li>
+        <li><a href="{{ route('admin.locations') }}">localizaciones</a></li>
         <li class="active">{{ $location->short }}</li>
     </ol>
 @endsection
@@ -18,23 +18,23 @@
     <div class="col-sm-6">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Detalhes da localização</h3>
+                <h3 class="box-title">Detalles de localizaciones</h3>
             </div>
             <form action="{{ route('admin.locations.view', $location->id) }}" method="POST">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pShort" class="form-label">Nome Simples</label>
+                        <label for="pShort" class="form-label">Nombre Simples</label>
                         <input type="text" id="pShort" name="short" class="form-control" value="{{ $location->short }}" />
                     </div>
                     <div class="form-group">
-                        <label for="pLong" class="form-label">Descrição</label>
+                        <label for="pLong" class="form-label">Descrición</label>
                         <textarea id="pLong" name="long" class="form-control" rows="4">{{ $location->long }}</textarea>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
                     {!! method_field('PATCH') !!}
-                    <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">Salvar</button>
+                    <button name="action" value="edit" class="btn btn-sm btn-primary pull-right">Guardar</button>
                     <button name="action" value="delete" class="btn btn-sm btn-danger pull-left muted muted-hover"><i class="fa fa-trash-o"></i></button>
                 </div>
             </form>
@@ -43,13 +43,13 @@
     <div class="col-sm-6">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Nodes</h3>
+                <h3 class="box-title">Nodos</h3>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Nombre</th>
                         <th>FQDN</th>
                         <th>Servidores</th>
                     </tr>

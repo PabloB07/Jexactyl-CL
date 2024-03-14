@@ -60,10 +60,10 @@ export default () => {
                     <>
                         <div>
                             <h1 className={'text-5xl'}>
-                                {showOnlyAdmin ? 'Mostrando os servidores dos outros' : 'Mostrando seus servidores'}
+                                {showOnlyAdmin ? 'Mostrando los servers de otros' : 'Mostrando tus servidores'}
                             </h1>
                             <h3 className={'text-2xl mt-2 text-neutral-500'}>
-                                Selecione um servidor para visualizar, atualizar ou modificar.
+                                Seleccione un servidor para ver, actualizar o modificar.
                             </h3>
                         </div>
                         <Switch
@@ -74,9 +74,9 @@ export default () => {
                     </>
                 ) : (
                     <div>
-                        <h1 className={'text-5xl'}>Bem-vindo, {username}!</h1>
+                        <h1 className={'text-5xl'}>Bienvenido, {username}!</h1>
                         <h3 className={'text-2xl mt-2 text-neutral-500'}>
-                            Selecione um servidor na lista de seus servidores abaixo.
+                            Seleccione un servidor de la lista de servidores a continuación.
                         </h3>
                     </div>
                 )}
@@ -101,7 +101,7 @@ export default () => {
                             </div>
                         ) : (
                             <p className={'text-gray-400 text-lg font-semibold text-center'}>
-                                Parece que você não tem nenhum servidor aqui.
+                                Parece que no tienes ningún servidor aquí.. obtén el tuyo ahora!
                             </p>
                         )
                     }

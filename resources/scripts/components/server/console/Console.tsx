@@ -79,7 +79,7 @@ export default () => {
         switch (status) {
             // Sent by either the source or target node if a failure occurs.
             case 'failure':
-                terminal.writeln(TERMINAL_PRELUDE + 'A transferência falhou.\u001b[0m');
+                terminal.writeln(TERMINAL_PRELUDE + 'La transferencia falló.\u001b[0m');
                 return;
         }
     };
@@ -216,11 +216,11 @@ export default () => {
                     />
                     <div className={classNames('text-gray-100', styles.command_icon)}>
                         {!isConsoleDetached && (
-                            <Tooltip content={'Inicie o console na janela externa'}>
+                            <Tooltip content={'Inicie la consola en la ventana exterior'}>
                                 <Icon.ExternalLink className={'w-4 h-4'} onClick={() => popout()} />
                             </Tooltip>
                         )}
-                        <Tooltip content={'Digite um comando ...'}>
+                        <Tooltip content={'Escribe un comando ...'}>
                             <Icon.ChevronsRight
                                 className={'w-4 h-4 ml-2 hover:animate-pulse'}
                                 onClick={() => {

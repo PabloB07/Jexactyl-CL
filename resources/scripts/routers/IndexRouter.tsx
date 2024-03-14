@@ -22,8 +22,8 @@ export default () => {
     if (approvals && !approved && authenticated) {
         return (
             <NotApproved
-                title={'Aguardando aprovação'}
-                message={'Sua conta está atualmente pendente de aprovação de um administrador.'}
+                title={'Esperando aprovación'}
+                message={'no se pudo resolver en una dirección IP válida.'}
             />
         );
     }

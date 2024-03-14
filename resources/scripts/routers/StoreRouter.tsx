@@ -25,7 +25,7 @@ export default () => {
                 <div>
                     <NavLink to={match.path} exact>
                         <div className={'flex items-center justify-between'}>
-                            Loja <Icon.ShoppingCart className={'ml-1'} size={18} />
+                            Tienda <Icon.ShoppingCart className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                     <NavLink to={`${match.path}/resources`}>
@@ -40,7 +40,7 @@ export default () => {
                     </NavLink>
                     <NavLink to={`${match.path}/create`}>
                         <div className={'flex items-center justify-between'}>
-                            Criar Servidor <Icon.Server className={'ml-1'} size={18} />
+                            Crear Servidor <Icon.Server className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                 </div>

@@ -18,7 +18,7 @@ interface Values {
 
 const schema = Yup.object().shape({
     username: Yup.string().min(3).required(),
-    password: Yup.string().required('Deve fornecer a sua senha de conta corrente.'),
+    password: Yup.string().required('Debe proporcionar la contraseña de su cuenta actual.'),
 });
 
 export default () => {
@@ -34,14 +34,14 @@ export default () => {
                 addFlash({
                     type: 'success',
                     key: 'account:username',
-                    message: 'O seu usuário foi alterado.',
+                    message: 'Su nombre de usuario ha sido cambiado.',
                 }),
             )
             .catch((error) =>
                 addFlash({
                     type: 'danger',
                     key: 'account:username',
-                    title: 'Erro',
+                    title: 'Error',
                     message: httpErrorToHuman(error),
                 }),
             )
@@ -57,17 +57,17 @@ export default () => {
                 <React.Fragment>
                     <SpinnerOverlay size={'large'} visible={isSubmitting} />
                     <Form css={tw`m-0`}>
-                        <Field id={'new_username'} type={'username'} name={'username'} label={'Novo Usúario'} />
+                        <Field id={'new_username'} type={'username'} name={'username'} label={'Nuevo Usuario'} />
                         <div css={tw`mt-6`}>
                             <Field
                                 id={'confirm_password'}
                                 type={'password'}
                                 name={'password'}
-                                label={'Confirmar Senha'}
+                                label={'Confirmar contraseña'}
                             />
                         </div>
                         <div css={tw`mt-6`}>
-                            <Button disabled={isSubmitting || !isValid}>Atualizar Usúario</Button>
+                            <Button disabled={isSubmitting || !isValid}>Actualizar usuario</Button>
                         </div>
                     </Form>
                 </React.Fragment>

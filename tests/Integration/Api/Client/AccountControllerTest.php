@@ -140,7 +140,7 @@ class AccountControllerTest extends ClientApiIntegrationTestCase
 
         $response->assertStatus(Response::HTTP_BAD_REQUEST);
         $response->assertJsonPath('errors.0.code', 'InvalidPasswordProvidedException');
-        $response->assertJsonPath('errors.0.detail', 'A senha fornecida é inválida para esta conta.');
+        $response->assertJsonPath('errors.0.detail', 'La contraseña que se proporciono es invalida para esta cuenta.');
     }
 
     /**
@@ -183,6 +183,6 @@ class AccountControllerTest extends ClientApiIntegrationTestCase
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
         $response->assertJsonPath('errors.0.meta.rule', 'confirmed');
-        $response->assertJsonPath('errors.0.detail', 'A confirmação password não corresponde.');
+        $response->assertJsonPath('errors.0.detail', 'La confirmación de la contraseña no coincide.');
     }
 }

@@ -96,7 +96,7 @@ abstract class Repository implements RepositoryInterface
             case 2:
                 return $this->model = call_user_func([$this->app->make($model[0]), $model[1]]);
             default:
-                throw new \InvalidArgumentException('O modelo deve ser um FQDN ou um array com uma contagem de dois.');
+                throw new \InvalidArgumentException('La plantilla debe ser un FQDN o una matriz con un recuento de dos.');
         }
     }
 }

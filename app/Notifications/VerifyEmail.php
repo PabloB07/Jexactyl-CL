@@ -24,10 +24,10 @@ class VerifyEmail extends Notification implements ShouldQueue
     public function toMail(): MailMessage
     {
         $message = new MailMessage();
-        $message->greeting('Olá ' . $this->user->username . '! Bem vindo(a) ' . $this->name . '.');
-        $message->line('Clique no link abaixo para verificar seu endereço de E-mail.');
+        $message->greeting('Hola ' . $this->user->username . '! Bienvenido ' . $this->name . '.');
+        $message->line('Haga clic en el enlace a continuación para verificar su dirección de correo electrónico.');
         $message->action('Verificar E-mail', url('/auth/verify/' . $this->token));
-        $message->line('Se você não criou esta conta, entre em contato ' . $this->name . '.');
+        $message->line('Si no ha creado esta cuenta, por favor contáctenos ' . $this->name . '.');
 
         return $message;
     }

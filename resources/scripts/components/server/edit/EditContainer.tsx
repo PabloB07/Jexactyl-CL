@@ -50,7 +50,7 @@ export default () => {
                 addFlash({
                     key: 'server:edit',
                     type: 'success',
-                    message: 'Os recursos do servidor foram editados com sucesso.',
+                    message: 'Los recursos del servidor fueron editados con éxito.',
                 });
             })
             .catch((error) => clearAndAddHttpError({ key: 'server:edit', error }));
@@ -59,20 +59,20 @@ export default () => {
     return (
         <ServerContentBlock
             title={'Editar Servidor'}
-            description={'Adicione ou remova recursos de seu servidor.'}
+            description={'Adicionnar o remover recursos.'}
             showFlashKey={'server:edit'}
         >
             <SpinnerOverlay size={'large'} visible={submitting} />
             <Dialog.Confirm
                 open={submitting}
                 onClose={() => setSubmitting(false)}
-                title={'Confirme a edição de recursos'}
+                title={'Confirme la edición de recursos'}
                 onConfirmed={() => edit(resource, amount)}
             >
-                Isso transferirá recursos entre sua conta e o servidor. Tem certeza de que deseja continuar?
+                Esto transferirá recursos entre su cuenta y el servidor. Estás seguro de que quieres continuar?
             </Dialog.Confirm>
             <Container css={tw`lg:grid lg:grid-cols-3 gap-4 my-10`}>
-                <TitledGreyBox title={'Editar limite de CPU do servidor'} css={tw`mt-8 sm:mt-0`}>
+                <TitledGreyBox title={'Editar limite de CPU del servidor'} css={tw`mt-8 sm:mt-0`}>
                     <Wrapper>
                         <Icon.Cpu size={40} />
                         <Button.Success
@@ -97,13 +97,13 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Altere a quantidade de CPU atribuída ao servidor.
+                        Cambie la cantidad de CPU asignada al servidor.
                     </p>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        O limite não pode ser inferior a 50%.
+                        El límite no puede ser inferior al 50%.
                     </p>
                 </TitledGreyBox>
-                <TitledGreyBox title={'Editar Limite de RAM do servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <TitledGreyBox title={'Editar Limite de RAM del servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <Wrapper>
                         <Icon.PieChart size={40} />
                         <Button.Success
@@ -128,13 +128,13 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Altere a quantidade de RAM atribuída ao servidor.
+                        Cambie la cantidad de RAM asignada al servidor.
                     </p>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        O limite não pode ser menor que 1 GB.
+                        Cambie la cantidad de RAM asignada al servidor.
                     </p>
                 </TitledGreyBox>
-                <TitledGreyBox title={'Editar limite de armazenamento do servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <TitledGreyBox title={'Editar límite de almacenamiento del servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <Wrapper>
                         <Icon.HardDrive size={40} />
                         <Button.Success
@@ -159,13 +159,13 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Alterar a quantidade de armazenamento atribuída ao servidor.
+                        Cambie la cantidad de almacenamiento asignado al servidor.
                     </p>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        O limite não pode ser menor que 1 GB.
+                        El límite no puede ser inferior a 1 GB.
                     </p>
                 </TitledGreyBox>
-                <TitledGreyBox title={'Editar Quantidade de portas do servidor'} css={tw`mt-8 sm:mt-0`}>
+                <TitledGreyBox title={'Editar número de puertos del servidor'} css={tw`mt-8 sm:mt-0`}>
                     <Wrapper>
                         <Icon.Share2 size={40} />
                         <Button.Success
@@ -190,11 +190,11 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Altere o limite das portas atribuídas ao servidor.
+                        Cambie el límite de puertos asignados al servidor.
                     </p>
-                    <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>O limite não pode ser menor que 1.</p>
+                    <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>El límite no puede ser inferior a 1.</p>
                 </TitledGreyBox>
-                <TitledGreyBox title={'Editar limite de backup do servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <TitledGreyBox title={'Editar límite de copia de seguridad del servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <Wrapper>
                         <Icon.Archive size={40} />
                         <Button.Success
@@ -219,10 +219,10 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Altere o limite de backups atribuídos ao servidor.
+                        Cambie el límite de copias de seguridad asignadas al servidor.
                     </p>
                 </TitledGreyBox>
-                <TitledGreyBox title={'Editar limite de Database do servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <TitledGreyBox title={'Editar límite de base de datos del servidor'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <Wrapper>
                         <Icon.Database size={40} />
                         <Button.Success
@@ -247,7 +247,7 @@ export default () => {
                         </Button.Danger>
                     </Wrapper>
                     <p css={tw`mt-1 text-gray-500 text-xs flex justify-center`}>
-                        Altere o limite dos bancos de dados atribuídos ao servidor.
+                        Cambiar el límite de bases de datos asignadas al servidor.
                     </p>
                 </TitledGreyBox>
             </Container>

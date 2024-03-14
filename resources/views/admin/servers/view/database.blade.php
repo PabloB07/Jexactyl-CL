@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-Servidor — {{ $server->name }}: Bancos de dados
+Servidor — {{ $server->name }}: Base de datos
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Gerenciar bancos de dados do servidor.</small></h1>
+    <h1>{{ $server->name }}<small>Administrar base de datos del servidor.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li><a href="{{ route('admin.servers') }}">Servidores</a></li>
         <li><a href="{{ route('admin.servers.view', $server->id) }}">{{ $server->name }}</a></li>
-        <li class="active">Bancos de Dados</li>
+        <li class="active">Base de Dados</li>
     </ol>
 @endsection
 
@@ -19,20 +19,20 @@ Servidor — {{ $server->name }}: Bancos de dados
 <div class="row">
     <div class="col-sm-7">
         <div class="alert alert-info">
-        As senhas do Database podem ser visualizadas quando <a href="/server/{{ $server->uuidShort }}/databases">visitando este servidor</a> no front-end.
+            Las contraseñas de la base de datos se pueden ver cuando <a href="/server/{{ $server->uuidShort }}/databases">visitando este servidor</a> en front-end.
         </div>
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Bancos de dados ativos</h3>
+                <h3 class="box-title">Base de datos activos</h3>
             </div>
             <div class="box-body table-responsible no-padding">
                 <table class="table table-hover">
                     <tr>
                         <th>Database</th>
-                        <th>Nome de usuário</th>
-                        <th>Conexões de</th>
+                        <th>Nombre deusuarios</th>
+                        <th>Conexiones de</th>
                         <th>Host</th>
-                        <th>Conexões máximas</th>
+                        <th>Conexiones máximas</th>
                         <th></th>
                     </tr>
                     @foreach($server->databases as $database)
@@ -70,29 +70,29 @@ Servidor — {{ $server->name }}: Bancos de dados
                                 <option value="{{ $host->id }}">{{ $host->name }}</option>
                             @endforeach
                         </select>
-                        <p class="text-muted small">Selecione o servidor de Database host no qual este Database deve ser criado.</p>
+                        <p class="text-muted small">Seleccione el servidor de base de datos host en el que se debe crear esta base de datos..</p>
                     </div>
                     <div class="form-group">
-                        <label for="pDatabaseName" class="control-label">Base de dados</label>
+                        <label for="pDatabaseName" class="control-label">Base de datos</label>
                         <div class="input-group">
                             <span class="input-group-addon">s{{ $server->id }}_</span>
                             <input id="pDatabaseName" type="text" name="database" class="form-control" placeholder="database" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pRemote" class="control-label">Conexões</label>
+                        <label for="pRemote" class="control-label">Conexiones</label>
                         <input id="pRemote" type="text" name="remote" class="form-control" value="%" />
-                        <p class="text-muted small">Isto deve refletir o endereço IP a partir do qual as conexões são permitidas. Utiliza a notação padrão MySQL. Se não tiver certeza, deixe como <code>%</code>.</p>
+                        <p class="text-muted small">Esto debería reflejar la dirección IP desde la que se permiten las conexiones. Utiliza la notación MySQL estándar. Si no estás seguro, déjala como <code>%</code>.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pmax_connections" class="control-label">Conexões simultâneas</label>
+                        <label for="pmax_connections" class="control-label">Conexiones simultáneas</label>
                         <input id="pmax_connections" type="text" name="max_connections" class="form-control"/>
-                        <p class="text-muted small">Isto deve refletir o número máximo de conexões simultâneas deste usuário com o Database. Deixar vazio para ilimitado.</p>
+                        <p class="text-muted small">Esto debería reflejar el número máximo de conexiones simultáneas de este usuario a la base de datos. Dejar vacío por ilimitado.</p>
                     </div>
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <p class="text-muted small no-margin">Um nome de usuário e uma senha para este Database serão gerados aleatoriamente após o envio do formulário.</p>
+                    <p class="text-muted small no-margin">Se generará aleatoriamente un nombre de usuario y una contraseña para esta base de datos después de enviar el formulario..</p>
                     <input type="submit" class="btn btn-sm btn-success pull-right" value="Create Database" />
                 </div>
             </form>
@@ -111,7 +111,7 @@ Servidor — {{ $server->name }}: Bancos de dados
         swal({
             title: '',
             type: 'warning',
-            text: 'Você tem certeza de que deseja excluir este Database? Não há como voltar atrás, todos os dados serão imediatamente removidos.',
+            text: '¿Está seguro de que desea eliminar esta base de datos?, No hay vuelta atrás, todos los datos serán eliminados inmediatamente.',
             showCancelButton: true,
             confirmButtonText: 'Excluir',
             confirmButtonColor: '#d9534f',
@@ -130,7 +130,7 @@ Servidor — {{ $server->name }}: Bancos de dados
                 swal({
                     type: 'error',
                     title: 'Whoops!',
-                    text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : 'Ocorreu um erro durante o processamento deste pedido.'
+                    text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : 'Ocurrio un error de proceso, vuelve a intentarlo.'
                 });
             });
         });
@@ -148,11 +148,11 @@ Servidor — {{ $server->name }}: Bancos de dados
             swal({
                 type: 'success',
                 title: '',
-                text: 'A senha para este Database foi redefinida.',
+                text: 'Esta contraseña fue redifinida.',
             });
         }).fail(function(jqXHR, textStatus, errorThrown) {
             console.error(jqXHR);
-            var error = 'Ocorreu um erro ao tentar processar esta solicitação.';
+            var error = 'Ocurrio un error de solicitud.';
             if (typeof jqXHR.responseJSON !== 'undefined' && typeof jqXHR.responseJSON.error !== 'undefined') {
                 error = jqXHR.responseJSON.error;
             }

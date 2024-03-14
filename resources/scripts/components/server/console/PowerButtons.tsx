@@ -42,11 +42,11 @@ export default ({ className }: PowerButtonProps) => {
                 open={open}
                 hideCloseIcon
                 onClose={() => setOpen(false)}
-                title={'Parar o processo à força'}
+                title={'Parar proceso'}
                 confirm={'Continuar'}
                 onConfirmed={onButtonClick.bind(this, 'kill-confirmed')}
             >
-                Parar à força um servidor pode levar à corrupção de dados.
+                Parar por la fuerza un servidor puede provocar corrupción de datos.
             </Dialog.Confirm>
             <Can action={'control.start'}>
                 <Button.Success

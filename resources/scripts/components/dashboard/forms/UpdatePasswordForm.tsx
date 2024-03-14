@@ -18,11 +18,11 @@ interface Values {
 }
 
 const schema = Yup.object().shape({
-    current: Yup.string().min(1).required('Você deve fornecer sua senha atual.'),
+    current: Yup.string().min(1).required('debes proporcionar tu contraseña actual.'),
     password: Yup.string().min(8).required(),
     confirmPassword: Yup.string().test(
         'password',
-        'A confirmação da senha não corresponde à senha que você digitou.',
+        'La confirmación de contraseña no coincide con la contraseña que ingresó.',
         function (value) {
             return value === this.parent.password;
         },
@@ -72,15 +72,15 @@ export default () => {
                     <React.Fragment>
                         <SpinnerOverlay size={'large'} visible={isSubmitting} />
                         <Form css={tw`m-0`}>
-                            <Field id={'current_password'} type={'password'} name={'current'} label={'Senha Atual'} />
+                            <Field id={'current_password'} type={'password'} name={'current'} label={'contraseña Atual'} />
                             <div css={tw`mt-6`}>
                                 <Field
                                     id={'new_password'}
                                     type={'password'}
                                     name={'password'}
-                                    label={'Nova Senha'}
+                                    label={'Nueva contraseña'}
                                     description={
-                                        'A sua nova senha deve ter pelo menos 8 caracteres e ser única para este WebSite.'
+                                        'Su nueva contraseña debe tener al menos 8 caracteres y ser única para este sitio web.'
                                     }
                                 />
                             </div>
@@ -89,11 +89,11 @@ export default () => {
                                     id={'confirm_new_password'}
                                     type={'password'}
                                     name={'confirmPassword'}
-                                    label={'Confirmar Nova Senha'}
+                                    label={'Confirmar Nueva contraseña'}
                                 />
                             </div>
                             <div css={tw`mt-6`}>
-                                <Button disabled={isSubmitting || !isValid}>Atualizar Senha</Button>
+                                <Button disabled={isSubmitting || !isValid}>Actualizar contraseña</Button>
                             </div>
                         </Form>
                     </React.Fragment>

@@ -17,7 +17,7 @@ interface Values {
 
 const schema = Yup.object().shape({
     code: Yup.string().length(16).required(),
-    password: Yup.string().required('Deve fornecer a sua senha de conta corrente.'),
+    password: Yup.string().required('Debe proporcionar la contraseña de su cuenta actual.'),
 });
 
 export default () => {
@@ -33,14 +33,14 @@ export default () => {
                 addFlash({
                     type: 'success',
                     key: 'account:referral',
-                    message: 'Agora você está usando o Código de referência.',
+                    message: 'Ahora estás usando el código de referencia.',
                 }),
             )
             .catch((error) =>
                 addFlash({
                     type: 'danger',
                     key: 'account:referral',
-                    title: 'Erro',
+                    title: 'Error',
                     message: httpErrorToHuman(error),
                 }),
             )
@@ -57,7 +57,7 @@ export default () => {
         <>
             {code ? (
                 <p className={'my-2 text-gray-400'}>
-                    Voce ja usou um código de referência
+                    ¿Ya has usado un código de referencia?
                     <span className={'bg-gray-800 rounded p-1 ml-2'}>{code}</span>
                 </p>
             ) : (
@@ -69,14 +69,14 @@ export default () => {
                                     id={'code'}
                                     type={'text'}
                                     name={'code'}
-                                    label={'Introduza o código de referência'}
+                                    label={'Introduce codigo de referencia'}
                                 />
                                 <div className={'mt-6'}>
                                     <Field
                                         id={'confirm_password'}
                                         type={'password'}
                                         name={'password'}
-                                        label={'Confirmar Senha'}
+                                        label={'Confirmar Contraseña'}
                                     />
                                 </div>
                                 <div className={'mt-6'}>

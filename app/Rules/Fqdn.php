@@ -38,7 +38,7 @@ class Fqdn implements Rule, DataAwareRule
             // custom SSL cert, IPs will not be able to use HTTPS.  This should prevent most
             // home users from making this mistake and wondering why their node is not working.
             if ($this->schemeField && Arr::get($this->data, $this->schemeField) === 'https') {
-                $this->message = 'O :attribute não deve ser um endereço IP quando o HTTPS está ativado.';
+                $this->message = 'El :attribute no debe ser una dirección IP cuando HTTPS está habilitado.';
 
                 return false;
             }
@@ -58,7 +58,7 @@ class Fqdn implements Rule, DataAwareRule
             return true;
         }
 
-        $this->message = 'O :attribute não pôde ser resolvido para um endereço IP válido.';
+        $this->message = 'El :attribute no se pudo resolver en una dirección IP válida.';
 
         return false;
     }

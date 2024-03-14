@@ -14,7 +14,7 @@ import { ApplicationStore } from '@/state';
 import { httpErrorToHuman } from '@/api/http';
 
 const schema = object().shape({
-    code: string().required('Você deve especificar o código que deseja resgatar.'),
+    code: string().required('Debes especificar el código que deseas canjear.'),
 });
 
 export default () => {
@@ -25,7 +25,7 @@ export default () => {
         clearFlashes();
         redeemCoupon(values.code)
             .then(() => {
-                addFlash({ type: 'success', key: 'coupons', message: 'Cupom resgatado com sucesso.' });
+                addFlash({ type: 'success', key: 'coupons', message: 'Cupón canjeado exitosamente.' });
             })
             .catch((err) => {
                 addFlash({ type: 'danger', key: 'coupons', message: httpErrorToHuman(err) });
@@ -37,19 +37,19 @@ export default () => {
     };
 
     return (
-        <PageContentBlock title={'Cupons'}>
+        <PageContentBlock title={'Cupones'}>
             <h1 className={'text-5xl'}>Cupons</h1>
             <h3 className={'text-2xl mt-2 text-neutral-500'}>Resgatar cupons dados a você.</h3>
             <FlashMessageRender byKey={'coupons'} className={'mt-2'} />
-            <ContentBox title={'Resgatar'} className={'w-1/4 mt-6'}>
+            <ContentBox title={'Rescatar'} className={'w-1/4 mt-6'}>
                 <Formik initialValues={{ code: '' }} onSubmit={submit} validationSchema={schema}>
                     {({ isSubmitting, isValid }) => (
                         <Fragment>
                             <SpinnerOverlay size={'large'} visible={isSubmitting} />
                             <Form>
-                                <Field id={'code'} type={'text'} name={'code'} label={'Coloque o código'} />
+                                <Field id={'code'} type={'text'} name={'code'} label={'Coloque el código'} />
                                 <div className={'mt-6'}>
-                                    <Button disabled={isSubmitting || !isValid}>Resgatar</Button>
+                                    <Button disabled={isSubmitting || !isValid}>Rescatar</Button>
                                 </div>
                             </Form>
                         </Fragment>

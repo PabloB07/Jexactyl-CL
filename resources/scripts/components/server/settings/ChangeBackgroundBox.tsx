@@ -21,12 +21,12 @@ const ChangeBackgroundBox = () => {
     const { isSubmitting } = useFormikContext<Values>();
 
     return (
-        <TitledGreyBox title={'Alterar o fundo do servidor'} css={tw`relative`}>
+        <TitledGreyBox title={'Alterar a fondo el servidor'} css={tw`relative`}>
             <SpinnerOverlay visible={isSubmitting} />
             <Form css={tw`mb-0`}>
-                <Field id={'bg'} name={'bg'} label={'Plano de fundo do servidor'} type={'text'} />
+                <Field id={'bg'} name={'bg'} label={'Fondo del servidor'} type={'text'} />
                 <div css={tw`mt-6 text-right`}>
-                    <Button type={'submit'}>Salvar</Button>
+                    <Button type={'submit'}>Guardar</Button>
                 </div>
             </Form>
         </TitledGreyBox>

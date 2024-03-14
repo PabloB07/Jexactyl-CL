@@ -77,23 +77,23 @@ const GSLTokenModalFeature = () => {
                 <Form>
                     <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Token GSL inválido!</h2>
                     <p css={tw`mt-4`}>
-                        Parece que o seu Token de login do GameServer (TSL Token) é inválido ou expirou.
+                        Parece que su token de inicio de sesión del servidor de juegos (token TLS) no es válido o ha caducado.
                     </p>
                     <p css={tw`mt-4`}>
-                        Você pode gerar um novo e digitá-lo abaixo ou deixar o campo em branco para removê-lo
+                        Puedes generar uno nuevo e ingresarlo a continuación o dejar el campo en blanco para eliminarlo.
                         completamente.
                     </p>
                     <div css={tw`sm:flex items-center mt-4`}>
                         <Field
                             name={'gslToken'}
                             label={'GSL Token'}
-                            description={'Visite https://steamcommunity.com/dev/managegameservers para gerar um token.'}
+                            description={'Visite https://steamcommunity.com/dev/managegameservers para generar un token.'}
                             autoFocus
                         />
                     </div>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button type={'submit'} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>
-                            Atualize o token GSL
+                            Actualize el token GSL
                         </Button>
                     </div>
                 </Form>

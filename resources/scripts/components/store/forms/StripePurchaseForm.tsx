@@ -35,7 +35,7 @@ export default () => {
     return (
         <TitledGreyBox title={'Compre via Stripe'}>
             <Dialog open={submitting} hideCloseIcon onClose={() => undefined}>
-                Agora você está sendo levado ao gateway do Stripe para concluir essa transação.
+                Serás llevado al pago para concluir la transacción.
             </Dialog>
             <FlashMessageRender byKey={'store:stripe'} css={tw`mb-2`} />
             <Formik
@@ -48,7 +48,7 @@ export default () => {
                     <SpinnerOverlay size={'large'} visible={submitting} />
                     <Select name={'amount'} disabled={submitting} onChange={(e) => setAmount(parseInt(e.target.value))}>
                         <option key={'stripe:placeholder'} hidden>
-                            Escolha um valor...
+                            Escoje un valor...
                         </option>
                         <option key={'stripe:buy:100'} value={100}>
                             Comprar 100 creditos

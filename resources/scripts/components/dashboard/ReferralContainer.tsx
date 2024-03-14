@@ -72,7 +72,7 @@ export default () => {
                 addFlash({
                     type: 'success',
                     key: 'referrals',
-                    message: 'O código de referência foi criado.',
+                    message: 'El código de referido se ha creado.',
                 });
             })
             .catch((error) => clearAndAddHttpError(error))
@@ -91,7 +91,7 @@ export default () => {
                 addFlash({
                     type: 'success',
                     key: 'referrals',
-                    message: 'O código de referência foi deletado.',
+                    message: 'El código de referido se ha eliminado.',
                 });
             })
             .catch((error) => clearAndAddHttpError(error))
@@ -103,25 +103,25 @@ export default () => {
 
     return (
         <PageContentBlock
-            title={'Indicações'}
-            description={'Criar um código e compartilhá-lo com outros.'}
+            title={'Indicaciones'}
+            description={'Crear un código para compartirla con otros.'}
             showFlashKey={'referrals'}
         >
             <Container className={'lg:grid lg:grid-cols-3 my-10'}>
-                <ContentBox title={'Seus códigos de indicação'} css={tw`sm:mt-0`}>
+                <ContentBox title={'Sus códigos e indicaciones'} css={tw`sm:mt-0`}>
                     <Dialog.Confirm
-                        title={'Excluir Código de Indicação'}
+                        title={'Excluir Código de Indicación'}
                         confirm={'Excluir código'}
                         open={!!code}
                         onClose={() => setCode('')}
                         onConfirmed={() => doDeletion(code)}
                     >
-                        Os usuários não poderão mais usar esta chave para se inscreverem.
+                        Los usuarios ya no podrán utilizar esta clave para registrarse.
                     </Dialog.Confirm>
                     <SpinnerOverlay visible={loading} />
                     {codes.length === 0 ? (
                         <p css={tw`text-center my-2`}>
-                            {!loading && 'Não existem códigos de referência para esta conta.'}
+                            {!loading && 'No hay códigos de referencia para esta cuenta.'}
                         </p>
                     ) : (
                         codes.map((code, index) => (
@@ -133,7 +133,7 @@ export default () => {
                                 <div css={tw`ml-4 flex-1 overflow-hidden`}>
                                     <p css={tw`text-sm break-words`}>{code.code}</p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
-                                        Criado em:&nbsp;
+                                        Creado en:&nbsp;
                                         {code.createdAt ? format(code.createdAt, 'MMM do, yyyy HH:mm') : 'Never'}
                                     </p>
                                 </div>
@@ -146,20 +146,20 @@ export default () => {
                         ))
                     )}
                     <Button onClick={() => doCreation()} className={'mt-4'}>
-                        Criar
+                        Crear
                     </Button>
                 </ContentBox>
-                <ContentBox title={'Vantagens Disponíveis'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <ContentBox title={'Ventajas disponibles'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <h1 css={tw`text-xl`}>
-                        Você receberá <span className={'text-green-500'}>{reward}</span> créditos para cada usuário que
-                        você indicar para este Painel.
+                        Recibirás <span className={'text-green-500'}>{reward}</span> créditos por cada usuario que
+                        usted nomina para este Panel.
                     </h1>
                 </ContentBox>
-                <ContentBox title={'Usuários indicados'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <ContentBox title={'Usuarios indicados'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     <SpinnerOverlay visible={loading} />
                     {activity.length === 0 ? (
                         <p css={tw`text-center my-2`}>
-                            {!loading && 'Não existe nenhuma atividade de indicação para esta conta.'}
+                            {!loading && 'No hay actividad de referencia para esta cuenta.'}
                         </p>
                     ) : (
                         activity.map((act, index) => (
@@ -173,14 +173,14 @@ export default () => {
                                         {act.userEmail} (ID: {act.userId})
                                     </p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
-                                        Usado em:&nbsp;
+                                        Usado en:&nbsp;
                                         {act.createdAt
                                             ? format(act.createdAt, "'dia' d 'de' MMMM yyyy', ás' HH:mm", {
                                                   locale: ptBR,
                                               })
                                             : 'Nunca'}
                                     </p>
-                                    <p css={tw`text-2xs text-neutral-300 uppercase`}>Usado em:&nbsp;{act.code}</p>
+                                    <p css={tw`text-2xs text-neutral-300 uppercase`}>Usado en:&nbsp;{act.code}</p>
                                 </div>
                             </GreyRowBox>
                         ))

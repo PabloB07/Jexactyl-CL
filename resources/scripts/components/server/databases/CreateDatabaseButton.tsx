@@ -28,14 +28,14 @@ export default () => {
 
     const schema = object().shape({
         databaseName: string()
-            .required('Um nome de Database deve ser fornecido.')
-            .min(3, 'O nome do Database deve ter pelo menos 3 caracteres.')
-            .max(48, 'O nome do Database não deve exceder 48 caracteres.')
+            .required('Se debe proporcionar un nombre de base de datos.')
+            .min(3, 'El nombre de la Base de Datos debe tener al menos 3 caracteres.')
+            .max(48, 'El nombre de la base de datos no debe exceder los 48 caracteres.')
             .matches(
                 /^[\w\-.]{3,48}$/,
-                'O nome do Database deve conter apenas caracteres alfanuméricos, sublinhados, traços e/ou períodos.',
+                'El nombre de la Base de Datos debe contener únicamente caracteres alfanuméricos, guiones bajos, guiones y/o puntos.',
             ),
-        connectionsFrom: string().matches(/^[\w\-/.%:]+$/, 'Um endereço de host válido deve ser fornecido.'),
+        connectionsFrom: string().matches(/^[\w\-/.%:]+$/, 'Se debe proporcionar una dirección de host válida.'),
     });
 
     const submit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
@@ -75,23 +75,23 @@ export default () => {
                         }}
                     >
                         <FlashMessageRender byKey={'database:create'} css={tw`mb-6`} />
-                        <h2 css={tw`text-2xl mb-6`}>Criar novo Database</h2>
+                        <h2 css={tw`text-2xl mb-6`}>Crear nuevo database</h2>
                         <Form css={tw`m-0`}>
                             <Field
                                 type={'string'}
                                 id={'database_name'}
                                 name={'databaseName'}
-                                label={'Nome do Database'}
-                                description={'Um nome descritivo para sua instância de Database.'}
+                                label={'Nombre de database'}
+                                description={'Un nombre descriptivo para su instancia de base de datos.'}
                             />
                             <div css={tw`mt-6`}>
                                 <Field
                                     type={'string'}
                                     id={'connections_from'}
                                     name={'connectionsFrom'}
-                                    label={'Conexões de'}
+                                    label={'Conexiones de'}
                                     description={
-                                        'De onde as conexões devem ser permitidas. Deixe em branco para permitir conexões de qualquer lugar.'
+                                        'Desde donde se deben permitir las conexiones. Déjelo en blanco para permitir conexiones desde cualquier lugar.'
                                     }
                                 />
                             </div>
@@ -105,14 +105,14 @@ export default () => {
                                     Cancelar
                                 </Button>
                                 <Button css={tw`w-full mt-4 sm:w-auto sm:mt-0`} type={'submit'}>
-                                    Criar Database
+                                    Crear database
                                 </Button>
                             </div>
                         </Form>
                     </Modal>
                 )}
             </Formik>
-            <Button onClick={() => setVisible(true)}>Novo Database</Button>
+            <Button onClick={() => setVisible(true)}>Nuevo database</Button>
         </>
     );
 };

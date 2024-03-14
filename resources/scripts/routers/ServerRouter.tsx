@@ -46,25 +46,21 @@ const ConflictStateRenderer = () => {
 
     return status === 'installing' || status === 'install_failed' ? (
         <ScreenBlock
-            title={'Instalador em execução'}
+            title={'Instalador en ejecución'}
             image={ServerInstallSvg}
-            message={'Seu servidor deve estar pronto em breve, tente novamente em alguns minutos.'}
+            message={'Su servidor debería estar listo pronto. Vuelva a intentarlo en unos minutos.'}
         />
     ) : status === 'suspended' ? (
         <Suspended />
     ) : (
         <ScreenBlock
-            title={isTransferring ? 'Transferindo' : 'Restaurando Backup'}
+            title={isTransferring ? 'Transfiriendo' : 'Restaurando Backup'}
             image={ServerRestoreSvg}
-            message={
-                isTransferring
-                    ? 'Seu servidor está sendo transferido para um novo Node, verifique novamente mais tarde.'
-                    : 'Seu servidor está sendo restaurado de um backup, verifique em alguns minutos.'
+            message={isTransferring ? 'Su servidor se está transfiriendo a un nuevo Nodo; vuelva a consultarlo más tarde.' : 'Su servidor se está restaurando a partir de una copia de seguridad; verifique en unos minutos.'
             }
         />
     );
 };
-
 export default () => {
     const match = useRouteMatch<{ id: string }>();
     const location = useLocation();
@@ -116,18 +112,18 @@ export default () => {
                             <div>
                                 <NavLink to={match.url} exact>
                                     <div css={tw`flex items-center justify-between`}>
-                                        Console <Icon.Terminal css={tw`ml-1`} size={18} />
+                                        Consola <Icon.Terminal css={tw`ml-1`} size={18} />
                                     </div>
                                 </NavLink>
                                 <NavLink to={`${match.url}/analytics`} exact>
                                     <div css={tw`flex items-center justify-between`}>
-                                        Analíticos <Icon.BarChart css={tw`ml-1`} size={18} />
+                                        Estadisticas <Icon.BarChart css={tw`ml-1`} size={18} />
                                     </div>
                                 </NavLink>
                                 <Can action={'activity.*'}>
                                     <NavLink to={`${match.url}/activity`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Atividades <Icon.Eye css={tw`ml-1`} size={18} />
+                                            Actividades <Icon.Eye css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
@@ -143,7 +139,7 @@ export default () => {
                                 <Can action={'file.*'}>
                                     <NavLink to={`${match.url}/files`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Arquivos <Icon.Folder css={tw`ml-1`} size={18} />
+                                            Archivos <Icon.Folder css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
@@ -151,7 +147,7 @@ export default () => {
                                     <Can action={'database.*'}>
                                         <NavLink to={`${match.url}/databases`}>
                                             <div css={tw`flex items-center justify-between`}>
-                                                Bancos de dados <Icon.Database css={tw`ml-1`} size={18} />
+                                                Base de datos <Icon.Database css={tw`ml-1`} size={18} />
                                             </div>
                                         </NavLink>
                                     </Can>
@@ -159,14 +155,14 @@ export default () => {
                                 <Can action={'schedule.*'}>
                                     <NavLink to={`${match.url}/schedules`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Tarefas <Icon.Clock css={tw`ml-1`} size={18} />
+                                            Tareas <Icon.Clock css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
                                 <Can action={'user.*'}>
                                     <NavLink to={`${match.url}/users`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Usuários <Icon.Users css={tw`ml-1`} size={18} />
+                                            Usuarios <Icon.Users css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
@@ -180,21 +176,21 @@ export default () => {
                                 <Can action={'allocation.*'}>
                                     <NavLink to={`${match.url}/network`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Rede <Icon.Share2 css={tw`ml-1`} size={18} />
+                                            Red <Icon.Share2 css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
                                 <Can action={'startup.*'}>
                                     <NavLink to={`${match.url}/startup`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Inicialização <Icon.Play css={tw`ml-1`} size={18} />
+                                            Inicialización <Icon.Play css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
                                 <Can action={['settings.*', 'file.sftp']} matchAny>
                                     <NavLink to={`${match.url}/settings`}>
                                         <div css={tw`flex items-center justify-between`}>
-                                            Definições <Icon.Settings css={tw`ml-1`} size={18} />
+                                            Definiciones <Icon.Settings css={tw`ml-1`} size={18} />
                                         </div>
                                     </NavLink>
                                 </Can>
@@ -202,7 +198,7 @@ export default () => {
                                     <Can action={['settings.*']} matchAny>
                                         <NavLink to={`${match.url}/edit`}>
                                             <div css={tw`flex items-center justify-between`}>
-                                                Edit <Icon.Edit css={tw`ml-1`} size={18} />
+                                                Editar <Icon.Edit css={tw`ml-1`} size={18} />
                                             </div>
                                         </NavLink>
                                     </Can>

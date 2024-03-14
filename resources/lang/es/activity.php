@@ -9,7 +9,7 @@
 return [
     'auth' => [
         'fail' => 'falló al cargar',
-        'success' => 'registrado a:',
+        'success' => 'Registrado hace:',
         'password-reset' => 'Restablecimiento de contraseña',
         'reset-password' => 'Restablecimiento de contraseña solicitada',
         'checkpoint' => 'Se solicita autenticación de dos factores',

@@ -78,7 +78,7 @@ export default ({ className }: WithClassname) => {
                         url: string()
                             .required()
                             .url()
-                            .test('unique', 'Arquivo ou diretório com esse nome já existe.', (v) => {
+                            .test('unique', 'Archivos con ese nombre ya no existe', (v) => {
                                 return (
                                     v !== undefined &&
                                     data !== undefined &&
@@ -89,7 +89,7 @@ export default ({ className }: WithClassname) => {
                 >
                     {({ resetForm, submitForm, isSubmitting: _, values }) => (
                         <Dialog
-                            title={'Baixar arquivo remoto'}
+                            title={'Bajar archivos remotos'}
                             open={visible}
                             onClose={() => {
                                 setVisible(false);
@@ -123,7 +123,7 @@ export default ({ className }: WithClassname) => {
                                     Cancelar
                                 </Button.Text>
                                 <Button className={'w-full sm:w-auto'} onClick={submitForm}>
-                                    Baixar Arquivo
+                                    Bajar archivos
                                 </Button>
                             </Dialog.Footer>
                         </Dialog>
@@ -131,7 +131,7 @@ export default ({ className }: WithClassname) => {
                 </Formik>
             </Portal>
             <Button.Text onClick={() => setVisible(true)} className={className}>
-                Baixar arquivo remoto
+                Bajar archivos remotos
             </Button.Text>
         </>
     );

@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-Servidor  — {{ $server->name }}: Gerenciar
+Servidor  — {{ $server->name }}:Administrar
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Ações adicionais para controlar este servidor.</small></h1>
+    <h1>{{ $server->name }}<small>Acciones adicionales para este servidor.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li><a href="{{ route('admin.servers') }}">Servidores</a></li>
@@ -23,9 +23,10 @@ Servidor  — {{ $server->name }}: Gerenciar
                     <h3 class="box-title">Reinstalar servidor</h3>
                 </div>
                 <div class="box-body">
-                    <p>Isto reinstalará o servidor com os scripts de serviço designados.
-                         <strong>Perigo!</strong> 
-                         Isto poderia sobrescrever os dados do servidor.</p>
+                    <p>Esto instala el servidor con los scripts de servicio designados..
+                         <strong>Peligro!</strong>
+                        Esto podría sobrescribir los datos del servidor.
+                    </p>
                 </div>
                 <div class="box-footer">
                     @if($server->isInstalled())
@@ -34,7 +35,8 @@ Servidor  — {{ $server->name }}: Gerenciar
                             <button type="submit" class="btn btn-danger">Reinstalar servidor</button>
                         </form>
                     @else
-                        <button class="btn btn-danger disabled">O servidor deve ser instalado corretamente para reinstalar</button>
+                        <button class="btn btn-danger disabled">
+                            El servidor debe estar instalado correctamente para instalar</button>
                     @endif
                 </div>
             </div>
@@ -42,15 +44,16 @@ Servidor  — {{ $server->name }}: Gerenciar
         <div class="col-sm-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Status de instalação</h3>
+                    <h3 class="box-title">Status de instalacióno</h3>
                 </div>
                 <div class="box-body">
-                    <p>Se você precisar mudar o status de instalação de desinstalado para instalado, ou vice-versa, você pode fazê-lo com o botão abaixo.</p>
+                    <p>
+                        Si necesita cambiar el estado de la instalación de desinstalada a instalada, o viceversa, puede hacerlo con el botón a continuación.</p>
                 </div>
                 <div class="box-footer">
                     <form action="{{ route('admin.servers.view.manage.toggle', $server->id) }}" method="POST">
                         {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-primary">Alternar o status de instalação</button>
+                        <button type="submit" class="btn btn-primary">Alternar status de instalación</button>
                     </form>
                 </div>
             </div>
@@ -63,13 +66,14 @@ Servidor  — {{ $server->name }}: Gerenciar
                         <h3 class="box-title">Suspender Servidor</h3>
                     </div>
                     <div class="box-body">
-                        <p>Isto suspenderá o servidor, interromperá qualquer processo em execução e bloqueará imediatamente o usuário de poder acessar seus arquivos ou de outra forma gerenciar o servidor através do painel ou API.</p>
+                        <p>
+                            Esto suspenderá el servidor, detendrá cualquier proceso en ejecución e inmediatamente impedirá que el usuario pueda acceder a sus archivos o administrar el servidor a través del panel o API.</p>
                     </div>
                     <div class="box-footer">
                         <form action="{{ route('admin.servers.view.manage.suspension', $server->id) }}" method="POST">
                             {!! csrf_field() !!}
                             <input type="hidden" name="action" value="suspend" />
-                            <button type="submit" class="btn btn-warning @if(! is_null($server->transfer)) disabled @endif">Servidor Suspenso</button>
+                            <button type="submit" class="btn btn-warning @if(! is_null($server->transfer)) disabled @endif">Servidor suspendido</button>
                         </form>
                     </div>
                 </div>
@@ -81,7 +85,7 @@ Servidor  — {{ $server->name }}: Gerenciar
                         <h3 class="box-title">Desbloquear servidor</h3>
                     </div>
                     <div class="box-body">
-                        <p>Isto irá desuspenderá o servidor e restaurar o acesso normal do usuário.</p>
+                        <p>Esto suspenderá el servidor y restaurará el acceso manual del usuario..</p>
                     </div>
                     <div class="box-footer">
                         <form action="{{ route('admin.servers.view.manage.suspension', $server->id) }}" method="POST">
@@ -102,8 +106,8 @@ Servidor  — {{ $server->name }}: Gerenciar
                     </div>
                     <div class="box-body">
                         <p>
-                        Transfira este servidor para outro Node conectado a este painel.
-                            <strong>Atenção!</strong> Esta funcionalidade não foi totalmente testada e pode ter bugs.
+                            Transfiera este servidor a otro Nodo conectado a este panel.
+                            <strong>¡Atención!</strong> Esta función no se ha probado completamente y puede tener errores.
                         </p>
                     </div>
 
@@ -112,7 +116,8 @@ Servidor  — {{ $server->name }}: Gerenciar
                             <button class="btn btn-success" data-toggle="modal" data-target="#transferServerModal">Transfer Server</button>
                         @else
                             <button class="btn btn-success disabled">Transferir Servidor</button>
-                            <p style="padding-top: 1rem;">A transferência de um servidor requer mais de um Node a ser configurado em seu painel.</p>
+                            <p style="padding-top: 1rem;">
+                                La transferencia de un servidor requiere que se configure más de un nodo en su panel de control.</p>
                         @endif
                     </div>
                 </div>
@@ -125,8 +130,8 @@ Servidor  — {{ $server->name }}: Gerenciar
                     </div>
                     <div class="box-body">
                         <p>
-                        Este servidor está sendo transferido atualmente para outro Node.
-                        A transferência foi iniciada em <strong>{{ $server->transfer->created_at }}</strong>
+                            Este servidor se está transfiriendo actualmente a otro Nodo.
+                            La transferencia se inició en <strong>{{ $server->transfer->created_at }}</strong>
                         </p>
                     </div>
 
@@ -166,19 +171,21 @@ Servidor  — {{ $server->name }}: Gerenciar
                                         </optgroup>
                                     @endforeach
                                 </select>
-                                <p class="small text-muted no-margin">O Node para o qual este servidor será transferido.</p>
+                                <p class="small text-muted no-margin">El nodo al que se transferirá este servidor.</p>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <label for="pAllocation">Alocação padrão</label>
+                                <label for="pAllocation">Asignación predeterminada</label>
                                 <select name="allocation_id" id="pAllocation" class="form-control"></select>
-                                <p class="small text-muted no-margin">A principal alocação que será atribuída a este servidor.</p>
+                                <p class="small text-muted no-margin">
+                                    La asignación principal que se asignará a este servidor..</p>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <label for="pAllocationAdditional">Alocação(ões) adicional(is)</label>
+                                <label for="pAllocationAdditional">
+                                    Asignaciones adicionales</label>
                                 <select name="allocation_additional[]" id="pAllocationAdditional" class="form-control" multiple></select>
-                                <p class="small text-muted no-margin">Alocações adicionais a serem atribuídas a este servidor na criação.</p>
+                                <p class="small text-muted no-margin">Asignaciones adicionales que se asignarán a este servidor al momento de su creación.</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +193,7 @@ Servidor  — {{ $server->name }}: Gerenciar
                     <div class="modal-footer">
                         {!! csrf_field() !!}
                         <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success btn-sm">Confirme</button>
+                        <button type="submit" class="btn btn-success btn-sm">Confirmar</button>
                     </div>
                 </form>
             </div>

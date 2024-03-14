@@ -14,7 +14,7 @@ export default ({ schedule }: { schedule: Schedule }) => (
         <div css={tw`flex-1 md:ml-4`}>
             <p>{schedule.name}</p>
             <p css={tw`text-xs text-neutral-400`}>
-                Última execução em:{' '}
+                Última ejecución en:{' '}
                 {schedule.lastRunAt
                     ? format(schedule.lastRunAt, "'dia' d 'de' MMMM yyyy', ás' HH:mm", { locale: ptBR })
                     : 'Nunca'}
@@ -38,7 +38,7 @@ export default ({ schedule }: { schedule: Schedule }) => (
                     schedule.isActive && !schedule.isProcessing ? tw`bg-green-600` : tw`bg-neutral-400`,
                 ]}
             >
-                {schedule.isProcessing ? 'Processando' : schedule.isActive ? 'Ativo' : 'Inativo'}
+                {schedule.isProcessing ? 'Procesando' : schedule.isActive ? 'Activo' : 'Inactivo'}
             </p>
         </div>
     </>

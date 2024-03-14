@@ -67,19 +67,19 @@ export default ({ schedule, task }: Props) => {
             />
             <Dialog.Confirm
                 open={visible}
-                title={'Confirme a exclusão da tarefa'}
-                confirm={'Sim, excluir tarefa'}
+                title={'Confirma la exclusión de la tarea'}
+                confirm={'Si, excluir tarea'}
                 onClose={() => setVisible(false)}
                 onConfirmed={onConfirmDeletion}
             >
-                Tem certeza de que deseja excluir esta tarefa? Essa ação não pode ser desfeita.
+                ¿Estás seguro de que deseas eliminar esta tarea? Esta acción no se puede deshacer.
             </Dialog.Confirm>
             <div css={tw`flex-none sm:flex-1 w-full sm:w-auto overflow-x-auto`}>
                 <p css={tw`md:ml-6 text-neutral-200 uppercase text-sm`}>{title}</p>
                 {task.payload && (
                     <div css={tw`md:ml-6 mt-2`}>
                         {task.action === 'backup' && (
-                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>Ignorando arquivos e pastas:</p>
+                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>Saltar archivos y carpetas:</p>
                         )}
                         <div
                             css={tw`font-mono bg-neutral-800 rounded py-1 px-2 text-sm w-auto inline-block whitespace-pre-wrap break-all`}
@@ -94,7 +94,7 @@ export default ({ schedule, task }: Props) => {
                     <div css={tw`mr-6`}>
                         <div css={tw`flex items-center px-2 py-1 bg-yellow-500 text-yellow-800 text-sm rounded-full`}>
                             <Icon.ChevronDown css={tw`w-3 h-3 mr-2`} />
-                            Continuar se Falhar
+                            Continuar si falla
                         </div>
                     </div>
                 )}
@@ -102,14 +102,14 @@ export default ({ schedule, task }: Props) => {
                     <div css={tw`mr-6`}>
                         <div css={tw`flex items-center px-2 py-1 bg-neutral-500 text-sm rounded-full`}>
                             <Icon.Clock css={tw`w-3 h-3 mr-2`} />
-                            {task.timeOffset}s depois
+                            {task.timeOffset}s después
                         </div>
                     </div>
                 )}
                 <Can action={'schedule.update'}>
                     <button
                         type={'button'}
-                        aria-label={'Editar tarefa programada'}
+                        aria-label={'Editar tarea programada'}
                         css={tw`block text-sm p-2 text-neutral-500 hover:text-neutral-100 transition-colors duration-150 mr-4 ml-auto sm:ml-0`}
                         onClick={() => setIsEditing(true)}
                     >
@@ -119,7 +119,7 @@ export default ({ schedule, task }: Props) => {
                 <Can action={'schedule.update'}>
                     <button
                         type={'button'}
-                        aria-label={'Excluir tarefa programada'}
+                        aria-label={'Excluir tarea programada'}
                         css={tw`block text-sm p-2 text-neutral-500 hover:text-red-600 transition-colors duration-150`}
                         onClick={() => setVisible(true)}
                     >

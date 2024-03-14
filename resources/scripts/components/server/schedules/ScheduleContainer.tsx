@@ -41,8 +41,8 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Programações'}
-            description={'Gerencie as funções programadas para seu servidor.'}
+            title={'Programaciones'}
+            description={'Administre las funciones programadas para su servidor.'}
             showFlashKey={'schedules'}
         >
             {!schedules.length && loading ? (
@@ -51,7 +51,7 @@ export default () => {
                 <>
                     {schedules.length === 0 ? (
                         <p css={tw`text-sm text-center text-neutral-300`}>
-                            Não há programações configuradas para este servidor.
+                            No hay horarios configurados para este servidor.
                         </p>
                     ) : (
                         schedules.map((schedule) => (
@@ -73,7 +73,7 @@ export default () => {
                         <div css={tw`mt-8 flex justify-end`}>
                             <EditScheduleModal visible={visible} onModalDismissed={() => setVisible(false)} />
                             <Button type={'button'} onClick={() => setVisible(true)}>
-                                Criar programação
+                                Crear programación
                             </Button>
                         </div>
                     </Can>

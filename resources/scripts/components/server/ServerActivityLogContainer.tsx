@@ -38,8 +38,8 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Atividade do servidor'}
-            description={'Ver atividade neste servidor.'}
+            title={'Actividad del servidor'}
+            description={'Ver actividades del servidor.'}
             showFlashKey={'server:activity'}
         >
             {(filters.filters?.event || filters.filters?.ip) && (
@@ -49,7 +49,7 @@ export default () => {
                         className={classNames(btnStyles.button, btnStyles.text, 'w-full sm:w-auto')}
                         onClick={() => setFilters((value) => ({ ...value, filters: {} }))}
                     >
-                        Limpar Filtros <Icon.XCircle className={'w-4 h-4 ml-2'} />
+                        Limpiar Filtros <Icon.XCircle className={'w-4 h-4 ml-2'} />
                     </Link>
                 </div>
             )}
@@ -57,7 +57,7 @@ export default () => {
                 <Spinner centered />
             ) : !data?.items.length ? (
                 <p className={'text-sm text-center text-gray-400'}>
-                    Nenhum registro de atividade disponível para este servidor.
+                    No hay registros de actividad disponibles para este servidor.
                 </p>
             ) : (
                 <div className={'bg-neutral-900 j-up'}>

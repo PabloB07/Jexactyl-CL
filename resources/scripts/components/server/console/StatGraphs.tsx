@@ -88,19 +88,19 @@ export default () => {
 
     return (
         <>
-            <ChartBlock title={'Uso da CPU'}>
+            <ChartBlock title={'Uso de CPU'}>
                 <Line {...cpu.props} />
             </ChartBlock>
             <ChartBlock title={'Disco'}>
                 <Line {...disk.props} />
             </ChartBlock>
-            <ChartBlock title={'Memória'}>
+            <ChartBlock title={'Memoria'}>
                 <Line {...memory.props} />
             </ChartBlock>
-            <ChartBlock title={'Entrada de Rede'}>
+            <ChartBlock title={'Entrada de Red'}>
                 <Line {...networkIn.props} />
             </ChartBlock>
-            <ChartBlock title={'Saída de Rede'}>
+            <ChartBlock title={'Salída de Red'}>
                 <Line {...networkOut.props} />
             </ChartBlock>
         </>

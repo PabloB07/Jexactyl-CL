@@ -21,7 +21,7 @@ const EulaModalFeature = () => {
         if (!connected || !instance || status === 'running') return;
 
         const listener = (line: string) => {
-            if (line.toLowerCase().indexOf('you need to agree to the eula in order to run the server') >= 0) {
+            if (line.toLowerCase().indexOf('¿Quieres aceptar el EULA para empezar el servidor de Minecraft?') >= 0) {
                 setVisible(true);
             }
         };
@@ -65,9 +65,9 @@ const EulaModalFeature = () => {
             showSpinnerOverlay={loading}
         >
             <FlashMessageRender key={'feature:eula'} css={tw`mb-4`} />
-            <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Aceitar o &reg; EULA do minecraft</h2>
+            <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Aceptaro &reg; EULA de minecraft</h2>
             <p css={tw`text-neutral-200`}>
-                Pressionando {'"Eu aceito"'} Abaixo você está indicando seu acordo com o&nbsp;
+                Pressionando {'"Acepto"'} A continuación indicas tu acuerdo con el&nbsp;
                 <a
                     target={'_blank'}
                     css={tw`text-primary-300 underline transition-colors duration-150 hover:text-primary-400`}
@@ -87,7 +87,7 @@ const EulaModalFeature = () => {
                     Cancelar
                 </Button>
                 <Button onClick={onAcceptEULA} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>
-                    Eu aceito
+                    Acepto
                 </Button>
             </div>
         </Modal>

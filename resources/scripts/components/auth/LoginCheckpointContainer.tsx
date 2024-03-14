@@ -27,15 +27,15 @@ const LoginCheckpointContainer = () => {
     const [isMissingDevice, setIsMissingDevice] = useState(false);
 
     return (
-        <LoginFormContainer title={'Ponto de verificação do dispositivo'} css={tw`w-full flex`}>
+        <LoginFormContainer title={'Punto de verificación de dispositivo'} css={tw`w-full flex`}>
             <div css={tw`mt-6`}>
                 <Field
                     light
                     name={isMissingDevice ? 'recoveryCode' : 'code'}
-                    title={isMissingDevice ? 'Código de recuperação' : 'Código de Autenticação'}
+                    title={isMissingDevice ? 'Código de recuperación' : 'Código de Autenticación'}
                     description={
                         isMissingDevice
-                            ? 'Introduza um dos códigos de recuperação gerados ao configurar a autenticação 2-Factor nesta conta para poder continuar.'
+                            ? 'Ingrese uno de los códigos de recuperación generados al configurar la autenticación de 2 factores en esta cuenta para continuar.'
                             : 'Introduza o token de dois factores gerado pelo seu dispositivo.'
                     }
                     type={'text'}
@@ -57,7 +57,7 @@ const LoginCheckpointContainer = () => {
                     }}
                     css={tw`cursor-pointer text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                 >
-                    {!isMissingDevice ? 'Perdi o meu aparelho' : 'Eu tenho o meu dispositivo'}
+                    {!isMissingDevice ? 'Perdí mi dispositivo' : 'Tengo mi dispositivo'}
                 </span>
             </div>
             <div css={tw`mt-6 text-center`}>
@@ -65,7 +65,7 @@ const LoginCheckpointContainer = () => {
                     to={'/auth/login'}
                     css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                 >
-                    Voltar ao Login
+                    Volver al login
                 </Link>
             </div>
         </LoginFormContainer>

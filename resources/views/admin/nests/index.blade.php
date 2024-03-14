@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-header')
-    <h1>Nests<small>Todos os nest atualmente disponíveis neste sistema.</small></h1>
+    <h1>Nests<small>Todos los nidos disponibles actualmente en este sistema.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
         <li class="active">Nests</li>
@@ -27,8 +27,8 @@
                 <table class="table table-hover">
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
                         <th class="text-center">Eggs</th>
                         <th class="text-center">Servidores</th>
                     </tr>
@@ -59,18 +59,18 @@
                         <label class="control-label" for="pImportFile">Arquivo do Egg<span class="field-required"></span></label>
                         <div>
                             <input id="pImportFile" type="file" name="import_file" class="form-control" accept="application/json" />
-                            <p class="small text-muted">Selecione o arquivo .<code>json</code> para o novo egg que você deseja importar.</p>
+                            <p class="small text-muted">Selecione el archivo .<code>json</code> para el nuevo egg que deseas importar.</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="pImportToNest">Nest Associados <span class="field-required"></span></label>
+                        <label class="control-label" for="pImportToNest">Nest Asociados <span class="field-required"></span></label>
                         <div>
                             <select id="pImportToNest" name="import_to_nest">
                                 @foreach($nests as $nest)
                                    <option value="{{ $nest->id }}">{{ $nest->name }} &lt;{{ $nest->author }}&gt;</option>
                                 @endforeach
                             </select>
-                            <p class="small text-muted">Selecione o nest ao qual este egg será associado na lista suspensa. Se você deseja associá-lo a um novo nest, você precisará criar esse nest antes de continuar.</p>
+                            <p class="small text-muted">Seleccione el nido al que se asociará este huevo en la lista desplegable. Si desea asociarlo con un nuevo nido, deberá crear ese nido antes de continuar..</p>
                         </div>
                     </div>
                 </div>

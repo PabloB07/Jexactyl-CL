@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-Servidor — {{ $server->name }}: Detalhes
+Servidor — {{ $server->name }}: Detalles
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Editar detalhes para este servidor, incluindo proprietário e contêiner</small></h1>
+    <h1>{{ $server->name }}<small>Editar detalles para este servidor, incluyendo proprietário y contenedor</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li><a href="{{ route('admin.servers') }}">Servidores</a></li>
@@ -20,44 +20,44 @@ Servidor — {{ $server->name }}: Detalhes
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Informações básicas</h3>
+                <h3 class="box-title">Informaciones básicas</h3>
             </div>
             <form action="{{ route('admin.servers.view.details', $server->id) }}" method="POST">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="name" class="control-label">Nome do servidor <span class="field-required"></span></label>
+                        <label for="name" class="control-label">Nombre del servidor <span class="field-required"></span></label>
                         <input type="text" name="name" value="{{ old('name', $server->name) }}" class="form-control" />
-                        <p class="text-muted small">Limites de caracteres: <code>a-zA-Z0-9_-</code> e <code>[Espaço]</code>.</p>
+                        <p class="text-muted small">Limites de caracteres: <code>a-zA-Z0-9_-</code> e <code>[Espacio]</code>.</p>
                     </div>
                     <div class="form-group">
                         <label for="external_id" class="control-label">Identificador externo</label>
                         <input type="text" name="external_id" value="{{ old('external_id', $server->external_id) }}" class="form-control" />
-                        <p class="text-muted small">Deixe vazio para não atribuir um identificador externo para este servidor. A identificação externa deve ser exclusiva para este servidor e não deve estar em uso por nenhum outro servidor.</p>
+                        <p class="text-muted small">Déjelo vacío para no asignar un identificador externo a este servidor. La ID externa debe ser única para este servidor y no debe ser utilizada por ningún otro servidor..</p>
                     </div>
                     <div class="form-group">
                         <label for="pUserId" class="control-label">Dono do servidor <span class="field-required"></span></label>
                         <select name="owner_id" class="form-control" id="pUserId">
                             <option value="{{ $server->owner_id }}" selected>{{ $server->user->email }}</option>
                         </select>
-                        <p class="text-muted small">Você pode mudar o dono deste servidor mudando este campo para um E-mail que corresponda a outro usuário deste sistema. Se você fizer isso, um novo daemon security token será gerado automaticamente.</p>
+                        <p class="text-muted small">Puede cambiar el propietario de este servidor cambiando este campo a un Correo electrónico que corresponda a otro usuario de este sistema. Si hace esto, se generará automáticamente un nuevo demonio de token de seguridad..</p>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="control-label">Descrição do servidor</label>
+                        <label for="description" class="control-label">Descripción del servidor</label>
                         <textarea name="description" rows="3" class="form-control">{{ old('description', $server->description) }}</textarea>
-                        <p class="text-muted small">Uma breve descrição deste servidor.</p>
+                        <p class="text-muted small">Una breve descripción de este servidor.</p>
                     </div>
                     <div class="form-group">
-                        <label for="renewable" class="control-label">Renovável <span class="field-required"></span></label>
+                        <label for="renewable" class="control-label">Renovable <span class="field-required"></span></label>
                         <select name="renewable" class="form-control">
-                            <option @if (!$server->renewable) selected @endif value="0">Desabilitado</option>
+                            <option @if (!$server->renewable) selected @endif value="0">Deshabilitado</option>
                             <option @if ($server->renewable) selected @endif value="1">Habilitado</option>
                         </select>
-                        <p class="text-muted small">Determina se este servidor é ou não renovado pelo sistema de renovação.</p>
+                        <p class="text-muted small">Determina si este servidor es renovado o no por el sistema de renovación..</p>
                     </div>
                     <div class="form-group">
-                        <label for="renewal" class="control-label">Dias até a renovação <span class="field-required"></span></label>
+                        <label for="renewal" class="control-label">Días hasta la renovación <span class="field-required"></span></label>
                         <input type="text" name="renewal" value="{{ $server->renewal }}" class="form-control" />
-                        <p class="text-muted small">Defina a quantidade de dias até que o servidor tenha que ser renovado.</p>
+                        <p class="text-muted small">Establecer el número de días hasta que se deba renovar el servidor.</p>
                     </div>
                 </div>
                 <div class="box-footer">

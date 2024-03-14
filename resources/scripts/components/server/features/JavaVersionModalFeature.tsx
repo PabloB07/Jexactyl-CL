@@ -16,9 +16,9 @@ import setSelectedDockerImage from '@/api/server/setSelectedDockerImage';
 const MATCH_ERRORS = [
     'unsupported major.minor version',
     'java.lang.unsupportedclassversionerror',
-    'foi compilado por uma versão mais recente do tempo de execução do Java',
-    'minecraft 1.17 Requer executar o servidor com Java 16 ou acima',
-    'minecraft 1.18 Requer executar o servidor com Java 17 ou acima',
+    'fue compilado por una versión más nueva del tiempo de ejecución de Java',
+    'minecraft 1.17 Requiere ejecutar el servidor con Java 16 o arriba',
+    'minecraft 1.18 Requiere ejecutar el servidor con Java 17 o arriba',
 ];
 
 const JavaVersionModalFeature = () => {
@@ -80,9 +80,9 @@ const JavaVersionModalFeature = () => {
             <FlashMessageRender key={'feature:javaVersion'} css={tw`mb-4`} />
             <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Versão Java não suportada</h2>
             <p css={tw`mt-4`}>
-                Atualmente, este servidor está executando uma versão não suportada do Java e não pode ser iniciada.
+                Este servidor ejecuta actualmente una versión no compatible de Java y no se puede iniciar.
                 <Can action={'startup.docker-image'}>
-                    &nbsp;Selecione uma versão suportada na lista abaixo para continuar iniciando o servidor.
+                    &nbsp;Seleccione una versión compatible de la lista siguiente para continuar iniciando el servidor.
                 </Can>
             </p>
             <Can action={'startup.docker-image'}>
@@ -112,7 +112,7 @@ const JavaVersionModalFeature = () => {
                 </Button>
                 <Can action={'startup.docker-image'}>
                     <Button onClick={updateJava} css={tw`w-full sm:w-auto`}>
-                        Atualize a imagem do Docker
+                        Actualize la imagen de Docker
                     </Button>
                 </Can>
             </div>

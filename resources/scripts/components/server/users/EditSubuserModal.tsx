@@ -99,9 +99,9 @@ const EditSubuserModal = ({ subuser }: Props) => {
             }
             validationSchema={object().shape({
                 email: string()
-                    .max(191, 'Os endereços de E-mail não devem exceder 191 caracteres.')
-                    .email('Um endereço de E-mail válido deve ser fornecido.')
-                    .required('Um endereço de E-mail válido deve ser fornecido.'),
+                    .max(191, 'Las direcciones de correo electrónico no deben exceder los 191 caracteres.')
+                    .email('Se debe proporcionar una dirección de correo electrónico válida.')
+                    .required('Se debe proporcionar una dirección de correo electrónico válida.'),
                 permissions: array().of(string()),
             })}
         >
@@ -109,12 +109,12 @@ const EditSubuserModal = ({ subuser }: Props) => {
                 <div css={tw`flex justify-between`}>
                     <h2 css={tw`text-2xl`} ref={ref}>
                         {subuser
-                            ? `${canEditUser ? 'Modify' : 'View'} permissions for ${subuser.email}`
-                            : 'Crie um novo sub-usuário'}
+                            ? `${canEditUser ? 'Modify' : 'View'} permissos para ${subuser.email}`
+                            : 'Crear un nuevo sub-usuario'}
                     </h2>
                     <div>
                         <Button type={'submit'} css={tw`w-full sm:w-auto`}>
-                            {subuser ? 'Salvar' : 'Convidar Usuário'}
+                            {subuser ? 'Guardar' : 'Invitar Usuario'}
                         </Button>
                     </div>
                 </div>
@@ -122,8 +122,8 @@ const EditSubuserModal = ({ subuser }: Props) => {
                 {!isRootAdmin && loggedInPermissions[0] !== '*' && (
                     <div css={tw`mt-4 pl-4 py-2 border-l-4 border-cyan-400`}>
                         <p css={tw`text-sm text-neutral-300`}>
-                            Somente permissões que sua conta está atribuída atualmente podem ser selecionadas ao criar
-                            ou modificando outros usuários.
+                            Solo se pueden seleccionar los permisos que su cuenta tiene asignados actualmente al crear
+                            o modificar a otros usuarios.
                         </p>
                     </div>
                 )}
@@ -131,16 +131,16 @@ const EditSubuserModal = ({ subuser }: Props) => {
                     <div css={tw`mt-6`}>
                         <Field
                             name={'email'}
-                            label={'E-mail do usuário'}
+                            label={'E-mail del usuario'}
                             description={
-                                'Digite o endereço de E-mail do usuário que você deseja convidar como sub-usuário deste servidor.'
+                                'Ingrese la dirección de correo electrónico del usuario que desea invitar como subusuario de este servidor.'
                             }
                         />
                     </div>
                 )}
                 <div css={tw`my-6`}>
                     <div css={tw`flex items-center mb-4 p-2 bg-gray-800 rounded shadow-sm`}>
-                        <p css={tw`flex-1 ml-1`}>Selecionar todas as permissões?</p>
+                        <p css={tw`flex-1 ml-1`}>Selecionar todas los permisos?</p>
                         {canEditUser && (
                             <SelectAllPermissions isEditable={canEditUser} permissions={editablePermissions} />
                         )}
@@ -169,7 +169,7 @@ const EditSubuserModal = ({ subuser }: Props) => {
                 <Can action={subuser ? 'user.update' : 'user.create'}>
                     <div css={tw`pb-6 flex justify-end`}>
                         <Button type={'submit'} css={tw`w-full sm:w-auto`}>
-                            {subuser ? 'Salvar' : 'Convidar Usuário'}
+                            {subuser ? 'Guardar' : 'Invitar Usuario'}
                         </Button>
                     </div>
                 </Can>

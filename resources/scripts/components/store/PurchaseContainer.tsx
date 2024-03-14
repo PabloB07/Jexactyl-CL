@@ -42,11 +42,11 @@ export default () => {
 
     return (
         <PageContentBlock
-            title={'Saldo da conta'}
-            description={'Compre créditos facilmente através do Stripe, PayPal ou Mercado Pago.'}
+            title={'Saldo en billetera'}
+            description={'Compra creditos a travez de MercadoPago.'}
         >
             <Container className={'lg:grid lg:grid-cols-2 my-10'}>
-                <ContentBox title={'Carteira do Usuário'} showFlashes={'account:balance'} css={tw`sm:mt-0`}>
+                <ContentBox title={'Billetera del usuario'} showFlashes={'account:balance'} css={tw`sm:mt-0`}>
                     <h1 css={tw`text-7xl flex justify-center items-center`}>
                         {resources.balance} <span className={'text-base ml-4'}>creditos</span>
                     </h1>
@@ -57,29 +57,29 @@ export default () => {
                     {mpago && <MercadoPagoPurchaseForm />}
                     {!paypal && !stripe && !mpago && (
                         <p className={'text-gray-400 text-sm m-2'}>
-                            Se nenhum gateway aparecer aqui, é porque eles ainda não foram configurados.
+                            Ningun gateway conectado o configurado, intentalo mas tarde.
                         </p>
                     )}
                 </ContentBox>
             </Container>
             {earn.enabled && (
                 <>
-                    <h1 className={'text-5xl'}>Ganhos de crédito AFK</h1>
+                    <h1 className={'text-5xl'}>Gana de crédito AFK</h1>
                     <h3 className={'text-2xl text-neutral-500'}>
-                        Veja quantos créditos você receberá por minuto de AFK.
+                        Ve cuantos creditos puedes ganar AFK.
                     </h3>
                     <Container className={'lg:grid lg:grid-cols-2 my-10'}>
                         <ContentBox title={'Earn Rate'} showFlashes={'earn:rate'} css={tw`sm:mt-0`}>
                             <h1 css={tw`text-7xl flex justify-center items-center`}>
-                                {earn.amount} <span className={'text-base ml-4'}>creditos / min</span>
+                                {earn.amount} <span className={'text-base ml-4'}>Créditos / min</span>
                             </h1>
                         </ContentBox>
                         <ContentBox title={'Como ganhar'} showFlashes={'earn:how'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
-                            <p>Você pode ganhar créditos tendo qualquer página deste painel aberta.</p>
+                            <p>Puedes ganar creditos con la ventana abierta.</p>
                             <p css={tw`mt-1`}>
                                 <span css={tw`text-green-500`}>{earn.amount}&nbsp;</span>
-                                credito(s) por minuto será automaticamente adicionado à sua conta, desde que este site
-                                esteja aberto em uma guia do navegador.
+                                crédito(s) por minuto será automáticamente agregado a su cuenta, desde este sitio
+                                este aierto en una guía del navegador.
                             </p>
                         </ContentBox>
                     </Container>

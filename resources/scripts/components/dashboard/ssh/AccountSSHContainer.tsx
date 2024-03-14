@@ -26,19 +26,19 @@ export default () => {
 
     return (
         <PageContentBlock
-            title={'Chaves SSH'}
-            description={'Crie chaves SSH para se conectar aos seus servidores.'}
+            title={'Claves SSH'}
+            description={'Crea claves SSH para conectarse a sus servidores.'}
             showFlashKey={'account'}
         >
             <div className={'md:flex flex-nowrap my-10'}>
-                <ContentBox title={'Adicionar Chave SSH'} css={tw`flex-none w-full md:w-1/2`}>
+                <ContentBox title={'Añadir Clave SSH'} css={tw`flex-none w-full md:w-1/2`}>
                     <CreateSSHKeyForm />
                 </ContentBox>
-                <ContentBox title={'Chaves SSH'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
+                <ContentBox title={'Claves SSH'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
                     <SpinnerOverlay visible={!data && isValidating} />
                     {!data || !data.length ? (
                         <p css={tw`text-center text-sm`}>
-                            {!data ? 'Carregando...' : 'Não existem chaves SSH para esta conta.'}
+                            {!data ? 'Cargando...' : 'No hay claves SSH para esta cuenta.'}
                         </p>
                     ) : (
                         data.map((key, index) => (

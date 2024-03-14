@@ -82,17 +82,17 @@ export default () => {
             initialValues={{ email: '' }}
             validationSchema={object().shape({
                 email: string()
-                    .email('Deve ser fornecido um endereço de E-mail válido para continuar.')
-                    .required('Deve ser fornecido um endereço de E-mail válido para continuar.'),
+                    .email('Se debe proporcionar una dirección de correo electrónico válida para continuar.')
+                    .required('Se debe proporcionar una dirección de correo electrónico válida para continuar.'),
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Pedir redefinição de senha'} css={tw`w-full flex`}>
+                <LoginFormContainer title={'Petición para la recuperación de contraseña'} css={tw`w-full flex`}>
                     <Field
                         light
                         label={'E-mail'}
                         description={
-                            'Introduza o endereço de E-mail da sua conta para receber instruções sobre como redefinir a sua senha.'
+                            'Ingrese la dirección de correo electrónico de su cuenta para recibir instrucciones sobre cómo restablecer su contraseña.'
                         }
                         name={'email'}
                         type={'email'}

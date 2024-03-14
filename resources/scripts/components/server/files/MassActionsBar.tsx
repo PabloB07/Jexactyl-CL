@@ -33,7 +33,7 @@ const MassActionsBar = () => {
     const onClickCompress = () => {
         setLoading(true);
         clearFlashes('files');
-        setLoadingMessage('Arquivando arquivos...');
+        setLoadingMessage('Archivando archivos...');
 
         compressFiles(uuid, directory, selectedFiles)
             .then(() => mutate())
@@ -46,7 +46,7 @@ const MassActionsBar = () => {
         setLoading(true);
         setShowConfirm(false);
         clearFlashes('files');
-        setLoadingMessage('Excluindo arquivos...');
+        setLoadingMessage('Excluyendo archivos...');
 
         deleteFiles(uuid, directory, selectedFiles)
             .then(() => {
@@ -97,7 +97,7 @@ const MassActionsBar = () => {
                         <Fade timeout={75} in={selectedFiles.length > 0} unmountOnExit>
                             <div css={tw`flex items-center space-x-4 pointer-events-auto rounded p-4 bg-black/50`}>
                                 <Button onClick={() => setShowMove(true)}>Mover</Button>
-                                <Button onClick={onClickCompress}>Arquivar</Button>
+                                <Button onClick={onClickCompress}>Archivar</Button>
                                 <Button.Danger variant={Button.Variants.Secondary} onClick={() => setShowConfirm(true)}>
                                     Excluir
                                 </Button.Danger>

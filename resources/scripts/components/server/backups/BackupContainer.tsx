@@ -32,7 +32,7 @@ const BackupContainer = () => {
     }
 
     return (
-        <ServerContentBlock title={'Backups'} description={'Proteja seus dados com backups.'} showFlashKey={'backups'}>
+        <ServerContentBlock title={'Backups'} description={'Proteja sus datos con backups.'} showFlashKey={'backups'}>
             <Pagination data={backups} onPageSelect={setPage}>
                 {({ items }) =>
                     !items.length ? (
@@ -41,8 +41,8 @@ const BackupContainer = () => {
                         !backupLimit ? null : (
                             <p css={tw`text-center text-sm text-neutral-300`}>
                                 {page > 1
-                                    ? 'Parece que ficamos sem backups para mostrar, tente voltar uma página.'
-                                    : 'Parece que atualmente não há backups armazenados para este servidor.'}
+                                    ? 'Parece que nos hemos quedado sin copias de seguridad para mostrar, intenta retroceder una página.'
+                                    : 'Parece que actualmente no hay copias de seguridad almacenadas para este servidor.'}
                             </p>
                         )
                     ) : (
@@ -54,14 +54,14 @@ const BackupContainer = () => {
             </Pagination>
             {backupLimit === 0 && (
                 <p css={tw`text-center text-sm text-neutral-300`}>
-                    Os backups não podem ser criados para este servidor porque o limite de backup é definido como 0.
+                    No se pueden crear copias de seguridad para este servidor porque el límite de copias de seguridad está establecido en 0.
                 </p>
             )}
             <Can action={'backup.create'}>
                 <div css={tw`mt-6 sm:flex items-center justify-end`}>
                     {backupLimit > 0 && backups.backupCount > 0 && (
                         <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                            {backups.backupCount} de {backupLimit} backups foram criados para este servidor.
+                            {backups.backupCount} de {backupLimit}Se crearon copias de seguridad para este servidor..
                         </p>
                     )}
                     {backupLimit > 0 && backupLimit > backups.backupCount && (

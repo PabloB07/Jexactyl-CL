@@ -69,8 +69,8 @@ const FileUploadList = () => {
 };
 
 const FileUploadListDialog = asDialog({
-    title: 'Upload de Arquivos',
-    description: 'Os seguintes arquivos estão sendo enviados para o seu servidor.',
+    title: 'Subir archivos',
+    description: 'Los siguientes archivos se están cargando en su servidor.',
 })(FileUploadList);
 
 export default () => {
@@ -91,7 +91,7 @@ export default () => {
     return (
         <>
             {count > 0 && (
-                <Tooltip content={`${count} arquivos estão sendo enviados, clique para ver`}>
+                <Tooltip content={`${count} los archivos se están enviando, haga clic para verlos.`}>
                     <button
                         className={'flex items-center justify-center w-10 h-10'}
                         onClick={() => (open.value = true)}

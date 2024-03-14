@@ -81,11 +81,11 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Gerenciador de arquivos'}
-            description={'Crie, edite e visualize arquivos.'}
+            title={'Administrador de archivos'}
+            description={'Crear, viaulizar archivos.'}
             showFlashKey={'files'}
         >
-            <Input onChange={searchFiles} className={'mb-4 j-up'} placeholder={'Buscar arquivos e pastas...'} />
+            <Input onChange={searchFiles} className={'mb-4 j-up'} placeholder={'Buscando archivos...'} />
             <div css={tw`flex flex-wrap-reverse md:flex-nowrap justify-center mb-4`}>
                 <ErrorBoundary>
                     <div className={'j-right'}>
@@ -108,7 +108,7 @@ export default () => {
                             <UploadButton />
                             <PullFileModal />
                             <NavLink to={`/server/${id}/files/new${window.location.hash}`}>
-                                <Button>Novo arquivo</Button>
+                                <Button>Nuevo archivo</Button>
                             </NavLink>
                         </div>
                     </Can>
@@ -119,15 +119,15 @@ export default () => {
             ) : (
                 <>
                     {!files.length ? (
-                        <p css={tw`text-sm text-neutral-400 text-center`}>Este diretório parece estar vazio.</p>
+                        <p css={tw`text-sm text-neutral-400 text-center`}>Este directorio parece estar vacío</p>
                     ) : (
                         <CSSTransition classNames={'fade'} timeout={150} appear in>
                             <>
                                 {files.length > 250 && (
                                     <div css={tw`rounded bg-yellow-400 mb-px p-3`}>
                                         <p css={tw`text-yellow-900 text-sm text-center`}>
-                                            Este diretório é muito grande para ser exibido no navegador, limitando a
-                                            saída para os primeiros 250 arquivos.
+                                            Este directorio es demasiado grande para mostrarse en el navegador, lo que limita la
+                                            salida para los primeros 250 archivos.
                                         </p>
                                     </div>
                                 )}
@@ -143,13 +143,13 @@ export default () => {
             <Can action={'file.sftp'}>
                 <TitledGreyBox title={'Detalhes do SFTP'} className={'mt-8 md:mt-6'}>
                     <div>
-                        <Label>Endereço do servidor</Label>
+                        <Label>Dirección del servidor</Label>
                         <CopyOnClick text={`sftp://${ip(sftp.ip)}:${sftp.port}`}>
                             <Input type={'text'} value={`sftp://${ip(sftp.ip)}:${sftp.port}`} readOnly />
                         </CopyOnClick>
                     </div>
                     <div css={tw`mt-6`}>
-                        <Label>Nome de usuário</Label>
+                        <Label>Nombre de usuario</Label>
                         <CopyOnClick text={`${username}.${id}`}>
                             <Input type={'text'} value={`${username}.${id}`} readOnly />
                         </CopyOnClick>
@@ -158,13 +158,13 @@ export default () => {
                         <div css={tw`flex-1`}>
                             <div css={tw`border-l-4 border-cyan-500 p-3`}>
                                 <p css={tw`text-xs text-neutral-200`}>
-                                    Sua senha SFTP é a mesma da senha que você usa para acessar este painel.
+                                    Su contraseña SFTP es la misma que utiliza para acceder a este panel.
                                 </p>
                             </div>
                         </div>
                         <div css={tw`ml-4`}>
                             <a href={`sftp://${username}.${id}@${ip(sftp.ip)}:${sftp.port}`}>
-                                <Button.Text variant={Button.Variants.Secondary}>Inicie o SFTP</Button.Text>
+                                <Button.Text variant={Button.Variants.Secondary}>Inicie el SFTP</Button.Text>
                             </a>
                         </div>
                     </div>

@@ -34,7 +34,7 @@ class MercadoPagoController extends Controller
             try {
                 $notificationId = $request->input('data.id') ?? $request->input('id') ?? $request->input('payment_id') ?? 'error12011';
                 if ($notificationId == 'error12011') {
-                    $msg = 'Erro ao processar o pagamento: ID de pagamento Não encontrado.'; // caso ID não exista, mostra essa mensagem
+                    $msg = 'Error de proceso de pago: ID de pago no encontrado.'; // caso ID não exista, mostra essa mensagem
                 } elseif ($notificationId == '123456') {
                     $msg = $this->TestePayment(); // Redireciona para o Evento de teste
                     $status = '200';
@@ -189,10 +189,10 @@ class MercadoPagoController extends Controller
 
             if ($Message === 'Nada') {
                 if ($internalStatus === 'Finalizado') {
-                    $Message = 'Este Pagamento ja foi Finalizado.';
+                    $Message = 'Este Pago ya fue Finalizado.';
                     $statusType = '200';
                 } elseif ($internalStatus == 'Cancelado') {
-                    $Message = 'Este Pagamento foi Cancelado.';
+                    $Message = 'Este Pago fue Cancelado.';
                     $statusType = '200';
                 } else {
                     if ($status === 'approved') {
@@ -241,23 +241,23 @@ class MercadoPagoController extends Controller
         $data = DB::table('mpago')->where('internal_token', $metadata_token)->first();
         $internalStatus = $data->internal_status ?? 'Desconhecido';
 
-        if ($internalStatus == 'Desconhecido') {
-            $description = 'Erro Desconhecido.';
+        if ($internalStatus == 'Desconocido') {
+            $description = 'Error Desconocido.';
             $color = '16711680'; // Vermelho
         } elseif ($internalStatus == 'Criado') {
-            $description = 'Novo Pagamento foi criado.';
+            $description = 'Nuevo Pago fue creado.';
             $color = '16776960'; // Amarelo
         } elseif ($internalStatus == 'Cancelado') {
-            $description = 'Pagamento Cancelado.';
+            $description = 'Pago Cancelado.';
             $color = '16711680'; // Vermelho
         } elseif ($internalStatus == 'Pendente') {
-            $description = 'Pagamento Pendente.';
+            $description = 'Pago Pendiente.';
             $color = '16776960'; // Amarelo
         } elseif ($internalStatus == 'Finalizado') {
-            $description = 'Pagamento concluido.';
+            $description = 'Pago concluido.';
             $color = '65280'; // Verde
         } else {
-            $description = 'Pagamento ?';
+            $description = 'Pagos ?';
             $color = '16711680'; // Vermelhor
         }
 
@@ -279,19 +279,19 @@ class MercadoPagoController extends Controller
                     'description' => $description,
                     'fields' => [
                         [
-                            'name' => 'Local do Pagamento:',
+                            'name' => 'Local de pago:',
                             'value' => $Content['pagamento']['payment_locale'],
                         ],
                         [
-                            'name' => 'ID do Usuário:',
+                            'name' => 'ID do Usuario:',
                             'value' => $Content['pagamento']['user_id'],
                         ],
                         [
-                            'name' => 'Email do Usuário:',
+                            'name' => 'Email de usuario:',
                             'value' => $Content['pagamento']['user_email'],
                         ],
                         [
-                            'name' => 'Valor da creditos:',
+                            'name' => 'Valor de creditos:',
                             'value' => $Content['pagamento']['valor'],
                         ],
                         [
@@ -303,7 +303,7 @@ class MercadoPagoController extends Controller
                             'value' => $metadata_token,
                         ],
                         [
-                            'name' => 'Mensagem:',
+                            'name' => 'Mensaje:',
                             'value' => $Content['pagamento']['message'],
                         ],
                     ],

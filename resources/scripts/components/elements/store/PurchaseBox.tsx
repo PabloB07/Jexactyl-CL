@@ -31,7 +31,7 @@ export default (props: BoxProps) => (
         </div>
         <p className={'mt-2 text-gray-500 text-xs flex justify-center'}>{props.description}</p>
         <p className={'mt-1 text-gray-500 text-xs flex justify-center'}>
-            Custo por {props.amount}
+            Costo por {props.amount}
             {props.suffix} {props.type}: {props.cost} créditos
         </p>
     </TitledGreyBox>

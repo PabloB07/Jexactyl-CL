@@ -97,26 +97,26 @@ const EditScheduleModal = ({ schedule }: Props) => {
                     <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`} />
                     <Field
                         name={'name'}
-                        label={'Nome da programação'}
-                        description={'Um identificador legível humano para esta programação.'}
+                        label={'Nombre da programación'}
+                        description={'Un identificador legible por humanos para este programa.'}
                     />
                     <div css={tw`grid grid-cols-2 sm:grid-cols-5 gap-4 mt-6`}>
                         <Field name={'minute'} label={'Minuto'} />
                         <Field name={'hour'} label={'Hora'} />
-                        <Field name={'dayOfMonth'} label={'Dia do mês'} />
-                        <Field name={'month'} label={'Mês'} />
-                        <Field name={'dayOfWeek'} label={'Dia da semana'} />
+                        <Field name={'dayOfMonth'} label={'Dia de mes'} />
+                        <Field name={'month'} label={'Mes'} />
+                        <Field name={'dayOfWeek'} label={'Dia de semana'} />
                     </div>
                     <p css={tw`text-neutral-400 text-xs mt-2`}>
-                        O sistema de programação suporta o uso da sintaxe de Cronjob ao definir quando as tarefas devem
-                        começar. Use os campos acima para especificar quando essas tarefas devem começar a ser
-                        executadas.
+                        El sistema de programación admite el uso de la sintaxis Cronjob al definir cuándo deben realizarse las tareas.
+                        para comenzar. Utilice los campos anteriores para especificar cuándo deben comenzar a realizarse estas tareas.
+                        ejecutado.
                     </p>
                     <div css={tw`mt-6 bg-neutral-900 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <Switch
                             name={'show_cheatsheet'}
-                            description={'Mostrar truques do Cron para alguns exemplos.'}
-                            label={'Mostre Cheatsheet'}
+                            description={'Muestre trucos de Cron para ver algunos ejemplos.'}
+                            label={'Mostrar hoja de referencia'}
                             defaultChecked={showCheatsheet}
                             onChange={() => setShowCheetsheet((s) => !s)}
                         />
@@ -130,21 +130,21 @@ const EditScheduleModal = ({ schedule }: Props) => {
                         <FormikSwitch
                             name={'onlyWhenOnline'}
                             description={
-                                'Execute apenas esta programação quando o servidor estiver em um estado em execução.'
+                                'Ejecute esta programación solo cuando el servidor esté en estado de ejecución.'
                             }
-                            label={'Somente quando o servidor está online'}
+                            label={'Sólo cuando el servidor está en línea'}
                         />
                     </div>
                     <div css={tw`mt-6 bg-neutral-900 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <FormikSwitch
                             name={'enabled'}
-                            description={'Esta programação será executado automaticamente se ativado.'}
-                            label={'Programação ativado'}
+                            description={'Este programa se ejecutará automáticamente.'}
+                            label={'Programación activada'}
                         />
                     </div>
                     <div css={tw`mt-6 text-right`}>
                         <Button className={'w-full sm:w-auto'} type={'submit'} disabled={isSubmitting}>
-                            {schedule ? 'Salvar mudanças' : 'Criar programação'}
+                            {schedule ? 'Guardar Cambios' : 'Cear programación'}
                         </Button>
                     </div>
                 </Form>

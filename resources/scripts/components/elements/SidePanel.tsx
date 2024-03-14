@@ -63,7 +63,7 @@ export default () => {
                     </Tooltip>
                 </NavLink>
                 <NavLink to={'/account'} className={'navigation-link'}>
-                    <Tooltip placement={'bottom'} content={'Conta'}>
+                    <Tooltip placement={'bottom'} content={'Cuenta'}>
                         <div className={'bg-gray-700 rounded-lg p-2 my-8'}>
                             <Icon.User size={32} />
                         </div>
@@ -71,7 +71,7 @@ export default () => {
                 </NavLink>
                 {store && (
                     <NavLink to={'/store'} className={'navigation-link'}>
-                        <Tooltip placement={'bottom'} content={'Loja'}>
+                        <Tooltip placement={'bottom'} content={'Tienda'}>
                             <div className={'bg-gray-700 rounded-lg p-2 my-8'}>
                                 <Icon.ShoppingCart size={32} />
                             </div>
@@ -98,7 +98,7 @@ export default () => {
                 )}
                 <div id={'logo'}>
                     <button onClick={onTriggerLogout} className={'navigation-link'}>
-                        <Tooltip placement={'bottom'} content={'Sair'}>
+                        <Tooltip placement={'bottom'} content={'Salir'}>
                             <div className={'flex flex-row fixed bottom-0 mb-8 bg-gray-700 rounded-lg p-2'}>
                                 <Icon.LogOut size={32} />
                             </div>

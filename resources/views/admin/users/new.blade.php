@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    Criar Usuario
+    Crear Usuario
 @endsection
 
 @section('content-header')
-    <h1>Criar Usuario<small>Adiciona un nuevo usuario en el sistema.</small></h1>
+    <h1>Crear Usuario<small>Agregar un nuevo usuario al sistema.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
         <li><a href="{{ route('admin.users') }}">Usuarios</a></li>

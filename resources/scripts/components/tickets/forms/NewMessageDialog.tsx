@@ -41,7 +41,7 @@ export default ({ open, onClose }: DialogProps) => {
                 addFlash({
                     key: 'tickets',
                     type: 'success',
-                    message: 'Sua mensagem foi enviada com sucesso.',
+                    message: 'Tu mensaje fue enviado con éxito!',
                 });
             })
             .catch((error) => {
@@ -55,8 +55,8 @@ export default ({ open, onClose }: DialogProps) => {
         <Dialog
             open={open}
             onClose={onClose}
-            title={'Adicionar uma mensagem'}
-            description={'Esta mensagem será visível tanto para você quanto para os administradores deste Painel.'}
+            title={'Añadir un mensaje'}
+            description={'Este mensaje será visible tanto para usted como para los administradores de este Panel.'}
         >
             <Formik
                 onSubmit={submit}
@@ -69,10 +69,10 @@ export default ({ open, onClose }: DialogProps) => {
                     <Form className={'mt-6'}>
                         <SpinnerOverlay visible={isSubmitting} />
                         <FormikFieldWrapper
-                            label={'Descrição'}
+                            label={'Descripción'}
                             name={'description'}
                             description={
-                                'Forneça informações adicionais, imagens e outros conteúdos a fim de nos ajudar a resolver seu problema mais rapidamente.'
+                                'Proporcione información adicional, imágenes y otro contenido para ayudarnos a resolver su problema más rápido..'
                             }
                         >
                             <Field name={'description'} as={CustomTextarea} />

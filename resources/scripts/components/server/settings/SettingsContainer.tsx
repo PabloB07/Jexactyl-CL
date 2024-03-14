@@ -16,20 +16,20 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Configurações'}
-            description={'Controle configurações importantes para seu servidor.'}
+            title={'Configuraciones'}
+            description={'Controla las configuraciones importantes para el servidor'}
             showFlashKey={'settings'}
         >
             <div className={'md:flex'}>
                 <div className={'w-full md:flex-1 md:mr-10'}>
                     <TitledGreyBox title={'Debug Information'} css={tw`mb-6 md:mb-10`}>
                         <div css={tw`flex items-center justify-between text-sm`}>
-                            <p>Node</p>
+                            <p>Nodo</p>
                             <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>{node}</code>
                         </div>
                         <CopyOnClick text={uuid}>
                             <div css={tw`flex items-center justify-between mt-2 text-sm`}>
-                                <p>ID do servidor</p>
+                                <p>ID del servidor</p>
                                 <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>{uuid}</code>
                             </div>
                         </CopyOnClick>

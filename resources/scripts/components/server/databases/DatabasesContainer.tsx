@@ -40,8 +40,8 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Bancos de dados'}
-            description={'Crie bancos de dados para o seu game.'}
+            title={'Base de datos'}
+            description={'Crea bases de datos para tu juego.'}
             showFlashKey={'databases'}
         >
             {!databases.length && loading ? (
@@ -60,15 +60,15 @@ export default () => {
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-300`}>
                                 {databaseLimit > 0
-                                    ? 'Parece que você não tem bancos de dados.'
-                                    : 'Os bancos de dados não podem ser criados para este servidor.'}
+                                    ? 'Parece que no tienes bases de datos.'
+                                    : 'No se pueden crear bases de datos para este servidor.'}
                             </p>
                         )}
                         <Can action={'database.create'}>
                             <div css={tw`mt-6 flex items-center justify-end`}>
                                 {databaseLimit > 0 && databases.length > 0 && (
                                     <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                        {databases.length} de {databaseLimit} bancos de dados foram alocados para isso
+                                        {databases.length} de {databaseLimit} Se asignaron bases de datos para este
                                         servidor.
                                     </p>
                                 )}

@@ -55,15 +55,15 @@ const schema = object().shape({
     action: string().required().oneOf(['command', 'power', 'backup']),
     payload: string().when('action', {
         is: (v: string) => v !== 'backup',
-        then: () => string().required('Deve ser fornecida uma carga de trabalho.'),
+        then: () => string().required('Se debe proporcionar una carga de trabajo..'),
         otherwise: () => string(),
     }),
     continueOnFailure: boolean(),
     timeOffset: number()
-        .typeError('O intervalo de tempo deve ser um número válido entre 0 e 900.')
-        .required('Deve ser fornecido um valor de intervalo de tempo.')
-        .min(0, 'O intervalo de tempo deve ser de pelo menos 0 segundos.')
-        .max(900, 'O intervalo de tempo deve ser inferior a 900 segundos.'),
+        .typeError('El rango de tiempo debe ser un número válido entre 0 y 900.')
+        .required('Se debe proporcionar un valor entre el intervalo de tiempo.')
+        .min(0, 'El intervalo de tiempo debe ser de al menos 0 segundos.')
+        .max(900, 'El intervalo de tiempo debe ser inferior a 900 segundos.'),
 });
 
 const TaskDetailsModal = ({ schedule, task }: Props) => {
@@ -86,7 +86,7 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
             setSubmitting(false);
             addError({
                 message:
-                    'Uma tarefa de backup não pode ser criada quando o limite de backup do servidor é definido como 0.',
+                    'No se puede crear una tarea de copia de seguridad cuando el límite de copia de seguridad del servidor está establecido en 0.',
                 key: 'schedule:task',
             });
         } else {
@@ -122,25 +122,25 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
             {({ isSubmitting, values }) => (
                 <Form css={tw`m-0`}>
                     <FlashMessageRender byKey={'schedule:task'} css={tw`mb-4`} />
-                    <h2 css={tw`text-2xl mb-6`}>{task ? 'Editar tarefa' : 'Criar tarefa'}</h2>
+                    <h2 css={tw`text-2xl mb-6`}>{task ? 'Editar tarea' : 'Crear tarea'}</h2>
                     <div css={tw`flex`}>
                         <div css={tw`mr-2 w-1/3`}>
-                            <Label>Ação</Label>
+                            <Label>Acción</Label>
                             <ActionListener />
                             <FormikFieldWrapper name={'action'}>
                                 <FormikField as={Select} name={'action'}>
                                     <option value={'command'}>Enviar comando</option>
-                                    <option value={'power'}>Enviar ação de energia</option>
-                                    <option value={'backup'}>Criar backup</option>
+                                    <option value={'power'}>Enviar acción energética</option>
+                                    <option value={'backup'}>Crear backup</option>
                                 </FormikField>
                             </FormikFieldWrapper>
                         </div>
                         <div css={tw`flex-1 ml-6`}>
                             <Field
                                 name={'timeOffset'}
-                                label={'Intervalo de tempo (em segundos)'}
+                                label={'Intervalo de tiempo (en segundos)'}
                                 description={
-                                    'O tempo de espera após a tarefa anterior é executado antes de executar esta tarefa. Se esta for a primeira tarefa em uma programação, isto não será aplicado.'
+                                    'El tiempo de espera después de la tarea anterior se ejecuta antes de ejecutar esta tarea. Si esta es la primera tarea de un cronograma, esto no se aplicará.'
                                 }
                             />
                         </div>
@@ -158,20 +158,20 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
                                 <Label>Carga útil</Label>
                                 <FormikFieldWrapper name={'payload'}>
                                     <FormikField as={Select} name={'payload'}>
-                                        <option value={'start'}>Iniciar o servidor</option>
-                                        <option value={'restart'}>Reinicie o servidor</option>
-                                        <option value={'stop'}>Parar o servidor</option>
-                                        <option value={'kill'}>Encerrar o servidor</option>
+                                        <option value={'start'}>Iniciar el servidor</option>
+                                        <option value={'restart'}>Reinicie el servidor</option>
+                                        <option value={'stop'}>Parar el servidor</option>
+                                        <option value={'kill'}>Encerrar el servidor</option>
                                     </FormikField>
                                 </FormikFieldWrapper>
                             </div>
                         ) : (
                             <div>
-                                <Label>Arquivos Ignorados</Label>
+                                <Label>Archivos Ignorados</Label>
                                 <FormikFieldWrapper
                                     name={'payload'}
                                     description={
-                                        'Opcional. Inclua os arquivos e pastas a serem excluídos neste backup. Por padrão, o conteúdo de seu arquivo .pteroignore será utilizado. Se você tiver atingido seu limite de backup, o backup mais antigo será rotacionado.'
+                                        'Opcional. Incluya los archivos y carpetas que se excluirán en esta copia de seguridad. De forma predeterminada, se utilizará el contenido de su archivo .pteroignore. Si ha alcanzado su límite de copias de seguridad, se rotará la copia de seguridad más antigua.'
                                     }
                                 >
                                     <FormikField as={Textarea} name={'payload'} rows={6} />
@@ -182,13 +182,13 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
                     <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
                         <FormikSwitch
                             name={'continueOnFailure'}
-                            description={'As tarefas futuras serão executadas quando esta tarefa falhar.'}
-                            label={'Continuar se Falhar'}
+                            description={'Las tareas futuras se ejecutarán cuando esta tarea falle.'}
+                            label={'Continuar si falla'}
                         />
                     </div>
                     <div css={tw`flex justify-end mt-6`}>
                         <Button type={'submit'} disabled={isSubmitting}>
-                            {task ? 'Salvar mudanças' : 'Criar tarefa'}
+                            {task ? 'Guardar cambios' : 'Crear tarea'}
                         </Button>
                     </div>
                 </Form>

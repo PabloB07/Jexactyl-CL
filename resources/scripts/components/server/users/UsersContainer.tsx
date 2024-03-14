@@ -48,12 +48,12 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Usuários'}
-            description={'Adicione ou remova usuários de seu servidor.'}
+            title={'Usuarios'}
+            description={'Agregue o elimine usuarios de su servidor.'}
             showFlashKey={'users'}
         >
             {!subusers.length ? (
-                <p css={tw`text-center text-sm text-neutral-300`}>Parece que você não tem nenhum sub-usuário.</p>
+                <p css={tw`text-center text-sm text-neutral-300`}>Parece que no tienes ningún subusuario.</p>
             ) : (
                 subusers.map((subuser) => <UserRow key={subuser.uuid} subuser={subuser} />)
             )}

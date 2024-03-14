@@ -38,18 +38,18 @@ trait RequiresDatabaseMigrations
         $this->getOutput()->writeln('<options=bold>
 | @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ |
 |                                                                              |
-|               Seu Database não foi devidamente migrado!                  |
+|               La base de datos no fue exitosamente migrado!                  |
 |                                                                              |
 | @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ |</>
 
-Você deve executar o seguinte comando para finalizar a migração de seu Database:
+Debes ejecutar el siguiente comando para ejecutar las migraciones:
 
   <fg=green;options=bold>php artisan migrate --step --force</>
 
-  Você não poderá usar o Painel do Jexactyl como esperado sem fixar seu
-  de Database, executando o comando acima.
+  No podrás usar el Painel do Jexactyl como esperabas sin arreglarlo
+  de Database, ejecutando el comando acima.
 ');
 
-        $this->getOutput()->error('Você deve corrigir o erro acima antes de continuar.');
+        $this->getOutput()->error('Debe corregir el error máximo antes de continuar.');
     }
 }

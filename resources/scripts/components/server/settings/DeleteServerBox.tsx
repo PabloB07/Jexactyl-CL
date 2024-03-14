@@ -29,7 +29,7 @@ export default () => {
                 addFlash({
                     key: 'settings',
                     type: 'success',
-                    message: 'Seu servidor foi excluído.',
+                    message: 'Tu servidor fue excluido',
                 });
                 // @ts-expect-error this is valid
                 window.location = '/';
@@ -41,16 +41,16 @@ export default () => {
         <TitledGreyBox title={'Excluir servidor'} className={'relative mb-12'}>
             <Dialog.Confirm
                 open={warn}
-                title={'Confirme a exclusão do servidor'}
-                confirm={'Sim, exclua o servidor'}
+                title={'Confirme la exclusión del servidor'}
+                confirm={'Si, excluir el servidor'}
                 onClose={() => setWarn(false)}
                 onConfirmed={() => {
                     setConfirm(true);
                     setWarn(false);
                 }}
             >
-                Seu servidor será excluído, com todos os arquivos sendo purgados e os recursos do servidor são
-                retornados para sua conta.Tem certeza que deseja continuar?
+                Se eliminará su servidor, se eliminarán todos los archivos y se eliminarán los recursos del servidor.
+                regresado a tu cuenta. ¿Estás seguro de que deseas continuar?
             </Dialog.Confirm>
             <form id={'delete-server-form'} onSubmit={submit}>
                 <Dialog
@@ -80,10 +80,10 @@ export default () => {
                 </Dialog>
             </form>
             <p className={'text-sm'}>
-                Excluir seu servidor desligará qualquer processo, retornará os recursos para sua conta e excluirá todos
-                os arquivos associados à instância - bem como backups, bancos de dados e configurações.{' '}
+                Eliminar su servidor cerrará cualquier proceso, devolverá recursos a su cuenta y eliminará todos
+                los archivos asociados con la instancia, así como las copias de seguridad, las bases de datos y las configuraciones.{' '}
                 <strong className={'font-medium'}>
-                    Todos os dados serão perdidos permanentemente se você continuar com esta ação.
+                    Todos los datos se perderán permanentemente si continúa con esta acción.
                 </strong>
             </p>
             <div className={'mt-6 font-medium text-right'}>

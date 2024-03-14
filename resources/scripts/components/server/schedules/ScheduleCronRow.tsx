@@ -19,15 +19,15 @@ const ScheduleCronRow = ({ cron, className }: Props) => (
         </div>
         <div className={'w-1/5 sm:w-auto text-center ml-4'}>
             <p className={'font-medium'}>{cron.dayOfMonth}</p>
-            <p className={'text-2xs text-neutral-500 uppercase'}>Dia do mês</p>
+            <p className={'text-2xs text-neutral-500 uppercase'}>Dia de mes</p>
         </div>
         <div className={'w-1/5 sm:w-auto text-center ml-4'}>
             <p className={'font-medium'}>{cron.month}</p>
-            <p className={'text-2xs text-neutral-500 uppercase'}>Mês</p>
+            <p className={'text-2xs text-neutral-500 uppercase'}>Mes</p>
         </div>
         <div className={'w-1/5 sm:w-auto text-center ml-4'}>
             <p className={'font-medium'}>{cron.dayOfWeek}</p>
-            <p className={'text-2xs text-neutral-500 uppercase'}>Dia da semana</p>
+            <p className={'text-2xs text-neutral-500 uppercase'}>Dia de la semana</p>
         </div>
     </div>
 );

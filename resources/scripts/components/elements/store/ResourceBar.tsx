@@ -55,52 +55,52 @@ export default ({ className, titles }: RowProps) => {
         <StoreContainer className={classNames(className, 'grid grid-cols-2 sm:grid-cols-7 gap-x-6 gap-y-2')}>
             <ResourceBox
                 title={'Créditos'}
-                description={'A quantidade de créditos que você tem disponível.'}
+                description={'La cantidad de créditos que tienes disponible.'}
                 icon={<Icon.DollarSign />}
                 amount={resources.balance}
             />
             <ResourceBox
                 title={'CPU'}
-                description={'A quantidade de CPU (em %) que você tem disponível.'}
+                description={'La cantidad de CPU (en %) que tienes disponible.'}
                 icon={<Icon.Cpu />}
                 amount={resources.cpu}
                 suffix={'%'}
             />
             <ResourceBox
-                title={'Memória'}
-                description={'A quantidade de RAM (em MB/GB) que você tem disponível.'}
+                title={'Memoria'}
+                description={'La cantidad de RAM (en MB/GB) que tienes disponible.'}
                 icon={<Icon.PieChart />}
                 amount={resources.memory}
                 toHuman
             />
             <ResourceBox
                 title={'Disco'}
-                description={'A quantidade de armazenamento (em MB/GB) que você tem disponível.'}
+                description={'La cantidad de almacenamiento (en MB/GB) que tienes disponible.'}
                 icon={<Icon.HardDrive />}
                 amount={resources.disk}
                 toHuman
             />
             <ResourceBox
                 title={'Slots'}
-                description={'A quantidade de servidores que você pode implantar.'}
+                description={'La cantidad de servidores que tu puedes hacr.'}
                 icon={<Icon.Server />}
                 amount={resources.slots}
             />
             <ResourceBox
-                title={'Portas'}
-                description={'A quantidade de portas que você pode adicionar aos seus servidores.'}
+                title={'Puertos'}
+                description={'La cantidad de puertos que puedes añadir a tus servidores.'}
                 icon={<Icon.Share2 />}
                 amount={resources.ports}
             />
             <ResourceBox
                 title={'Backups'}
-                description={'A quantidade de slots de backup que você pode adicionar aos seus servidores.'}
+                description={'La cantidad de slots de backups que puedes adicionar a sus servidores.'}
                 icon={<Icon.Archive />}
                 amount={resources.backups}
             />
             <ResourceBox
                 title={'Databases'}
-                description={'A quantidade de slots de Database que você pode adicionar aos seus servidores.'}
+                description={'La cantidad de espacios de base de datos que puede agregar a sus servidores.'}
                 icon={<Icon.Database />}
                 amount={resources.databases}
             />

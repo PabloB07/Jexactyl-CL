@@ -1,6 +1,6 @@
 import http from '@/api/http';
 
-export type TicketStatus = 'pendente' | 'resolvido' | 'não-resolvido' | 'em-andamento';
+export type TicketStatus = 'pendiente' | 'resolvido' | 'no-resuelto' | 'en-proceso';
 
 export interface Ticket {
     id: number;

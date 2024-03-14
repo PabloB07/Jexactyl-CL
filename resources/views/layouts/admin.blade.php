@@ -59,14 +59,14 @@
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.index') ?: 'desactive' }}">
                                 <a href="{{ route('index')}}">
                                     <i data-feather="home" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Voltar ao Painel</span> 
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Volver al Panel</span>
                                 </a>
                             </li>
                         <!-- Novo codigo-->
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.index') ?: 'active' }}">
                                 <a href="{{ route('admin.index')}}">
                                     <i data-feather="tool" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Configurações</span> 
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Configuraciones</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.tickets') ?: 'active' }}">
@@ -78,25 +78,25 @@
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.api') ?: 'active' }}">
                                 <a href="{{ route('admin.api.index')}}">
                                     <i data-feather="git-branch" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Aplicação de API</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Aplicaciones de API</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.databases') ?: 'active' }}">
                                 <a href="{{ route('admin.databases') }}">
                                     <i data-feather="database" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Database</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Databases</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.locations') ?: 'active' }}">
                                 <a href="{{ route('admin.locations') }}">
                                     <i data-feather="navigation" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Localizações</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Localizaciones</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nodes') ?: 'active' }}">
                                 <a href="{{ route('admin.nodes') }}">
                                     <i data-feather="layers" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Nodes</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Nodos</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.servers') ?: 'active' }}">
@@ -108,13 +108,13 @@
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.users') ?: 'active' }}">
                                 <a href="{{ route('admin.users') }}">
                                     <i data-feather="users" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Usuários</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Usuarios</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.mounts') ?: 'active' }}">
                                 <a href="{{ route('admin.mounts') }}">
                                     <i data-feather="hard-drive" style="margin-left: 12px;"></i>
-                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Montagens</span>
+                                    <span style="margin-left: 4px; font-weight: bold; font-size: 18px;">Mounts</span>
                                 </a>
                             </li>
                             <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nests') ?: 'active' }}">
@@ -135,7 +135,7 @@
                             <div class="col-xs-12">
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
-                                        Ocorreu um erro ao validar os dados fornecidos.<br><br>
+                                        Se produjo un error al validar los datos proporcionados..<br><br>
                                         <ul>
                                             @foreach ($errors->all() as $error)
                                                 <li>{{ $error }}</li>

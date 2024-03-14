@@ -22,12 +22,12 @@ const PIDLimitModalFeature = () => {
         if (!connected || !instance || status === 'running') return;
 
         const errors = [
-            'pthread_create falhou',
-            'falhou na criação do thread',
-            'incapaz de criar o thread',
-            'incapaz de criar thread nativo',
-            'incapaz de criar novos thread nativos',
-            'exceção na thread "craft async scheduler management thread"',
+            'pthread_create falló',
+            'falló la creacion del thread',
+            'incapaz de crear el thread',
+            'incapaz de crear el thread nativo',
+            'incapaz de crear nuevos thread nativos',
+            'excepción en el hilo "proceso de gestión del programador asíncrono artesanal"',
         ];
 
         const listener = (line: string) => {
@@ -59,23 +59,23 @@ const PIDLimitModalFeature = () => {
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
                         <Icon.AlertTriangle css={tw`pr-4`} color={'orange'} size={'4x'} />
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Limite de memória ou de processo atingido...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Se alcanzó el límite de memoria o proceso...</h2>
                     </div>
-                    <p css={tw`mt-4`}>Este servidor atingiu o limite máximo de processo ou memória.</p>
                     <p css={tw`mt-4`}>
-                        Aumentar <code css={tw`font-mono bg-neutral-900`}>container_pid_limit</code> nas configurações
-                        da Wings, <code css={tw`font-mono bg-neutral-900`}>config.yml</code>, Pode ajudar a resolver
-                        esse assunto.
+                        Este servidor ha alcanzado el límite máximo de procesador o memoria..</p>
+                    <p css={tw`mt-4`}>
+                        Aumentar <code css={tw`font-mono bg-neutral-900`}>container_pid_limit</code> en la configuración
+                        de Wings, <code css={tw`font-mono bg-neutral-900`}>config.yml</code>, puede ayudar a resolver
+                        Ese asunto.
                     </p>
                     <p css={tw`mt-4`}>
                         <b>
-                            Nota: as Wings devem ser reiniciadas para as alterações do arquivo de configuração para
-                            entrar em vigor
+                            Nota: Se debe iniciar Wings para que los cambios en el archivo de configuración surtan efecto.
                         </b>
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Close
+                            Cerrar
                         </Button>
                     </div>
                 </>
@@ -83,20 +83,20 @@ const PIDLimitModalFeature = () => {
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
                         <Icon.AlertTriangle css={tw`pr-4`} color={'orange'} size={'4x'} />
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Possível limite de recursos alcançado...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Posible límite de recursos alcanzado...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        Este servidor está tentando usar mais recursos do que o alocado. Entre em contato com o
-                        administrador e dê a eles o erro abaixo.
+                        Este servidor está intentando utilizar más recursos de los asignados. Ponte en contacto con el
+                        administrador y darles el siguiente error.
                     </p>
                     <p css={tw`mt-4`}>
                         <code css={tw`font-mono bg-neutral-900`}>
-                            pthread_create falhou, Possivelmente sem memória ou limites de processo/recursos atingidos
+                            pthread_create falló, posiblemente sin memoria o se alcanzaron los límites de proceso/recursos
                         </code>
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Fechar
+                            Cerrar
                         </Button>
                     </div>
                 </>

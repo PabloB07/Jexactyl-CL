@@ -53,7 +53,7 @@ export default () => {
             if (reconnectErrors.find((v) => error.toLowerCase().indexOf(v) >= 0)) {
                 updateToken(uuid, socket);
             } else {
-                setError('Houve um erro validando as credenciais fornecidas para o WebSocket. Atualize a página.');
+                setError('Se produjo un error al validar las credenciales proporcionadas para WebSocket. Recarga la página.');
             }
         });
 
@@ -109,7 +109,7 @@ export default () => {
                     {error === 'connecting' ? (
                         <>
                             <Spinner size={'small'} />
-                            <p css={tw`ml-2 text-sm text-red-100`}>Aguarde enquanto nos conectarmos à sua instância.</p>
+                            <p css={tw`ml-2 text-sm text-red-100`}>Aguarda mientras nos conectamos a su instancia.</p>
                         </>
                     ) : (
                         <p css={tw`ml-2 text-sm text-white`}>{error}</p>

@@ -94,8 +94,8 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Analíticos do servidor'}
-            description={'Veja estatísticas e desempenho para o seu servidor.'}
+            title={'Estadisticas del servidor'}
+            description={'Ver desempeño del servidor.'}
         >
             <div className={'grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-2'}>
                 <div className={'col-span-2 grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4'}>
@@ -107,10 +107,10 @@ export default () => {
                         <PowerButtons className={'flex space-x-4 text-center mb-4'} />
                     </Can>
                     <ContentBox>
-                        <UsageBox progress={parseInt(cpuUsed)} title={'Uso da CPU'} content={`${cpuUsed}% utilizada`} />
+                        <UsageBox progress={parseInt(cpuUsed)} title={'Uso de CPU'} content={`${cpuUsed}% utilizada`} />
                         <UsageBox
                             progress={parseInt(memoryUsed)}
-                            title={'Uso da memória'}
+                            title={'Uso de memoria'}
                             content={`${memoryUsed}% utilizada`}
                         />
                         <UsageBox
@@ -119,7 +119,7 @@ export default () => {
                             content={`${diskUsed}% utilizado`}
                         />
                     </ContentBox>
-                    <TitledGreyBox title={'Métricas de desempenho'} className={'rounded mt-4'}>
+                    <TitledGreyBox title={'Métricas de desempeño'} className={'rounded mt-4'}>
                         {!messages || messages.length < 1 ? (
                             <p className={'text-gray-400 text-center'}>Atualmente, nenhuma métrica está disponível.</p>
                         ) : (

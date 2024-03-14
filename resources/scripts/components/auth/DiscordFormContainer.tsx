@@ -27,7 +27,7 @@ const DiscordFormContainer = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
             <Wrapper>
-                <h2 css={tw`text-3xl text-center text-neutral-100 font-medium py-4`}>Logar no Painel {name}</h2>
+                <h2 css={tw`text-3xl text-center text-neutral-100 font-medium py-4`}>Logarse en el Panel {name}</h2>
                 <FlashMessageRender css={tw`mb-2 px-1`} />
                 <div css={tw`md:flex w-full bg-neutral-900 shadow-lg rounded-lg p-6 md:pl-0 mx-1`}>
                     <div css={tw`flex-none select-none mb-6 md:mb-0 self-center`}>
@@ -36,14 +36,13 @@ const DiscordFormContainer = ({ children }: { children: React.ReactNode }) => {
                     <div css={tw`flex-1`}>{children}</div>
                 </div>
                 <p css={tw`text-neutral-500 text-xs mt-6 sm:float-left`}>
-                    &copy; <a href={'https://jexactyl.com'}>Jexactyl,</a> um fork do{' '}
-                    <a href={'https://pterodactyl.io'}>Pterodactyl</a> e traduzido pela{' '}
-                    <a href={'https://nextpanel.com.br'}>Nextpanel.</a>
+                    &copy; <a href={'https://jexactyl.com'}>Jexactyl,</a> un fork de{' '}
+                    <a href={'https://pterodactyl.io'}>Pterodactyl</a> está traducido{' '}
                 </p>
                 <p css={tw`text-neutral-500 text-xs mt-6 sm:float-right`}>
-                    <a href={'https://nextpanel.com.br'}> Site </a>
+                    <a href={'https://nextpanel.com.br'}> Sitio </a>
                     &bull;
-                    <a href={'https://github.com/Next-Panel/Jexactyl-BR'}> GitHub </a>
+                    <a href={'https://github.com/PabloB07/Jexactyl-CL'}> GitHub </a>
                 </p>
             </Wrapper>
         </div>

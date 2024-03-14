@@ -42,8 +42,8 @@ export default ({ database, className }: Props) => {
 
     const schema = object().shape({
         confirm: string()
-            .required('O nome do Database deve ser fornecido.')
-            .oneOf([database.name.split('_', 2)[1], database.name], 'O nome do Database deve ser fornecido.'),
+            .required('Se debe proporcionar el nombre de la base de datos.')
+            .oneOf([database.name.split('_', 2)[1], database.name], 'Se debe proporcionar el nombre de la base de datos..'),
     });
 
     const submit = (values: { confirm: string }, { setSubmitting }: FormikHelpers<{ confirm: string }>) => {
@@ -77,18 +77,18 @@ export default ({ database, className }: Props) => {
                         }}
                     >
                         <FlashMessageRender byKey={'database:delete'} css={tw`mb-6`} />
-                        <h2 css={tw`text-2xl mb-6`}>Confirme a exclusão do Database</h2>
+                        <h2 css={tw`text-2xl mb-6`}>Confirmar la eliminación de la base de datos</h2>
                         <p css={tw`text-sm`}>
-                            A exclusão de um Database é uma ação permanente, não pode ser desfeita. Isso vai excluir
-                            permanentemente o Database: <strong>{database.name}</strong> e todos os dados associados.
+                            Eliminar una base de datos es una acción permanente y no se puede deshacer. Esto excluirá
+                            permanentemente la Base de Datos: <strong>{database.name}</strong> y todos los datos asociados.
                         </p>
                         <Form css={tw`m-0 mt-6`}>
                             <Field
                                 type={'text'}
                                 id={'confirm_name'}
                                 name={'confirm'}
-                                label={'Confirme o nome do Database'}
-                                description={'Digite o nome do Database para confirmar a exclusão.'}
+                                label={'Confirmar nombre de la database'}
+                                description={'Ingrese el nombre de la base de datos para confirmar la eliminación.'}
                             />
                             <div css={tw`mt-6 text-right`}>
                                 <Button
@@ -117,7 +117,7 @@ export default ({ database, className }: Props) => {
                     </CopyOnClick>
                 </div>
                 <div css={tw`mt-6`}>
-                    <Label>Conexões de</Label>
+                    <Label>Conexiones de</Label>
                     <Input type={'text'} readOnly value={database.allowConnectionsFrom} />
                 </div>
                 <div css={tw`mt-6`}>
@@ -128,14 +128,14 @@ export default ({ database, className }: Props) => {
                 </div>
                 <Can action={'database.view_password'}>
                     <div css={tw`mt-6`}>
-                        <Label>Senha</Label>
+                        <Label>Contraseña</Label>
                         <CopyOnClick text={database.password}>
                             <Input type={'text'} readOnly value={database.password} />
                         </CopyOnClick>
                     </div>
                 </Can>
                 <div css={tw`mt-6`}>
-                    <Label>String de conexão JDBC</Label>
+                    <Label>String de conexión JDBC</Label>
                     <CopyOnClick text={jdbcConnectionString}>
                         <Input type={'text'} readOnly value={jdbcConnectionString} />
                     </CopyOnClick>
@@ -145,7 +145,7 @@ export default ({ database, className }: Props) => {
                         <RotatePasswordButton databaseId={database.id} onUpdate={appendDatabase} />
                     </Can>
                     <Button variant={Button.Variants.Secondary} onClick={() => setConnectionVisible(false)}>
-                        Perto
+                        Puerto
                     </Button>
                 </div>
             </Modal>

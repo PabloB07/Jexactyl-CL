@@ -37,7 +37,7 @@ export default () => {
                 addFlash({
                     type: 'info',
                     key: 'dashboard',
-                    message: 'O E-mail de verificação foi reenviado.',
+                    message: 'Se ha enviado el correo electrónico de verificación..',
                 });
         });
     };
@@ -46,31 +46,31 @@ export default () => {
         <>
             {store.earn.enabled ? (
                 <InformationBox icon={faCircle} iconCss={'animate-pulse'}>
-                    Ganhando <span className={'text-green-600'}>{store.earn.amount}</span> Créditos / min.
+                    Ganando <span className={'text-green-600'}>{store.earn.amount}</span> Créditos / min.
                 </InformationBox>
             ) : (
                 <InformationBox icon={faExclamationCircle}>
-                    Atualmente, os ganhos de crédito estão <span className={'text-red-600'}>desativado.</span>
+                    Actualmente, las ganancias crediticias están <span className={'text-red-600'}>desactivado.</span>
                 </InformationBox>
             )}
             <InformationBox icon={faCoins}>
-                Você tem <span className={'text-green-600'}>{bal}</span> créditos disponíveis.
+                Tu tienes <span className={'text-green-600'}>{bal}</span> créditos disponibles.
             </InformationBox>
             <InformationBox icon={faUserLock}>
                 {user.useTotp ? (
                     <>
-                        <span className={'text-green-600'}>2FA está habilitado</span> em sua conta.
+                        <span className={'text-green-600'}>2FA está habilitado</span> en su cuenta
                     </>
                 ) : (
                     <>
-                        <span className={'text-yellow-600'}>Habilitar 2FA</span> para proteger sua conta.
+                        <span className={'text-yellow-600'}>Habilitar 2FA</span> para proteger su cuonta.
                     </>
                 )}
             </InformationBox>
             {!user.verified ? (
                 <InformationBox icon={faTimesCircle} iconCss={'text-yellow-500'}>
                     <span onClick={verify} className={'cursor-pointer text-blue-400'}>
-                        Verifique sua conta para começar.
+                        Verifique sua cuonta para comenzar.
                     </span>
                 </InformationBox>
             ) : (
@@ -91,7 +91,7 @@ export default () => {
                             })}
                         </>
                     ) : (
-                        'Incapaz de obter os últimos registros de atividades.'
+                        'No se pueden obtener los registros de actividad más recientes.'
                     )}
                 </InformationBox>
             )}

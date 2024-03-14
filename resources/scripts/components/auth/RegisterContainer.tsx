@@ -55,7 +55,7 @@ const RegisterContainer = ({ history }: RouteComponentProps) => {
                     addFlash({
                         key: 'auth:register',
                         type: 'success',
-                        message: 'A conta foi criada com sucesso.',
+                        message: 'La cuenta fue creada satisfactoriamente.',
                     });
                     return;
                 }
@@ -84,23 +84,23 @@ const RegisterContainer = ({ history }: RouteComponentProps) => {
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Criar Uma Conta'} css={tw`w-full flex`}>
+                <LoginFormContainer title={'Crear una cuenta'} css={tw`w-full flex`}>
                     <FlashMessageRender byKey={'auth:register'} css={tw`my-3`} />
                     <Field
                         type={'text'}
-                        label={'Nome de usuário'}
+                        label={'Nombre de usuario'}
                         name={'username'}
                         css={tw`my-3`}
                         disabled={isSubmitting}
                     />
                     <Field
                         type={'email'}
-                        label={'Endereço de E-mail'}
+                        label={'Dirección de correo electrónico'}
                         name={'email'}
                         css={tw`my-3`}
                         disabled={isSubmitting}
                     />
-                    <Field type={'password'} label={'Senha'} name={'password'} css={tw`my-3`} disabled={isSubmitting} />
+                    <Field type={'password'} label={'Contraseña'} name={'password'} css={tw`my-3`} disabled={isSubmitting} />
                     <Button type={'submit'} css={tw`my-6 w-full`} size={Button.Sizes.Large} disabled={isSubmitting}>
                         Registrar
                     </Button>

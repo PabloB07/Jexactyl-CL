@@ -14,10 +14,10 @@ const ApiKeyModal = ({ apiKey }: Props) => {
 
     return (
         <>
-            <h3 css={tw`mb-6 text-2xl`}>Sua Chave API</h3>
+            <h3 css={tw`mb-6 text-2xl`}>Sus claves API</h3>
             <p css={tw`text-sm mb-6`}>
-                A chave API que solicitou é mostrada abaixo. Por favor, guarde-a em um local seguro, ela não será
-                mostrada novamente.
+                La clave API que solicitó se muestra a continuación. Guárdelo en un lugar seguro, no será
+                mostrado de nuevo.
             </p>
             <pre css={tw`text-sm bg-neutral-900 rounded py-2 px-4 font-mono`}>
                 <CopyOnClick text={apiKey}>
@@ -26,7 +26,7 @@ const ApiKeyModal = ({ apiKey }: Props) => {
             </pre>
             <div css={tw`flex justify-end mt-6`}>
                 <Button type={'button'} onClick={() => dismiss()}>
-                    Fechar
+                    Cerrar
                 </Button>
             </div>
         </>

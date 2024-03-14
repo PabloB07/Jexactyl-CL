@@ -22,10 +22,10 @@ return [
     |--------------------------------------------------------------------------
     | Cost per 100 credits
     |--------------------------------------------------------------------------
-    | This value determines how much 100 credits costs. Defaults to $1.00 CLP.
+    | This value determines how much 100 credits costs. Defaults to $1.500 CLP.
     |
     */
-    'cost' => env('STORE_COST', 1.0),
+    'cost' => env('STORE_COST', 1.500),
 
     /*
     |--------------------------------------------------------------------------

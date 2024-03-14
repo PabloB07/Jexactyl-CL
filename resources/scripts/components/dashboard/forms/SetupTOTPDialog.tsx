@@ -70,12 +70,12 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
             </div>
             <CopyOnClick text={token?.secret}>
                 <p className={'font-mono text-sm text-gray-100 text-center mt-2'}>
-                    {token?.secret.match(/.{1,4}/g)!.join(' ') || 'Carregando...'}
+                    {token?.secret.match(/.{1,4}/g)!.join(' ') || 'Cargando..'}
                 </p>
             </CopyOnClick>
             <p id={'totp-code-description'} className={'mt-6'}>
-                Digitalize o código QR acima usando a aplicação de autenticação em duas etapas à sua escolha. Em
-                seguida, introduza o código de 6 dígitos gerado no campo abaixo.
+                Escanee el código QR de arriba usando la aplicación de autenticación en dos pasos de su elección. En
+                Luego, ingrese el código de 6 dígitos generado en el campo a continuación.
             </p>
             <Input.Text
                 aria-labelledby={'totp-code-description'}
@@ -105,8 +105,8 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                     disabled={password.length > 0 && value.length === 6}
                     content={
                         !token
-                            ? 'À espera do código QR para carregar...'
-                            : 'Deve introduzir o código de 6 dígitos e a sua palavra-passe para continuar.'
+                            ? 'Esperando a que se cargue el código QR...'
+                            : 'Debes ingresar el código de 6 dígitos y tu contraseña para continuar.'
                     }
                     delay={100}
                 >
@@ -124,7 +124,7 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
 };
 
 export default asDialog({
-    title: 'Activar a Verificação em Duas Etapas',
+    title: 'Activar verificación de 2 pasos',
     description:
-        'Ajude a proteger a sua conta contra o acesso não autorizado. Ser-lhe-á pedido um código de verificação cada vez que entrar na sua conta.',
+        'Ayude a proteger su cuenta del acceso no autorizado. Se le pedirá un código de verificación cada vez que inicie sesión en su cuenta.',
 })(ConfigureTwoFactorForm);

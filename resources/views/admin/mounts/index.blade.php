@@ -2,11 +2,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    Montagens
+    Mounts
 @endsection
 
 @section('content-header')
-    <h1>Montagens<small>Configure e gerencie pontos de montagem adicionais para servidores.</small></h1>
+    <h1>Mounts<small>Configure e gerencie pontos de montagem adicionais para servidores.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
         <li class="active">Montagens</li>

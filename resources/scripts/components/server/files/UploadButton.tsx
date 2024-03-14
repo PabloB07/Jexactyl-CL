@@ -67,7 +67,7 @@ export default ({ className }: WithClassname) => {
         clearAndAddHttpError();
         const list = Array.from(files);
         if (list.some((file) => !file.size || (!file.type && file.size === 4096))) {
-            return addError('Uploads de pastas não são suportados no momento.', 'Error');
+            return addError('Actualmente no se admiten cargas de carpetas.', 'Error');
         }
 
         const uploads = list.map((file) => {
@@ -127,7 +127,7 @@ export default ({ className }: WithClassname) => {
                             >
                                 <CloudUploadIcon className={'w-10 h-10 flex-shrink-0'} />
                                 <p className={'font-header flex-1 text-lg text-neutral-100 text-center'}>
-                                    Arraste e solte arquivos para carregar.
+                                    Arratra y suelta los archivos para cargarlos
                                 </p>
                             </div>
                         </div>

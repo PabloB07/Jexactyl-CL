@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    localização
+    localizaciones
 @endsection
 
 @section('content-header')
-    <h1>Localizações<small>Todos os locais aos quais os nodes podem ser atribuídos para facilitar a categorização.</small></h1>
+    <h1>Localizaciones<small>Todas las ubicaciones a las que se pueden asignar los nodos para una fácil categorización.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Administrador</a></li>
-        <li class="active">Localizações</li>
+        <li class="active">Localizaciones</li>
     </ol>
 @endsection
 
@@ -17,9 +17,9 @@
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Lista de localizações</h3>
+                <h3 class="box-title">Lista de localizaciones</h3>
                 <div class="box-tools">
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newLocationModal">Criar Novo</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newLocationModal">Crear Nuevo</button>
                 </div>
             </div>
             <div class="box-body table-responsive no-padding">
@@ -27,9 +27,9 @@
                     <tbody>
                         <tr>
                             <th>ID</th>
-                            <th>Nome Simples</th>
-                            <th>Descrição</th>
-                            <th class="text-center">Nodes</th>
+                            <th>Nommbre simple</th>
+                            <th>Descripción</th>
+                            <th class="text-center">Nodos</th>
                             <th class="text-center">Servidores</th>
                         </tr>
                         @foreach ($locations as $location)
@@ -53,19 +53,20 @@
             <form action="{{ route('admin.locations') }}" method="POST">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Criar localização</h4>
+                    <h4 class="modal-title">Crear localización</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <label for="pShortModal" class="form-label">Nome Simples</label>
                             <input type="text" name="short" id="pShortModal" class="form-control" />
-                            <p class="text-muted small">Um identificador curto usado para distinguir esse local de outros. Deve ter entre 1 e 60 caracteres, por exemplo, <code>br.painel.loc</code>.</p>
+                            <p class="text-muted small">
+                                Un identificador corto utilizado para distinguir esta ubicación de otras. Debe tener entre 1 y 60 caracteres, p.e., <code>cl.panel.loc</code>.</p>
                         </div>
                         <div class="col-md-12">
-                            <label for="pLongModal" class="form-label">Descrição</label>
+                            <label for="pLongModal" class="form-label">Descrición</label>
                             <textarea name="long" id="pLongModal" class="form-control" rows="4"></textarea>
-                            <p class="text-muted small">Uma descrição mais longa desse local. Deve ter menos de 191 caracteres.</p>
+                            <p class="text-muted small">Una descripción más larga de esta ubicación. Debe tener menos de 191 caracteres..</p>
                         </div>
                     </div>
                 </div>

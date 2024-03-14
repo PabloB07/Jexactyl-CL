@@ -21,7 +21,7 @@ export default () => {
                 addFlash({
                     key: 'settings',
                     type: 'success',
-                    message: 'Seu servidor começou o processo de reinstalação.',
+                    message: 'Su servidor ha comenzado el proceso de reinstalación.',
                 });
             })
             .catch((error) => {
@@ -41,28 +41,28 @@ export default () => {
     }, []);
 
     return (
-        <TitledGreyBox title={'Reinstalar o servidor'} css={tw`relative`}>
+        <TitledGreyBox title={'Reinstalar el servidor'} css={tw`relative`}>
             <Dialog.Confirm
                 open={modalVisible}
-                title={'Confirme a reinstalação do servidor'}
-                confirm={'Sim, reinstale o servidor'}
+                title={'Confirme la reinstalación del servidor'}
+                confirm={'Si, reinstalar el servidor'}
                 onClose={() => setModalVisible(false)}
                 onConfirmed={reinstall}
             >
-                Seu servidor será interrompido e alguns arquivos podem ser excluídos ou modificados durante esse
-                processo, você tem certeza Você deseja continuar?
+                Su servidor se detendrá y es posible que algunos archivos se eliminen o modifiquen durante este tiempo.
+                proceso, ¿estás seguro de que quieres continuar?
             </Dialog.Confirm>
             <p css={tw`text-sm`}>
-                A reinstalação de seu servidor irá pará-lo e, em seguida, executar novamente o script de instalação que
-                inicialmente o definiu acima.&nbsp;
+                Reinstalar su servidor lo detendrá y luego volverá a ejecutar el script de instalación que
+                inicialmente lo definió anteriormente.
                 <strong css={tw`font-medium`}>
-                    Alguns arquivos podem ser excluídos ou modificados durante esse processo, faça backup de seus dados
-                    antes de continuar.
+                    Algunos archivos pueden eliminarse o modificarse durante este proceso, haga una copia de seguridad de sus datos
+                    Antes de continuar.
                 </strong>
             </p>
             <div css={tw`mt-6 text-right`}>
                 <Button.Danger variant={Button.Variants.Secondary} onClick={() => setModalVisible(true)}>
-                    Reinstalar o servidor
+                    Reinstalar el servidor
                 </Button.Danger>
             </div>
         </TitledGreyBox>

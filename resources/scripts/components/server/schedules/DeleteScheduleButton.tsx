@@ -45,12 +45,12 @@ export default ({ scheduleId, onDeleted }: Props) => {
             <Dialog.Confirm
                 open={visible}
                 onClose={() => setVisible(false)}
-                title={'Excluir programação'}
+                title={'Excluir programación'}
                 confirm={'Excluir'}
                 onConfirmed={onDelete}
             >
                 <SpinnerOverlay visible={isLoading} />
-                Todas as tarefas serão removidas e quaisquer processos em execução serão encerrados.
+                Se eliminarán todas las tareas y se finalizará cualquier proceso en ejecución.
             </Dialog.Confirm>
             <Button.Danger css={tw`flex-1 sm:flex-none mr-4 border-transparent`} onClick={() => setVisible(true)}>
                 Excluir

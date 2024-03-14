@@ -34,18 +34,18 @@ export default () => {
                     <div>
                         <NavLink to={'/account'} exact>
                             <div css={tw`flex items-center justify-between`}>
-                                Contas <Icon.User css={tw`ml-1`} size={18} />
+                                Cuentas <Icon.User css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                         <NavLink to={'/account/security'}>
                             <div css={tw`flex items-center justify-between`}>
-                                Segurança <Icon.Key css={tw`ml-1`} size={18} />
+                                Seguridad <Icon.Key css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                         {referrals && (
                             <NavLink to={'/account/referrals'}>
                                 <div css={tw`flex items-center justify-between`}>
-                                    Referências <Icon.DollarSign css={tw`ml-1`} size={18} />
+                                    Referencias <Icon.DollarSign css={tw`ml-1`} size={18} />
                                 </div>
                             </NavLink>
                         )}
@@ -56,13 +56,13 @@ export default () => {
                         </NavLink>
                         <NavLink to={'/account/ssh'}>
                             <div css={tw`flex items-center justify-between`}>
-                                Chaves SSH <Icon.Terminal css={tw`ml-1`} size={18} />
+                                Claves SSH <Icon.Terminal css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                         {coupons && (
                             <NavLink to={'/account/coupons'}>
                                 <div className={'flex items-center justify-between'}>
-                                    Cupons <Icon.DollarSign className={'ml-1'} size={18} />
+                                    Cupones <Icon.DollarSign className={'ml-1'} size={18} />
                                 </div>
                             </NavLink>
                         )}

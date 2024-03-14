@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-Servidor — {{ $server->name }}: Inicialização
+Servidor — {{ $server->name }}: Inicialización
 @endsection
 
 @section('content-header')
-    <h1>{{ $server->name }}<small>Comando de inicialização de controle, bem como variáveis.</small></h1>
+    <h1>{{ $server->name }}<small>Controla el comando de inicialización y las variables.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li><a href="{{ route('admin.servers') }}">Servidores</a></li>
         <li><a href="{{ route('admin.servers.view', $server->id) }}">{{ $server->name }}</a></li>
-        <li class="active">Inicialização</li>
+        <li class="active">Inicialización</li>
     </ol>
 @endsection
 
@@ -21,22 +21,24 @@ Servidor — {{ $server->name }}: Inicialização
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Modificar comando de Inicialização</h3>
+                    <h3 class="box-title">Modificar comando de Inicialización</h3>
                 </div>
                 <div class="box-body">
-                    <label for="pStartup" class="form-label">Comando de inicialização</label>
+                    <label for="pStartup" class="form-label">Comando de inicialización</label>
                     <input id="pStartup" name="startup" class="form-control" type="text" value="{{ old('startup', $server->startup) }}" />
-                    <p class="small text-muted">Edite aqui o comando de inicialização de seu servidor.
-                    As seguintes variáveis estão disponíveis por padrão:
+                    <p class="small text-muted">
+                        Edite el comando de inicio de su servidor aquí.
+                        Las siguientes variables están disponibles de forma predeterminada:
                           <code>@{{SERVER_MEMORY}}</code>, <code>@{{SERVER_IP}}</code>, e <code>@{{SERVER_PORT}}</code>.</p>
                 </div>
                 <div class="box-body">
-                    <label for="pDefaultStartupCommand" class="form-label">Comando de inicialização padrão</label>
+                    <label for="pDefaultStartupCommand" class="form-label">
+                        Comando de arranque predeterminado</label>
                     <input id="pDefaultStartupCommand" class="form-control" type="text" readonly />
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-primary btn-sm pull-right">Salvar Modificações</button>
+                    <button type="submit" class="btn btn-primary btn-sm pull-right">Guardar modificaciones</button>
                 </div>
             </div>
         </div>
@@ -45,18 +47,18 @@ Servidor — {{ $server->name }}: Inicialização
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configurações dos serviços</h3>
+                    <h3 class="box-title">Configuraciones de servicios</h3>
                 </div>
                 <div class="box-body row">
                     <div class="col-xs-12">
                         <p class="small text-danger">
-                        A alteração de qualquer um dos valores abaixo resultará em um comando de reinstalação no servidor.
-                            O servidor será parado e então prosseguirá.
-                            Se você quiser que os scripts de serviço não sejam executados, certifique-se de que a caixa esteja marcada na parte inferior.
+                            Cambiar cualquiera de los valores siguientes generará un comando de reinstalación en el servidor.
+                            El servidor se detendrá y luego continuará.
+                            Si desea que los scripts de servicio no se ejecuten, asegúrese de que la casilla esté marcada en la parte inferior.
                         </p>
                         <p class="small text-danger">
-                            <strong>Esta é em muitos casos uma operação destrutiva.
-                                Este servidor será interrompido imediatamente para que esta ação prossiga.</strong>
+                            <strong>Esta es en muchos casos una operación destructiva.
+                                Este servidor se detendrá inmediatamente para que se lleve a cabo esta acción.</strong>
                         </p>
                     </div>
                     <div class="form-group col-xs-12">
@@ -70,34 +72,36 @@ Servidor — {{ $server->name }}: Inicialização
                                 >{{ $nest->name }}</option>
                             @endforeach
                         </select>
-                        <p class="small text-muted no-margin">Selecione o Nest no qual este servidor será agrupado.</p>
+                        <p class="small text-muted no-margin">Seleccione el Nest con el que se agrupará este servidor.</p>
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="pEggId">Egg</label>
                         <select name="egg_id" id="pEggId" class="form-control"></select>
-                        <p class="small text-muted no-margin">Selecione o Egg que fornecerá os dados de processamento para este servidor.</p>
+                        <p class="small text-muted no-margin">Seleccione el Egg que proporcionará datos de procesamiento para este servidor.</p>
                     </div>
                     <div class="form-group col-xs-12">
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input id="pSkipScripting" name="skip_scripts" type="checkbox" value="1" @if($server->skip_scripts) checked @endif />
-                            <label for="pSkipScripting" class="strong">Pular o Script de Instalação do Egg</label>
+                            <label for="pSkipScripting" class="strong">Omita el script de instalación del Egg</label>
                         </div>
-                        <p class="small text-muted no-margin">Se o Egg selecionado tiver um script de instalação anexado a ele, o script será executado durante a instalação.
-                             Se você gostaria de pular esta etapa, marque esta caixa.</p>
+                        <p class="small text-muted no-margin">
+                            Si el Egg seleccionado tiene un script de instalación adjunto, el script se ejecutará durante la instalación.
+                            Si desea omitir este paso, marque esta casilla.</p>
                     </div>
                 </div>
             </div>
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Configuração da imagem do Docker</h3>
+                    <h3 class="box-title">Configuración dela imagen de Docker</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pDockerImage">Imagem</label>
+                        <label for="pDockerImage">Imagen</label>
                         <select id="pDockerImage" name="docker_image" class="form-control"></select>
                         <input id="pDockerImageCustom" name="custom_docker_image" value="{{ old('custom_docker_image') }}" class="form-control" placeholder="Or enter a custom image..." style="margin-top:1rem"/>
-                        <p class="small text-muted no-margin">Esta é a imagem do Docker que será usada para executar este servidor.
-Selecione uma imagem do campo ou digite uma imagem personalizada no campo de texto acima.</p>
+                        <p class="small text-muted no-margin">
+                            Esta es la imagen de Docker que se utilizará para ejecutar este servidor.
+                            Seleccione una imagen del campo o ingrese una imagen personalizada en el campo de texto de arriba.</p>
                     </div>
                 </div>
             </div>

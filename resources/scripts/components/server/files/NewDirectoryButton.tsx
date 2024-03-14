@@ -22,7 +22,7 @@ interface Values {
 }
 
 const schema = object().shape({
-    directoryName: string().required('Um nome de diretório válido deve ser fornecido.'),
+    directoryName: string().required('Se debe proporcionar un nombre de directorio válido.'),
 });
 
 const generateDirectoryData = (name: string): FileObject => ({
@@ -41,7 +41,7 @@ const generateDirectoryData = (name: string): FileObject => ({
 });
 
 const NewDirectoryDialog = asDialog({
-    title: 'Criar diretório',
+    title: 'Crear directorio',
 })(() => {
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
     const directory = ServerContext.useStoreState((state) => state.files.directory);
@@ -76,7 +76,7 @@ const NewDirectoryDialog = asDialog({
                     <Form css={tw`m-0`}>
                         <Field autoFocus id={'directoryName'} name={'directoryName'} label={'Name'} />
                         <p css={tw`mt-2 text-sm md:text-base break-all`}>
-                            <span css={tw`text-neutral-200`}>Este diretório será criado como&nbsp;</span>
+                            <span css={tw`text-neutral-200`}>Este directorio será creado como &nbsp;</span>
                             <Code>
                                 /home/container/
                                 <span css={tw`text-cyan-200`}>
@@ -90,7 +90,7 @@ const NewDirectoryDialog = asDialog({
                             Cancelar
                         </Button.Text>
                         <Button className={'w-full sm:w-auto'} onClick={submitForm}>
-                            Criar
+                            Crear
                         </Button>
                     </Dialog.Footer>
                 </>
@@ -106,7 +106,7 @@ export default ({ className }: WithClassname) => {
         <>
             <NewDirectoryDialog open={open} onClose={setOpen.bind(this, false)} />
             <Button.Text onClick={setOpen.bind(this, true)} className={className}>
-                Criar diretório
+                Crear directorio
             </Button.Text>
         </>
     );

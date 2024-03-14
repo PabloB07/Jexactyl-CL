@@ -137,9 +137,9 @@ export default () => {
                         <div css={tw`hidden sm:grid grid-cols-5 md:grid-cols-5 gap-4 mb-4 mt-4`}>
                             <CronBox title={'Minuto'} value={schedule.cron.minute} />
                             <CronBox title={'Hora'} value={schedule.cron.hour} />
-                            <CronBox title={'Dia do mês'} value={schedule.cron.dayOfMonth} />
-                            <CronBox title={'Mês'} value={schedule.cron.month} />
-                            <CronBox title={'Dia da semana'} value={schedule.cron.dayOfWeek} />
+                            <CronBox title={'Dia de mes'} value={schedule.cron.dayOfMonth} />
+                            <CronBox title={'Mes'} value={schedule.cron.month} />
+                            <CronBox title={'Dia de la semana'} value={schedule.cron.dayOfWeek} />
                         </div>
                         <div css={tw`bg-neutral-700 rounded-b`}>
                             {schedule.tasks.length > 0

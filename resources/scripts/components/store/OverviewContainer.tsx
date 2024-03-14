@@ -10,31 +10,31 @@ export default () => {
     const username = useStoreState((state) => state.user.data!.username);
 
     return (
-        <PageContentBlock title={'Visão geral da Loja'}>
+        <PageContentBlock title={'Versión general de la tienda'}>
             <div className={'flex flex-row items-center justify-between mt-10'}>
                 {width >= 1280 && (
                     <div>
-                        <h1 className={'text-6xl'}>Olá, {username}!</h1>
-                        <h3 className={'text-2xl mt-2 text-neutral-500'}>👋 Bem-vindo à loja.</h3>
+                        <h1 className={'text-6xl'}>Hola, {username}!</h1>
+                        <h3 className={'text-2xl mt-2 text-neutral-500'}>👋 Bienvenido a la tienda.</h3>
                     </div>
                 )}
                 {width >= 1024 && <ResourceBar className={'w-full lg:w-[100%]'} />}
             </div>
             <div className={'lg:grid lg:grid-cols-3 gap-8 my-10'}>
                 <StoreBanner
-                    title={'Deseja criar um servidor?'}
+                    title={'Desear crear un servidor?'}
                     className={'bg-storeone'}
-                    action={'Criar'}
+                    action={'Crear'}
                     link={'create'}
                 />
                 <StoreBanner
-                    title={'Precisa de mais recursos?'}
+                    title={'Necesitas mas recursos?'}
                     className={'bg-storetwo'}
                     action={'Comprar Recursos'}
                     link={'resources'}
                 />
                 <StoreBanner
-                    title={'Ficou sem créditos?'}
+                    title={'te quedaste sin céditos?'}
                     className={'bg-storethree'}
                     action={'Comprar Créditos'}
                     link={'credits'}

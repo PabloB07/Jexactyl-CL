@@ -52,7 +52,7 @@ export default ({ onFileNamed, onDismissed, ...props }: Props) => {
                             autoFocus
                         />
                         <div css={tw`mt-6 text-right`}>
-                            <Button>Criar arquivo</Button>
+                            <Button>Crear archivos</Button>
                         </div>
                     </Form>
                 </Modal>

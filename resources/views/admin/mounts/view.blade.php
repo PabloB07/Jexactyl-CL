@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Montagens &rarr; View &rarr; {{ $mount->id }}
+    Mounts &rarr; View &rarr; {{ $mount->id }}
 @endsection
 
 @section('content-header')

@@ -89,13 +89,13 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faClock} size={'1x'} />
                             <br />O servidor está{' '}
-                            <span className={getColorFromStatus(status ?? 'desligado')}>{status}</span>
+                            <span className={getColorFromStatus(status ?? 'apagado')}>{status}</span>
                         </p>
                         <p className={'font-semibold text-sm text-gray-400 mt-1'}>
                             {status === 'running' ? (
                                 <UptimeDuration uptime={stats.uptime / 1000} />
                             ) : (
-                                <>Não é possível obter o tempo de atividade</>
+                                <>No se puede obtener tiempo de actividad</>
                             )}
                         </p>
                     </div>
@@ -105,12 +105,12 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faMicrochip} size={'1x'} />
                             <br />
-                            Utilização da CPU {getStatusFromUsage(parseInt(cpuUsed))}
+                            Utilización de {getStatusFromUsage(parseInt(cpuUsed))}
                         </p>
                         {status === 'running' ? (
                             <p className={'font-semibold text-sm text-gray-400 mt-1'}>Usando {cpuUsed}%</p>
                         ) : (
-                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Offline</p>
+                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Apagado</p>
                         )}
                     </div>
                 </ContentBox>
@@ -119,12 +119,12 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faMemory} size={'1x'} />
                             <br />
-                            Utilização da RAM {getStatusFromUsage(parseInt(memoryUsed))}
+                            Utilización de RAM {getStatusFromUsage(parseInt(memoryUsed))}
                         </p>
                         {status === 'running' ? (
                             <p className={'font-semibold text-sm text-gray-400 mt-1'}>Usando {memoryUsed}%</p>
                         ) : (
-                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Offline</p>
+                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Apagado</p>
                         )}
                     </div>
                 </ContentBox>
@@ -133,12 +133,12 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faHdd} size={'1x'} />
                             <br />
-                            Utilização do disco {getStatusFromUsage(parseInt(diskUsed))}
+                            Utilización de disco {getStatusFromUsage(parseInt(diskUsed))}
                         </p>
                         {status === 'running' ? (
                             <p className={'font-semibold text-sm text-gray-400 mt-1'}>Usando {diskUsed}%</p>
                         ) : (
-                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Offline</p>
+                            <p className={'font-semibold text-sm text-gray-400 mt-1'}>Servidor Apagado</p>
                         )}
                     </div>
                 </ContentBox>

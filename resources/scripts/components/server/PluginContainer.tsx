@@ -42,14 +42,14 @@ export default () => {
     };
 
     const doDownload = (id: number) => {
-        console.log('Instalando o plugin com ID ' + id);
+        console.log('Instalando el plugin con ID ' + id);
         installPlugin(uuid, id)
             .then(() => setOpen(false))
             .then(() =>
                 addFlash({
                     key: 'server:plugins',
                     type: 'success',
-                    message: 'Plugin instalado com sucesso.',
+                    message: 'Plugin instalado con éxito.',
                 }),
             )
             .catch((error) => clearAndAddHttpError(error));
@@ -58,7 +58,7 @@ export default () => {
     return (
         <ServerContentBlock
             title={'Plugins'}
-            description={'Pesquisar e baixar plugins Spigot.'}
+            description={'Buscar y bajar plugins de spigot.'}
             showFlashKey={'server:plugins'}
         >
             <Formik
@@ -73,12 +73,12 @@ export default () => {
                         <div className={'col-span-11 mr-4'}>
                             <Field
                                 name={'query'}
-                                placeholder={'Digite para pesquisar...'}
+                                placeholder={'Escrbe para buscar..'}
                                 className={'p-3 text-sm w-full bg-gray-800 rounded'}
                             />
                         </div>
                         <Button type={'submit'}>
-                            Pesquisar <Icon.Search size={18} className={'ml-1'} />
+                            Buscar <Icon.Search size={18} className={'ml-1'} />
                         </Button>
                     </div>
                 </Form>
@@ -89,16 +89,16 @@ export default () => {
                 title={'Instalar Plugin'}
                 onConfirmed={() => doDownload(pluginId)}
             >
-                Você tem certeza de que deseja baixar este plugin?
+                ¿De verdad quieres bajar este plugin?
             </Dialog.Confirm>
             {!data ? null : (
                 <>
                     {!data.plugins ? (
-                        <p className={'text-gray-400 text-center'}>Aguardando uma consulta de pesquisa...</p>
+                        <p className={'text-gray-400 text-center'}>Esperando una consulta de búsqueda...</p>
                     ) : (
                         <>
                             {data.plugins.length < 1 ? (
-                                <p>Não foi encontrado nenhum plugin.</p>
+                                <p>No fue encontrado ningún plugin.</p>
                             ) : (
                                 <div className={'lg:grid lg:grid-cols-3 p-2'}>
                                     {data.plugins.map((plugin, key) => (

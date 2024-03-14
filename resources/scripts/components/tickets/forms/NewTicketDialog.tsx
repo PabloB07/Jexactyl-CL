@@ -49,8 +49,8 @@ export default ({ open, onClose }: DialogProps) => {
         <Dialog
             open={open}
             onClose={onClose}
-            title={'Criar um novo ticket'}
-            description={'Este ticket será registrado sob sua conta e acessível a todos os administradores do Painel.'}
+            title={'Crear un nuevo ticket'}
+            description={'Este ticket se registró en su cuenta y es accesible para todos los administradores del Panel'}
         >
             <Formik
                 onSubmit={submit}
@@ -66,22 +66,22 @@ export default ({ open, onClose }: DialogProps) => {
                         <FormikFieldWrapper
                             label={'Título'}
                             name={'title'}
-                            description={'Um título para este ticket.'}
+                            description={'Un título para este ticket.'}
                             className={'mb-6'}
                         >
                             <Field name={'title'} as={Input} />
                         </FormikFieldWrapper>
                         <FormikFieldWrapper
-                            label={'Descrição'}
+                            label={'Descripción'}
                             name={'description'}
                             description={
-                                'Forneça informações adicionais, imagens e outros conteúdos a fim de nos ajudar a resolver seu problema mais rapidamente.'
+                                'Proporcione información adicional, imágenes y otro contenido para ayudarnos a resolver su problema más rápidamente.'
                             }
                         >
                             <Field name={'description'} as={CustomTextarea} />
                         </FormikFieldWrapper>
                         <div className={'flex justify-end mt-6'}>
-                            <Button type={'submit'}>Criar</Button>
+                            <Button type={'submit'}>Crear</Button>
                         </div>
                     </Form>
                 )}

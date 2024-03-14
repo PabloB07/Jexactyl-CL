@@ -28,7 +28,7 @@ export default () => {
                 addFlash({
                     key: 'console:share',
                     type: 'success',
-                    message: 'Os logs do seu servidor foram salvos na pasta /share.',
+                    message: 'Los registros de su servidor se han guardado en la carpeta /share.',
                 });
             })
             .catch((error) => {
@@ -53,10 +53,10 @@ export default () => {
     return (
         <>
             {status === 'offline' ? (
-                <span className={'text-gray-400'}>Desligado</span>
+                <span className={'text-gray-400'}>Apagando</span>
             ) : (
                 <div className={'cursor-pointer'} onClick={submit}>
-                    Salvar
+                    Guardar
                 </div>
             )}
         </>

@@ -23,23 +23,23 @@
                         <label class="control-label">Nome <span class="field-required"></span></label>
                         <div>
                             <input type="text" name="name" class="form-control" value="{{ $nest->name }}" />
-                            <p class="text-muted"><small>Este deve ser um nome de categoria descritivo que engloba todas as opções dentro do serviço.</small></p>
+                            <p class="text-muted"><small>Debe ser un nombre de categoría descriptivo que abarque todas las opciones dentro del servicio..</small></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Descrição</label>
+                        <label class="control-label">Descripción</label>
                         <div>
                             <textarea name="description" class="form-control" rows="7">{{ $nest->description }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Visibilidade do Nest</label>
+                        <label class="control-label">Visibilidad do Nest</label>
                         <div>
                             <select name="private" class="form-control">
                                 <option @if (!$nest->private) selected @endif value="0">Público</option>
                                 <option @if ($nest->private) selected @endif value="1">Privado</option>
                             </select>
-                            <p class="text-muted"><small>Determina se os usuários podem implantar neste nest.</small></p>
+                            <p class="text-muted"><small>Determina si los usuarios pueden implementar en este nest.</small></p>
                         </div>
                     </div>
                 </div>
@@ -58,21 +58,21 @@
                     <label class="control-label">Nest ID</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->id }}" />
-                        <p class="text-muted small">Uma identificação única utilizada para a identificação deste Nest internamente e através do API.</p>
+                        <p class="text-muted small">Un ID único utilizado para identificar este Nest internamente y a través de la API.</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Autor</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->author }}" />
-                        <p class="text-muted small">O autor desta opção de serviço. Por favor, direcione perguntas e problemas para eles, a menos que esta seja uma opção oficial de autoria de<code> support@pterodactyl.io</code>.</p>
+                        <p class="text-muted small">El autor de esta opción de servicio. Diríjales sus preguntas y problemas a menos que se trate de una opción oficial creada por <code> support@pterodactyl.io</code>.</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label">UUID</label>
                     <div>
                         <input type="text" readonly class="form-control" value="{{ $nest->uuid }}" />
-                        <p class="text-muted small">Um UUID que todos os servidores que usam essa opção são atribuídos para fins de identificação.</p>
+                        <p class="text-muted small">Un UUID que se asigna a todos los servidores que utilizan esta opción con fines de identificación.</p>
                     </div>
                 </div>
             </div>
@@ -89,8 +89,8 @@
                 <table class="table table-hover">
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
                         <th class="text-center">Servidores</th>
                         <th class="text-center"></th>
                     </tr>
@@ -108,7 +108,7 @@
                 </table>
             </div>
             <div class="box-footer">
-                <a href="{{ route('admin.nests.egg.new') }}"><button class="btn btn-success btn-sm pull-right">Novo Egg</button></a>
+                <a href="{{ route('admin.nests.egg.new') }}"><button class="btn btn-success btn-sm pull-right">Nuevo Egg</button></a>
             </div>
         </div>
     </div>

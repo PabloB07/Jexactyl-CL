@@ -21,8 +21,8 @@ const SteamDiskSpaceFeature = () => {
         if (!connected || !instance || status === 'running') return;
 
         const errors = [
-            'Steamcmd precisa de 250 MB de espaço livre em disco para atualizar',
-            '0x202 após o trabalho de atualização',
+            'Steamcmd necesita 250 MB de espacio libre en disco para actualizarse',
+            '0x202 después del trabajo de actualización',
         ];
 
         const listener = (line: string) => {
@@ -53,37 +53,37 @@ const SteamDiskSpaceFeature = () => {
             {isAdmin ? (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Sem espaço disponível em disco...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Sin espacio disponible en el disco..</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        Este servidor ficou sem espaço disponível em disco e não pode completar o processo de instalação
-                        ou atualização.
+                        Este servidor se ha quedado sin espacio disponible en disco y no puede completar el proceso de instalación.
+                        o actualizar.
                     </p>
                     <p css={tw`mt-4`}>
-                        Certifique-se de que a máquina tenha espaço suficiente em disco ao digitar{' '}
-                        <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> na hospedagem da máquina
-                        este servidor. Excluir arquivos ou aumentar o espaço disponível em disco para resolver o
+                        Asegúrese de que su máquina tenga suficiente espacio en disco al escribir {' '}
+                        <code css={tw`font-mono bg-neutral-900 rounded py-1 px-2`}>df -h</code> en el alojamiento de la máquina
+                        Este servidor. Elimine archivos o aumente el espacio disponible en disco para resolver el problema
                         problema.
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Fechar
+                            Cerrar
                         </Button>
                     </div>
                 </>
             ) : (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Sem espaço disponível em disco...</h2>
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Sin espacio disponible en el disco...</h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        Este servidor ficou sem espaço disponível em disco e não pode completar a instalação ou
-                        atualização do processo. Favor entrar em contato com o(s) administrador(es) e informá-lo(s)
-                        sobre problemas de espaço em disco.
+                        Este servidor se ha quedado sin espacio disponible en disco y no puede completar la instalación o
+                        actualización del proceso. Por favor, póngase en contacto con los administradores e infórmeles.
+                        sobre problemas de espacio en disco.
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
                         <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
-                            Fechar
+                            Cerrar
                         </Button>
                     </div>
                 </>

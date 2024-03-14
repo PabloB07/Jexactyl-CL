@@ -42,19 +42,19 @@ export default () => {
 
     return (
         <PageContentBlock
-            title={'API da conta'}
-            description={'Criar chaves API para interagir com o Painel.'}
+            title={'API de cuenta'}
+            description={'Crear claves API para interactuar con el Panel de control.'}
             showFlashKey={'account'}
         >
             <div className={'md:flex flex-nowrap my-10'}>
-                <ContentBox title={'Criar Chave API'} css={tw`flex-none w-full md:w-1/2`}>
+                <ContentBox title={'Crear claves API'} css={tw`flex-none w-full md:w-1/2`}>
                     <CreateApiKeyForm onKeyCreated={(key) => setKeys((s) => [...s!, key])} />
                 </ContentBox>
-                <ContentBox title={'Chaves API'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
+                <ContentBox title={'Claves API'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
                     <SpinnerOverlay visible={loading} />
                     <Dialog.Confirm
-                        title={'Deletar Chave API'}
-                        confirm={'Deletar Chave'}
+                        title={'Eliminar Claves API'}
+                        confirm={'Eliminar Clave'}
                         open={!!deleteIdentifier}
                         onClose={() => setDeleteIdentifier('')}
                         onConfirmed={() => doDeletion(deleteIdentifier)}
@@ -63,7 +63,7 @@ export default () => {
                     </Dialog.Confirm>
                     {keys.length === 0 ? (
                         <p css={tw`text-center text-sm`}>
-                            {loading ? 'Carregando...' : 'Não existem chaves API para esta conta.'}
+                            {loading ? 'Cargando...' : 'No existe claves API para esta cuenta.'}
                         </p>
                     ) : (
                         keys.map((key, index) => (
@@ -75,7 +75,7 @@ export default () => {
                                 <div css={tw`ml-4 flex-1 overflow-hidden`}>
                                     <p css={tw`text-sm break-words`}>{key.description}</p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
-                                        Última utilização:&nbsp;
+                                        Última actualización:&nbsp;
                                         {key.lastUsedAt
                                             ? format(key.lastUsedAt, "'dia' d 'de' MMMM yyyy', ás' HH:mm", {
                                                   locale: ptBR,

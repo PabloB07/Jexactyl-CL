@@ -25,15 +25,15 @@ const Container = styled.div`
 `;
 
 export default () => (
-    <PageContentBlock title={'Segurança da conta'} description={'Gerenciar logs da conta e autenticação.'}>
+    <PageContentBlock title={'Seguridad de la cuenta'} description={'Administrar registros de cuentas y autenticación.'}>
         <Container css={tw`lg:grid lg:grid-cols-3 my-10`}>
             <div css={tw`flex-none w-full col-span-1`}>
-                <ContentBox className={'j-right'} title={'Atualizar Senha'} showFlashes={'account:password'}>
+                <ContentBox className={'j-right'} title={'Actualizar Contraseña'} showFlashes={'account:password'}>
                     <UpdatePasswordForm />
                 </ContentBox>
                 <ContentBox
                     className={'j-right'}
-                    title={'Configurar Duas Etapas'}
+                    title={'Configurar 2 pasos'}
                     css={tw`mt-8`}
                     showFlashes={'account:2fa'}
                 >
@@ -42,7 +42,7 @@ export default () => (
             </div>
             <ContentBox
                 className={'j-left'}
-                title={'Registros da Conta'}
+                title={'Registros de cuenta'}
                 css={tw`md:ml-8 mt-8 md:mt-0 col-span-2`}
                 showFlashes={'account:logs'}
             >

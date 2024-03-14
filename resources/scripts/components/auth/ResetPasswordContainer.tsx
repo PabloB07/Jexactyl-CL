@@ -63,16 +63,16 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
             }}
             validationSchema={object().shape({
                 password: string()
-                    .required('É necessária uma nova palavra-passe.')
-                    .min(8, 'A sua nova senha deve ter pelo menos 8 caracteres.'),
+                    .required('Se requiere nueva contraseña.')
+                    .min(8, 'Su nueva contraseña debe tener al menos 8 caracteres.'),
                 passwordConfirmation: string()
-                    .required('A sua nova senha não corresponde.')
+                    .required('Tu nueva contraseña no coincide.')
                     // @ts-expect-error this is valid
-                    .oneOf([ref('password'), null], 'A sua nova senha não corresponde.'),
+                    .oneOf([ref('password'), null], 'Tu nueva contraseña no coincide.'),
             })}
         >
             {({ isSubmitting }) => (
-                <LoginFormContainer title={'Redefinir Senha'} css={tw`w-full flex`}>
+                <LoginFormContainer title={'Redefinir contraseña'} css={tw`w-full flex`}>
                     <div>
                         <label>E-mail</label>
                         <Input value={email} isLight disabled />
@@ -80,18 +80,18 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                     <div css={tw`mt-6`}>
                         <Field
                             light
-                            label={'Nova Senha'}
+                            label={'Nueva Contraseña'}
                             name={'password'}
                             type={'password'}
-                            description={'As senha devem ter pelo menos 8 caracteres de comprimento.'}
+                            description={'Las contraseñas deben tener al menos 8 caracteres.'}
                         />
                     </div>
                     <div css={tw`mt-6`}>
-                        <Field light label={'Confirmar Nova Senha'} name={'passwordConfirmation'} type={'password'} />
+                        <Field light label={'Confirmar nueva contraseña'} name={'passwordConfirmation'} type={'password'} />
                     </div>
                     <div css={tw`mt-6`}>
                         <Button size={Button.Sizes.Large} css={tw`w-full`} type={'submit'} disabled={isSubmitting}>
-                            Resetar Senha
+                            Resetear contraseña
                         </Button>
                     </div>
                     <div css={tw`mt-6 text-center`}>
@@ -99,7 +99,7 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                             to={'/auth/login'}
                             css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                         >
-                            Voltar ao login
+                            Volver al login
                         </Link>
                     </div>
                 </LoginFormContainer>

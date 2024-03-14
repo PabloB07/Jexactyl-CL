@@ -61,11 +61,11 @@ export default () => {
             </div>
             <Alert
                 type={
-                    ticket.status === 'pendente'
+                    ticket.status === 'pendiente'
                         ? 'info'
-                        : ticket.status === 'em-andamento'
+                        : ticket.status === 'en-proceso'
                           ? 'info'
-                          : ticket.status === 'não-resolvido'
+                          : ticket.status === 'no-resuelto'
                             ? 'danger'
                             : ticket.status === 'resolvido'
                               ? 'success'
@@ -84,7 +84,7 @@ export default () => {
                 )}
             </TitledGreyBox>
             {!messages ? (
-                <p className={'text-gray-400 text-center'}>Ainda ninguém respondeu a este ticket.</p>
+                <p className={'text-gray-400 text-center'}>Nadie ha respondido a este ticket todavía.</p>
             ) : (
                 <>
                     {messages.map((message) => (
@@ -118,7 +118,7 @@ export default () => {
                 </>
             )}
             <div className={'flex justify-center items-center mt-6'}>
-                <Button onClick={() => setVisible(true)}>Criar Mensagem</Button>
+                <Button onClick={() => setVisible(true)}>Crear mensaje</Button>
             </div>
         </PageContentBlock>
     );

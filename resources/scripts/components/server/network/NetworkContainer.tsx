@@ -56,7 +56,7 @@ const NetworkContainer = () => {
     return (
         <ServerContentBlock
             title={'Network'}
-            description={'Configure redes externas e portas.'}
+            description={'Configurar redes y puertos externos.'}
             showFlashKey={'server:network'}
         >
             {!data ? (
@@ -71,12 +71,13 @@ const NetworkContainer = () => {
                             <SpinnerOverlay visible={loading} />
                             <div css={tw`mt-6 sm:flex items-center justify-end`}>
                                 <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                    Você está usando atualmente {data.length} de {allocationLimit} alocações permitidas
+                                    Estás usando actualmente {data.length} de {allocationLimit}
+                                    asignaciones permitidas
                                     para este servidor.
                                 </p>
                                 {allocationLimit > data.length && (
                                     <Button css={tw`w-full sm:w-auto`} onClick={onCreateAllocation}>
-                                        Criar alocação
+                                        Crear asignaciones
                                     </Button>
                                 )}
                             </div>

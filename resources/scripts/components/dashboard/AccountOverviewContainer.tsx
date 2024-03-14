@@ -34,18 +34,18 @@ export default () => {
     const referrals = useStoreState((state) => state.storefront.data!.referrals.enabled);
 
     return (
-        <PageContentBlock title={'Visão geral da conta'} description={'Visualizar e atualizar detalhes da conta.'}>
+        <PageContentBlock title={'Descripción de cuenta'} description={'Ver y actualizar los detalles de la cuenta.'}>
             {state?.twoFactorRedirect && (
-                <Alert type={'danger'}>Sua conta deve ter autenticação de dois fatores ativada para continuar.</Alert>
+                <Alert type={'danger'}>Su cuenta debe tener habilitada la autenticación de dos factores para continuar.</Alert>
             )}
             <Container
                 className={'j-up'}
                 css={[tw`lg:grid lg:grid-cols-2 gap-8 mb-10`, state?.twoFactorRedirect ? tw`mt-4` : tw`mt-10`]}
             >
-                <ContentBox title={'Atualizar Usuário'} showFlashes={'account:username'}>
+                <ContentBox title={'Actualizar Usuario'} showFlashes={'account:username'}>
                     <UpdateUsernameForm />
                 </ContentBox>
-                <ContentBox title={'Atualizar Endereço de E-mail'} showFlashes={'account:email'}>
+                <ContentBox title={'Actualizar dirección de E-mail'} showFlashes={'account:email'}>
                     <UpdateEmailAddressForm />
                 </ContentBox>
                 {referrals && (
@@ -54,7 +54,7 @@ export default () => {
                     </ContentBox>
                 )}
                 {discord && (
-                    <ContentBox title={'Conectar com o Discord'} showFlashes={'account:discord'}>
+                    <ContentBox title={'Conectar con Discord'} showFlashes={'account:discord'}>
                         <DiscordAccountForm />
                     </ContentBox>
                 )}

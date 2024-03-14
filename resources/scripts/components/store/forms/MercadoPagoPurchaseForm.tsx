@@ -35,7 +35,7 @@ export default () => {
     return (
         <TitledGreyBox title={'Comprar via Mercado Pago'}>
             <Dialog open={submitting} hideCloseIcon onClose={() => undefined}>
-                Agora você está sendo levado ao gateway Mercado Pago para concluir essa transação.
+                Serás enviado a mercadopago para realizar la transacción correspondiente.
             </Dialog>
             <FlashMessageRender byKey={'store:mpago'} css={tw`mb-2`} />
             <Formik
@@ -48,7 +48,7 @@ export default () => {
                     <SpinnerOverlay size={'large'} visible={submitting} />
                     <Select name={'amount'} disabled={submitting} onChange={(e) => setAmount(parseInt(e.target.value))}>
                         <option key={'mpago:placeholder'} hidden>
-                            Escolha um valor...
+                            Escoje un valor...
                         </option>
                         <option key={'mpago:buy:100'} value={100}>
                             Comprar 100 creditos
